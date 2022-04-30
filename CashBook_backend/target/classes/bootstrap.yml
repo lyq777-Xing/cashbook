@@ -1,0 +1,36 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /lyq
+spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/cashbook?serverTimezone=Asia/Shanghai
+#    password: 123456
+#    username: root
+  application:
+    name: cashbook-backend
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.7:8848
+dubbo:
+  scan:
+    # dubbo 服务扫描基准包
+    base-packages: com.cashbook
+  protocol:
+    # dubbo 协议
+    name: dubbo
+    port: 20892
+  registry:
+    address: nacos://127.0.0.1:8848
+  application:
+    qos:
+      port: 22311 # dubbo qos端口配置  命令行注入
+  consumer:
+    check: false
+    timeout: 3000
+    retries: -1
+
+logging:
+  config: classpath:log4j2.xml
