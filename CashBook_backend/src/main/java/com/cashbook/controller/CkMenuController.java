@@ -25,15 +25,16 @@ import java.util.Map;
  */
 @Slf4j
 @RestController
-@Api(value = "菜单", tags = "", description="")
+@Api(value = "菜单栏", tags = "", description="")
 public class CkMenuController {
 
     @Reference
     private ICkMenuService ckMenuService;
 
+    @ApiOperation(value = "左侧菜单栏(树形结构)")
     @GetMapping("/menus")
-    public Map<String, Object> findAll(){
-        Map<String, Object> map = ckMenuService.getMap(null);
-        return map;
+    public List<CkMenu> findAll(){
+        List<CkMenu> menusTree = ckMenuService.findMenusTree();
+        return menusTree;
     }
 }

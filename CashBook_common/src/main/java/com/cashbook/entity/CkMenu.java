@@ -1,8 +1,11 @@
 package com.cashbook.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+import java.util.List;
+
 import lombok.Data;
 import com.baomidou.mybatisplus.annotation.TableName;
 
@@ -20,6 +23,9 @@ public class CkMenu implements Serializable {
     private String menuLevel;
 
     private Integer menuPid;
+
+    @TableField(exist = false)
+    private List<CkMenu> children;
 
 
 }
