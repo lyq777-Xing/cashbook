@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="CashBookCloud-bill-service" />
+        <module name="CashBookCloud-swagger" />
+        <module name="CashBookCloud-result" />
+        <module name="CashBookCloud-cat-api" />
+        <module name="CashBookCloud-cat-service" />
+        <module name="CashBookCloud-gateway" />
+        <module name="CashBookCloud-utils" />
+        <module name="CashBookCloud-billlist-api" />
+        <module name="CashBookCloud-bill-api" />
+        <module name="CashBookCloud-billlist-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="CashBookCloud-cache" target="8" />
+      <module name="CashBookCloud-data" target="8" />
+      <module name="CashBookCloud-entity" target="8" />
+      <module name="CashBookCloud-security-admin" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

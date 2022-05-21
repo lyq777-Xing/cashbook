@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "ratelimiter-config",
+      "type": "com.cashbookcloud.gateway.config.RateLimiterConfig",
+      "sourceType": "com.cashbookcloud.gateway.config.RateLimiterConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "ratelimiter-config.rate-limit-map",
+      "type": "java.util.Map<java.lang.String,java.lang.Integer>",
+      "sourceType": "com.cashbookcloud.gateway.config.RateLimiterConfig"
+    }
+  ],
+  "hints": []
+}

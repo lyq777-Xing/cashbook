@@ -1,0 +1,2213 @@
+2022-05-20 10:27:28 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [2d4096d4-1]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 10:34:01 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [2d4096d4-2]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 13:43:14 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-6[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [2d4096d4-3]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 13:50:10 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.diagnostics.LoggingFailureAnalysisReporter[0;39m | 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8888 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8888 or configure this application to listen on another port.
+
+2022-05-20 13:50:10 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-7[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [2d4096d4-4]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 13:50:16 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [2d4096d4-5]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 13:57:19 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.diagnostics.LoggingFailureAnalysisReporter[0;39m | 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8888 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8888 or configure this application to listen on another port.
+
+2022-05-20 13:58:21 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [fcd05c5a-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:01:04 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [d299f147-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:22:28 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-7[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [d299f147-4]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:40:38 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [7201efe9-7]  500 Server Error for HTTP GET "/bill/getAllBill"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:40:51 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-2[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [7201efe9-8]  500 Server Error for HTTP GET "/bill/getAllBill"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:41:51 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-2[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [7201efe9-11]  500 Server Error for HTTP GET "/bill/getAllBill"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:43:54 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-8[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [7201efe9-12]  500 Server Error for HTTP GET "/bill/getAllBill"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:43:59 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-2[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [7201efe9-13]  500 Server Error for HTTP GET "/bill/getlll"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getlll" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:44:03 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-2[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [7201efe9-14]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:44:51 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-1[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [7201efe9-15]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:45:34 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [7201efe9-16]  500 Server Error for HTTP GET "/bill/getall"
+io.netty.channel.ConnectTimeoutException: connection timed out: /172.18.113.87:20891
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 14:48:53 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [9204cf94-1]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:00:44 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.cloud.nacos.client.NacosPropertySourceBuilder[0;39m | parse data from Nacos error,dataId:cashbook-gateway.yml,data: spring:
+    gateway:
+        httpclient:
+            connect-timeout: 10000
+            response-timeout: 20s
+        discovery:
+            locator:
+            lowerCaseServiceId: true
+            enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+        globalcors:
+            corsConfigurations:
+            '[/**]':
+                #这里有个allowCredentials: true这个东西是设置允许访问携带cookie的，这点一定要和前端对应！
+                allowCredentials: true
+                #可以填写多个域名用","隔开 例如：""  "*"代表允许所有
+                allowedOrigins: "*"
+                allowedMethods: "*"
+                allowedHeaders: "*"
+        routes:
+            - id: cashbook-bill
+            uri: lb://cashbook-bill-service
+            #          order: 8001
+            predicates:
+                - Path=/bill/**
+    redis:
+        host: 106.12.162.221
+        password:
+        port: 6379
+        timeout: 10000
+        database: 0
+
+    #
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.cashbookcloud
+  global-config:
+    banner: false
+    db-config:
+      id-type: id_worker
+      field-strategy: not_empty
+      column-underline: true
+      #capital-mode: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    refresh: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+,
+org.yaml.snakeyaml.parser.ParserException: while parsing a block collection
+ in 'reader', line 20, column 13:
+                - id: cashbook-bill
+                ^
+expected <block end>, but found '?'
+ in 'reader', line 21, column 13:
+                uri: lb://cashbook-bill-service
+                ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry.produce(ParserImpl.java:516)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:190)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:142)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:125)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:160)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.createMap(YamlMapFactoryBean.java:124)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.getObject(YamlMapFactoryBean.java:104)
+	at com.alibaba.cloud.nacos.parser.NacosDataYamlParser.doParse(NacosDataYamlParser.java:40)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:80)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:85)
+	at com.alibaba.cloud.nacos.parser.NacosDataParserHandler.parseNacosData(NacosDataParserHandler.java:45)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:98)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:74)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:204)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:191)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosConfiguration(NacosPropertySourceLocator.java:161)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:102)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:626)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.cashbookcloud.gateway.CloudGatewayApplication.main(CloudGatewayApplication.java:30)
+2022-05-20 15:01:57 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.cloud.nacos.client.NacosPropertySourceBuilder[0;39m | parse data from Nacos error,dataId:cashbook-gateway.yml,data: spring:
+    gateway:
+        httpclient:
+            connect-timeout: 10000
+            response-timeout: 20s
+        discovery:
+            locator:
+            lowerCaseServiceId: true
+            enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+        globalcors:
+            corsConfigurations:
+            '[/**]':
+                #这里有个allowCredentials: true这个东西是设置允许访问携带cookie的，这点一定要和前端对应！
+                allowCredentials: true
+                #可以填写多个域名用","隔开 例如：""  "*"代表允许所有
+                allowedOrigins: "*"
+                allowedMethods: "*"
+                allowedHeaders: "*"
+        routes:
+            - id: cashbook-bill
+            uri: lb://cashbook-bill-service
+            #          order: 8001
+            predicates:
+                - Path=/bill/**
+    redis:
+        host: 106.12.162.221
+        password:
+        port: 6379
+        timeout: 10000
+        database: 0
+
+    #
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.cashbookcloud
+  global-config:
+    banner: false
+    db-config:
+      id-type: id_worker
+      field-strategy: not_empty
+      column-underline: true
+      #capital-mode: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    refresh: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+,
+org.yaml.snakeyaml.parser.ParserException: while parsing a block collection
+ in 'reader', line 20, column 13:
+                - id: cashbook-bill
+                ^
+expected <block end>, but found '?'
+ in 'reader', line 21, column 13:
+                uri: lb://cashbook-bill-service
+                ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry.produce(ParserImpl.java:516)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:190)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:142)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:125)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:160)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.createMap(YamlMapFactoryBean.java:124)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.getObject(YamlMapFactoryBean.java:104)
+	at com.alibaba.cloud.nacos.parser.NacosDataYamlParser.doParse(NacosDataYamlParser.java:40)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:80)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:85)
+	at com.alibaba.cloud.nacos.parser.NacosDataParserHandler.parseNacosData(NacosDataParserHandler.java:45)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:98)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:74)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:204)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:191)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosConfiguration(NacosPropertySourceLocator.java:161)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:102)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:626)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.cashbookcloud.gateway.CloudGatewayApplication.main(CloudGatewayApplication.java:30)
+2022-05-20 15:04:33 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.client.Worker.longPolling.fixed-106.12.162.221_8848-5370d71d-e695-4fa9-bbe5-6b823c9c7696[0;39m | [1;32mcom.alibaba.cloud.nacos.client.NacosPropertySourceBuilder[0;39m | parse data from Nacos error,dataId:cashbook-gateway.yml,data: spring:
+    gateway:
+        httpclient:
+            connect-timeout: 10000
+            response-timeout: 20s
+        discovery:
+            locator:
+            lowerCaseServiceId: true
+            enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+        globalcors:
+            corsConfigurations:
+                '[/**]':
+                    #这里有个allowCredentials: true这个东西是设置允许访问携带cookie的，这点一定要和前端对应！
+                    allowCredentials: true
+                    #可以填写多个域名用","隔开 例如：""  "*"代表允许所有
+                    allowedOrigins: "*"
+                    allowedMethods: "*"
+                    allowedHeaders: "*"
+        routes:
+            - id: cashbook-bill
+            uri: lb://cashbook-bill-service
+            #          order: 8001
+            predicates:
+                - Path=/bill/**
+    redis:
+        host: 106.12.162.221
+        password:
+        port: 6379
+        timeout: 10000
+        database: 0
+#mybatis
+# mybatis-plus:
+#   mapper-locations: classpath:/mapper/*Mapper.xml
+#   typeAliasesPackage: com.cashbookcloud
+#   global-config:
+#     banner: false
+#     db-config:
+#       id-type: id_worker
+#       field-strategy: not_empty
+#       column-underline: true
+#       #capital-mode: true
+#       logic-delete-value: 1
+#       logic-not-delete-value: 0
+#     refresh: true
+#   configuration:
+#     map-underscore-to-camel-case: true
+#     cache-enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+,
+org.yaml.snakeyaml.parser.ParserException: while parsing a block collection
+ in 'reader', line 20, column 13:
+                - id: cashbook-bill
+                ^
+expected <block end>, but found '?'
+ in 'reader', line 21, column 13:
+                uri: lb://cashbook-bill-service
+                ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry.produce(ParserImpl.java:516)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:190)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:142)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:125)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:160)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.createMap(YamlMapFactoryBean.java:124)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.getObject(YamlMapFactoryBean.java:104)
+	at com.alibaba.cloud.nacos.parser.NacosDataYamlParser.doParse(NacosDataYamlParser.java:40)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:80)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:85)
+	at com.alibaba.cloud.nacos.parser.NacosDataParserHandler.parseNacosData(NacosDataParserHandler.java:45)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:98)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:74)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:204)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:191)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosConfiguration(NacosPropertySourceLocator.java:161)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:102)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:626)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.context.refresh.ContextRefresher.addConfigFilesToEnvironment(ContextRefresher.java:113)
+	at org.springframework.cloud.context.refresh.ContextRefresher.refreshEnvironment(ContextRefresher.java:93)
+	at org.springframework.cloud.context.refresh.ContextRefresher.refresh(ContextRefresher.java:85)
+	at org.springframework.cloud.endpoint.event.RefreshEventListener.handle(RefreshEventListener.java:72)
+	at org.springframework.cloud.endpoint.event.RefreshEventListener.onApplicationEvent(RefreshEventListener.java:61)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at com.alibaba.cloud.nacos.refresh.NacosContextRefresher$1.innerReceive(NacosContextRefresher.java:133)
+	at com.alibaba.nacos.api.config.listener.AbstractSharedListener.receiveConfigInfo(AbstractSharedListener.java:38)
+	at com.alibaba.nacos.client.config.impl.CacheData$1.run(CacheData.java:203)
+	at com.alibaba.nacos.client.config.impl.CacheData.safeNotifyListener(CacheData.java:233)
+	at com.alibaba.nacos.client.config.impl.CacheData.checkListenerMd5(CacheData.java:174)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:552)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:04:46 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.cloud.nacos.client.NacosPropertySourceBuilder[0;39m | parse data from Nacos error,dataId:cashbook-gateway.yml,data: spring:
+    gateway:
+        httpclient:
+            connect-timeout: 10000
+            response-timeout: 20s
+        discovery:
+            locator:
+            lowerCaseServiceId: true
+            enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+        globalcors:
+            corsConfigurations:
+                '[/**]':
+                    #这里有个allowCredentials: true这个东西是设置允许访问携带cookie的，这点一定要和前端对应！
+                    allowCredentials: true
+                    #可以填写多个域名用","隔开 例如：""  "*"代表允许所有
+                    allowedOrigins: "*"
+                    allowedMethods: "*"
+                    allowedHeaders: "*"
+        routes:
+            - id: cashbook-bill
+            uri: lb://cashbook-bill-service
+            #          order: 8001
+            predicates:
+                - Path=/bill/**
+    redis:
+        host: 106.12.162.221
+        password:
+        port: 6379
+        timeout: 10000
+        database: 0
+#mybatis
+# mybatis-plus:
+#   mapper-locations: classpath:/mapper/*Mapper.xml
+#   typeAliasesPackage: com.cashbookcloud
+#   global-config:
+#     banner: false
+#     db-config:
+#       id-type: id_worker
+#       field-strategy: not_empty
+#       column-underline: true
+#       #capital-mode: true
+#       logic-delete-value: 1
+#       logic-not-delete-value: 0
+#     refresh: true
+#   configuration:
+#     map-underscore-to-camel-case: true
+#     cache-enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+,
+org.yaml.snakeyaml.parser.ParserException: while parsing a block collection
+ in 'reader', line 20, column 13:
+                - id: cashbook-bill
+                ^
+expected <block end>, but found '?'
+ in 'reader', line 21, column 13:
+                uri: lb://cashbook-bill-service
+                ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockSequenceEntry.produce(ParserImpl.java:516)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeSequenceNode(Composer.java:190)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:142)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:125)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:160)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.createMap(YamlMapFactoryBean.java:124)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.getObject(YamlMapFactoryBean.java:104)
+	at com.alibaba.cloud.nacos.parser.NacosDataYamlParser.doParse(NacosDataYamlParser.java:40)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:80)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:85)
+	at com.alibaba.cloud.nacos.parser.NacosDataParserHandler.parseNacosData(NacosDataParserHandler.java:45)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:98)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:74)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:204)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:191)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosConfiguration(NacosPropertySourceLocator.java:161)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:102)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:626)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.cashbookcloud.gateway.CloudGatewayApplication.main(CloudGatewayApplication.java:30)
+2022-05-20 15:05:31 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.client.Worker.longPolling.fixed-106.12.162.221_8848-5370d71d-e695-4fa9-bbe5-6b823c9c7696[0;39m | [1;32mcom.alibaba.cloud.nacos.client.NacosPropertySourceBuilder[0;39m | parse data from Nacos error,dataId:cashbook-gateway.yml,data: spring:
+    gateway:
+        httpclient:
+            connect-timeout: 10000
+            response-timeout: 20s
+        discovery:
+            locator:
+            lowerCaseServiceId: true
+            enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+        globalcors:
+            corsConfigurations:
+                '[/**]':
+                    #这里有个allowCredentials: true这个东西是设置允许访问携带cookie的，这点一定要和前端对应！
+                    allowCredentials: true
+                    #可以填写多个域名用","隔开 例如：""  "*"代表允许所有
+                    allowedOrigins: "*"
+                    allowedMethods: "*"
+                    allowedHeaders: "*"
+        routes:
+            - id: cashbook-bill
+              uri: lb://cashbook-bill-service
+                #          order: 8001
+              predicates:
+                - Path=/bill/**
+    redis:
+        host: 106.12.162.221
+        password:
+        port: 6379
+        timeout: 10000
+        database: 0
+#mybatis
+# mybatis-plus:
+#   mapper-locations: classpath:/mapper/*Mapper.xml
+#   typeAliasesPackage: com.cashbookcloud
+#   global-config:
+#     banner: false
+#     db-config:
+#       id-type: id_worker
+#       field-strategy: not_empty
+#       column-underline: true
+#       #capital-mode: true
+#       logic-delete-value: 1
+#       logic-not-delete-value: 0
+#     refresh: true
+#   configuration:
+#     map-underscore-to-camel-case: true
+#     cache-enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+,
+org.yaml.snakeyaml.parser.ParserException: expected '<document start>', but found '<block mapping start>'
+ in 'reader', line 48, column 1:
+    management:
+    ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:68)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:114)
+	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:543)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:160)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.createMap(YamlMapFactoryBean.java:124)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.getObject(YamlMapFactoryBean.java:104)
+	at com.alibaba.cloud.nacos.parser.NacosDataYamlParser.doParse(NacosDataYamlParser.java:40)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:80)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:85)
+	at com.alibaba.cloud.nacos.parser.NacosDataParserHandler.parseNacosData(NacosDataParserHandler.java:45)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:98)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:74)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:204)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:191)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosConfiguration(NacosPropertySourceLocator.java:161)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:102)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:626)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.context.refresh.ContextRefresher.addConfigFilesToEnvironment(ContextRefresher.java:113)
+	at org.springframework.cloud.context.refresh.ContextRefresher.refreshEnvironment(ContextRefresher.java:93)
+	at org.springframework.cloud.context.refresh.ContextRefresher.refresh(ContextRefresher.java:85)
+	at org.springframework.cloud.endpoint.event.RefreshEventListener.handle(RefreshEventListener.java:72)
+	at org.springframework.cloud.endpoint.event.RefreshEventListener.onApplicationEvent(RefreshEventListener.java:61)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at com.alibaba.cloud.nacos.refresh.NacosContextRefresher$1.innerReceive(NacosContextRefresher.java:133)
+	at com.alibaba.nacos.api.config.listener.AbstractSharedListener.receiveConfigInfo(AbstractSharedListener.java:38)
+	at com.alibaba.nacos.client.config.impl.CacheData$1.run(CacheData.java:203)
+	at com.alibaba.nacos.client.config.impl.CacheData.safeNotifyListener(CacheData.java:233)
+	at com.alibaba.nacos.client.config.impl.CacheData.checkListenerMd5(CacheData.java:174)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:552)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:07:22 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.cloud.nacos.client.NacosPropertySourceBuilder[0;39m | parse data from Nacos error,dataId:cashbook-gateway.yml,data: spring:
+    gateway:
+        httpclient:
+            connect-timeout: 10000
+            response-timeout: 20s
+        discovery:
+            locator:
+            lowerCaseServiceId: true
+            enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+        globalcors:
+            corsConfigurations:
+                '[/**]':
+                    #这里有个allowCredentials: true这个东西是设置允许访问携带cookie的，这点一定要和前端对应！
+                    allowCredentials: true
+                    #可以填写多个域名用","隔开 例如：""  "*"代表允许所有
+                    allowedOrigins: "*"
+                    allowedMethods: "*"
+                    allowedHeaders: "*"
+        routes:
+            - id: cashbook-bill
+              uri: lb://cashbook-bill-service
+                #          order: 8001
+              predicates:
+                - Path=/bill/**
+    redis:
+        host: 106.12.162.221
+        password:
+        port: 6379
+        timeout: 10000
+        database: 0
+#mybatis
+# mybatis-plus:
+#   mapper-locations: classpath:/mapper/*Mapper.xml
+#   typeAliasesPackage: com.cashbookcloud
+#   global-config:
+#     banner: false
+#     db-config:
+#       id-type: id_worker
+#       field-strategy: not_empty
+#       column-underline: true
+#       #capital-mode: true
+#       logic-delete-value: 1
+#       logic-not-delete-value: 0
+#     refresh: true
+#   configuration:
+#     map-underscore-to-camel-case: true
+#     cache-enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+,
+org.yaml.snakeyaml.parser.ParserException: expected '<document start>', but found '<block mapping start>'
+ in 'reader', line 48, column 1:
+    management:
+    ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseDocumentStart.produce(ParserImpl.java:226)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.checkNode(Composer.java:68)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.checkData(BaseConstructor.java:114)
+	at org.yaml.snakeyaml.Yaml$1.hasNext(Yaml.java:543)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:160)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.createMap(YamlMapFactoryBean.java:124)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.getObject(YamlMapFactoryBean.java:104)
+	at com.alibaba.cloud.nacos.parser.NacosDataYamlParser.doParse(NacosDataYamlParser.java:40)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:80)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:85)
+	at com.alibaba.cloud.nacos.parser.NacosDataParserHandler.parseNacosData(NacosDataParserHandler.java:45)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:98)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:74)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:204)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:191)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosConfiguration(NacosPropertySourceLocator.java:161)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:102)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:626)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.cashbookcloud.gateway.CloudGatewayApplication.main(CloudGatewayApplication.java:30)
+2022-05-20 15:07:38 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-6[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [071c2937-2]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:07:43 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-6[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [071c2937-3]  500 Server Error for HTTP GET "/bill/getAllBill"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:08:22 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.client.Worker.longPolling.fixed-106.12.162.221_8848-5370d71d-e695-4fa9-bbe5-6b823c9c7696[0;39m | [1;32mcom.alibaba.cloud.nacos.client.NacosPropertySourceBuilder[0;39m | parse data from Nacos error,dataId:cashbook-gateway.yml,data:server:
+  port: 8888
+
+
+spring:
+  application:
+    name: @artifactId@
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 106.12.162.221:8848
+        namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
+        namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+        group: CashBook-Group
+        extension-configs:
+          - refresh: true
+            data-id: cashbook-gateway.yml
+            group: COMMON_GROUP # 通用配置组
+    gateway:
+      httpclient:
+        connect-timeout: 10000
+        response-timeout: 20s
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            #这里有个allowCredentials: true这个东西是设置允许访问携带cookie的，这点一定要和前端对应！
+            allowCredentials: true
+            #可以填写多个域名用","隔开 例如：""  "*"代表允许所有
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: cashbook-bill
+          uri: lb://cashbook-bill-service
+          #          order: 8001
+          predicates:
+            - Path=/bill/**
+  #          filters:
+  #            - SwaggerHeaderFilter
+  #            - StripPrefix=1
+  #          uri: lb://cloud-admin-service
+  #          order: 8001
+  #          predicates:
+  #            - Path=/admin/**
+  #          filters:
+  ##            - SwaggerHeaderFilter
+  #            - StripPrefix=1
+  ##            - name: RequestRateLimiter
+  ##              args:
+  ##                rate-limiter: "#{@sysRedisRateLimiter}"
+  ##                key-resolver: "#{@sysKeyResolver}"
+
+
+
+  redis:
+    host: 106.12.162.221
+    password:
+    port: 6379
+    timeout: 10000
+    database: 0
+
+#
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.cashbookcloud
+  global-config:
+    banner: false
+    db-config:
+      id-type: id_worker
+      field-strategy: not_empty
+      column-underline: true
+      #capital-mode: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    refresh: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+logging:
+  config: classpath:logback-spring.xml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+swagger:
+  enabled: false
+ratelimiter-config:
+  rateLimitMap:
+    service.cloud-auth.replenishRate: 10
+    service.cloud-auth.burstCapacity: 100
+    service.cloud-admin-service.replenishRate: 20
+    service.cloud-admin-service.burstCapacity: 1000
+,
+org.yaml.snakeyaml.scanner.ScannerException: while scanning for the next token
+found character '@' that cannot start any token. (Do not use @ for indentation)
+ in 'reader', line 7, column 11:
+        name: @artifactId@
+              ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:419)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:124)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:125)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:160)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.createMap(YamlMapFactoryBean.java:124)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.getObject(YamlMapFactoryBean.java:104)
+	at com.alibaba.cloud.nacos.parser.NacosDataYamlParser.doParse(NacosDataYamlParser.java:40)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:80)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:85)
+	at com.alibaba.cloud.nacos.parser.NacosDataParserHandler.parseNacosData(NacosDataParserHandler.java:45)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:98)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:74)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:204)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:191)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosConfiguration(NacosPropertySourceLocator.java:161)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:102)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:626)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:140)
+	at org.springframework.cloud.context.refresh.ContextRefresher.addConfigFilesToEnvironment(ContextRefresher.java:113)
+	at org.springframework.cloud.context.refresh.ContextRefresher.refreshEnvironment(ContextRefresher.java:93)
+	at org.springframework.cloud.context.refresh.ContextRefresher.refresh(ContextRefresher.java:85)
+	at org.springframework.cloud.endpoint.event.RefreshEventListener.handle(RefreshEventListener.java:72)
+	at org.springframework.cloud.endpoint.event.RefreshEventListener.onApplicationEvent(RefreshEventListener.java:61)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at com.alibaba.cloud.nacos.refresh.NacosContextRefresher$1.innerReceive(NacosContextRefresher.java:133)
+	at com.alibaba.nacos.api.config.listener.AbstractSharedListener.receiveConfigInfo(AbstractSharedListener.java:38)
+	at com.alibaba.nacos.client.config.impl.CacheData$1.run(CacheData.java:203)
+	at com.alibaba.nacos.client.config.impl.CacheData.safeNotifyListener(CacheData.java:233)
+	at com.alibaba.nacos.client.config.impl.CacheData.checkListenerMd5(CacheData.java:174)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:552)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:08:41 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.cloud.nacos.client.NacosPropertySourceBuilder[0;39m | parse data from Nacos error,dataId:cashbook-gateway.yml,data:server:
+  port: 8888
+
+
+spring:
+  application:
+    name: @artifactId@
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 106.12.162.221:8848
+        namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
+        namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+        group: CashBook-Group
+        extension-configs:
+          - refresh: true
+            data-id: cashbook-gateway.yml
+            group: COMMON_GROUP # 通用配置组
+    gateway:
+      httpclient:
+        connect-timeout: 10000
+        response-timeout: 20s
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true  #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            #这里有个allowCredentials: true这个东西是设置允许访问携带cookie的，这点一定要和前端对应！
+            allowCredentials: true
+            #可以填写多个域名用","隔开 例如：""  "*"代表允许所有
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: cashbook-bill
+          uri: lb://cashbook-bill-service
+          #          order: 8001
+          predicates:
+            - Path=/bill/**
+  #          filters:
+  #            - SwaggerHeaderFilter
+  #            - StripPrefix=1
+  #          uri: lb://cloud-admin-service
+  #          order: 8001
+  #          predicates:
+  #            - Path=/admin/**
+  #          filters:
+  ##            - SwaggerHeaderFilter
+  #            - StripPrefix=1
+  ##            - name: RequestRateLimiter
+  ##              args:
+  ##                rate-limiter: "#{@sysRedisRateLimiter}"
+  ##                key-resolver: "#{@sysKeyResolver}"
+
+
+
+  redis:
+    host: 106.12.162.221
+    password:
+    port: 6379
+    timeout: 10000
+    database: 0
+
+#
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  typeAliasesPackage: com.cashbookcloud
+  global-config:
+    banner: false
+    db-config:
+      id-type: id_worker
+      field-strategy: not_empty
+      column-underline: true
+      #capital-mode: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    refresh: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+logging:
+  config: classpath:logback-spring.xml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+swagger:
+  enabled: false
+ratelimiter-config:
+  rateLimitMap:
+    service.cloud-auth.replenishRate: 10
+    service.cloud-auth.burstCapacity: 100
+    service.cloud-admin-service.replenishRate: 20
+    service.cloud-admin-service.burstCapacity: 1000
+,
+org.yaml.snakeyaml.scanner.ScannerException: while scanning for the next token
+found character '@' that cannot start any token. (Do not use @ for indentation)
+ in 'reader', line 7, column 11:
+        name: @artifactId@
+              ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:419)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:227)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingValue.produce(ParserImpl.java:586)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:124)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:239)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:230)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:218)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:125)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:548)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:160)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.createMap(YamlMapFactoryBean.java:124)
+	at org.springframework.beans.factory.config.YamlMapFactoryBean.getObject(YamlMapFactoryBean.java:104)
+	at com.alibaba.cloud.nacos.parser.NacosDataYamlParser.doParse(NacosDataYamlParser.java:40)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:80)
+	at com.alibaba.cloud.nacos.parser.AbstractNacosDataParser.parseNacosData(AbstractNacosDataParser.java:85)
+	at com.alibaba.cloud.nacos.parser.NacosDataParserHandler.parseNacosData(NacosDataParserHandler.java:45)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.loadNacosData(NacosPropertySourceBuilder.java:98)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceBuilder.build(NacosPropertySourceBuilder.java:74)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosPropertySource(NacosPropertySourceLocator.java:204)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosDataIfPresent(NacosPropertySourceLocator.java:191)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadNacosConfiguration(NacosPropertySourceLocator.java:161)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.loadExtConfiguration(NacosPropertySourceLocator.java:129)
+	at com.alibaba.cloud.nacos.client.NacosPropertySourceLocator.locate(NacosPropertySourceLocator.java:102)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:52)
+	at org.springframework.cloud.bootstrap.config.PropertySourceLocator.locateCollection(PropertySourceLocator.java:47)
+	at org.springframework.cloud.bootstrap.config.PropertySourceBootstrapConfiguration.initialize(PropertySourceBootstrapConfiguration.java:97)
+	at org.springframework.boot.SpringApplication.applyInitializers(SpringApplication.java:626)
+	at org.springframework.boot.SpringApplication.prepareContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.cashbookcloud.gateway.CloudGatewayApplication.main(CloudGatewayApplication.java:30)
+2022-05-20 15:10:01 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [5939036d-2]  500 Server Error for HTTP GET "/bill/getAllBill"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:11:53 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-1[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [a6b7a575-3]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:11:55 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-7[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [a6b7a575-4]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:11:56 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-7[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [a6b7a575-5]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:19:27 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [49c8876e-3]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:19:30 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [49c8876e-4]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:19:32 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [49c8876e-5]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:19:33 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [49c8876e-6]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:44:36 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [8bdc3bda-2]  500 Server Error for HTTP GET "/bill/getall"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:46:45 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.client.Worker.longPolling.fixed-106.12.162.221_8848-5370d71d-e695-4fa9-bbe5-6b823c9c7696[0;39m | [1;32mcom.alibaba.nacos.client.config.http.ServerHttpAgent[0;39m | [NACOS IOException httpPost] currentServerAddr: http://106.12.162.221:8848
+java.net.SocketException: Software caused connection abort: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:698)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1593)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at com.alibaba.nacos.client.config.impl.HttpSimpleClient.httpPost(HttpSimpleClient.java:119)
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:143)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:386)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:354)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:521)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:46:45 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.client.Worker.longPolling.fixed-106.12.162.221_8848-5370d71d-e695-4fa9-bbe5-6b823c9c7696[0;39m | [1;32mcom.alibaba.nacos.client.config.impl.ClientWorker[0;39m | [fixed-106.12.162.221_8848-5370d71d-e695-4fa9-bbe5-6b823c9c7696] [check-update] get changed dataId exception
+java.net.SocketException: Software caused connection abort: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:698)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1593)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at com.alibaba.nacos.client.config.impl.HttpSimpleClient.httpPost(HttpSimpleClient.java:119)
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:143)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:386)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:354)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:521)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:46:45 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.client.Worker.longPolling.fixed-106.12.162.221_8848-5370d71d-e695-4fa9-bbe5-6b823c9c7696[0;39m | [1;32mcom.alibaba.nacos.client.config.impl.ClientWorker[0;39m | longPolling error : 
+java.net.SocketException: Software caused connection abort: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:698)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1593)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1498)
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)
+	at com.alibaba.nacos.client.config.impl.HttpSimpleClient.httpPost(HttpSimpleClient.java:119)
+	at com.alibaba.nacos.client.config.http.ServerHttpAgent.httpPost(ServerHttpAgent.java:143)
+	at com.alibaba.nacos.client.config.http.MetricsHttpAgent.httpPost(MetricsHttpAgent.java:64)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateConfigStr(ClientWorker.java:386)
+	at com.alibaba.nacos.client.config.impl.ClientWorker.checkUpdateDataIds(ClientWorker.java:354)
+	at com.alibaba.nacos.client.config.impl.ClientWorker$LongPollingRunnable.run(ClientWorker.java:521)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:47:40 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-7[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [e751414a-4]  500 Server Error for HTTP GET "/bill/getall"
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at sun.nio.ch.SocketDispatcher.read0(Native Method)
+		at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+		at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+		at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+		at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+		at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253)
+		at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1133)
+		at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:48:31 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-8[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [e751414a-5]  500 Server Error for HTTP GET "/bill/getall"
+io.netty.channel.ConnectTimeoutException: connection timed out: /172.18.113.87:20891
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:48:59 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [ea895f8e-12]  500 Server Error for HTTP GET "/bill/getall"
+io.netty.channel.ConnectTimeoutException: connection timed out: /172.18.113.87:20891
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:49:22 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [f233a8b2-16]  500 Server Error for HTTP GET "/bill/getAllBill"
+io.netty.channel.ConnectTimeoutException: connection timed out: /172.18.113.87:20891
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:49:48 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-8[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [e751414a-18]  500 Server Error for HTTP GET "/bill/getall"
+io.netty.channel.ConnectTimeoutException: connection timed out: /172.18.113.87:20891
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getall" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:49:53 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [f233a8b2-19]  500 Server Error for HTTP GET "/bill/getAllBill"
+io.netty.channel.ConnectTimeoutException: connection timed out: /172.18.113.87:20891
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-20 15:50:14 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [f233a8b2-21]  500 Server Error for HTTP GET "/bill/getAllBill"
+io.netty.channel.ConnectTimeoutException: connection timed out: /172.18.113.87:20891
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)

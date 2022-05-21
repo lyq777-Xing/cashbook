@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.CashBookCloud</groupId>
+    <artifactId>CashBookCloud</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <elasticsearch.version>7.7.0</elasticsearch.version>
+        <pro-cloud.version>1.0-SNAPSHOT</pro-cloud.version>
+        <!--        <spring-cloud.version>2.2.1.RELEASE</spring-cloud.version>-->
+        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
+        <security.oauth.version>2.3.6.RELEASE</security.oauth.version>
+        <!--        <spring-platform.version>Cairo-SR8</spring-platform.version>-->
+        <hutool.version>5.1.0</hutool.version>
+        <druid.version>1.1.22</druid.version>
+        <swagger.version>2.9.2</swagger.version>
+        <knife4j.version>2.0.2</knife4j.version>
+        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+        <spring-boot-admin.version>2.2.2</spring-boot-admin.version>
+        <mybatis-plus-boot-starter.version>3.3.2</mybatis-plus-boot-starter.version>
+        <jasypt.version>2.1.1</jasypt.version>
+        <curator.version>4.2.0</curator.version>
+        <xxl-job.version>2.1.2</xxl-job.version>
+        <ali-java-sdk-core.version>4.5.1</ali-java-sdk-core.version>
+        <hibernate-validator.version>6.0.17.Final</hibernate-validator.version>
+        <aliyun-sdk-oss.version>3.10.0</aliyun-sdk-oss.version>
+        <fastjson.version>1.2.70</fastjson.version>
+        <easypoi-spring-boot.version>4.1.3</easypoi-spring-boot.version>
+        <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
+
+        <guava.version>20.0</guava.version>
+        <justAuth.version>1.3.1</justAuth.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--Lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <modules>
+        <module>CashBookCloud-common</module>
+        <module>CashBookCloud-gateway</module>
+        <module>CashBookCloud-bill</module>
+        <module>CashBookCloud-cat</module>
+        <module>CashBookCloud-billlist</module>
+    </modules>
+
+
+    <!--控制springcloud个组件版本-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--            <dependency>-->
+            <!--                <groupId>io.spring.platform</groupId>-->
+            <!--                <artifactId>platform-bom</artifactId>-->
+            <!--                <version>${spring-platform.version}</version>-->
+            <!--                <type>pom</type>-->
+            <!--                <scope>import</scope>-->
+            <!--            </dependency>-->
+
+
+            <!--spring cloud alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${security.oauth.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!-- jar-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hdrhistogram</groupId>
+                <artifactId>HdrHistogram</artifactId>
+                <version>2.1.10</version>
+                <scope>compile</scope>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.25.0-GA</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>28.2-jre</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcpkix-jdk15on</artifactId>
+                <version>1.64</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>3.0.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.prometheus</groupId>
+                <artifactId>simpleclient</artifactId>
+                <version>0.7.0</version>
+            </dependency>
+
+            <!--自定义jar管理-->
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-util</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-data</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-security</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-swagger</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-entity</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-cache</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-oauth</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-job</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-mq</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-websocket</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-oss</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>cloud-common-es</artifactId>
+                <version>${pro-cloud.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>${project.name}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <!--为了打包引入 jar-->
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <target>${maven.compiler.target}</target>
+                    <source>${maven.compiler.source}</source>
+                    <encoding>UTF-8</encoding>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>jdk-1.8</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+            </properties>
+        </profile>
+    </profiles>
+
+    <!-- 开发者信息 -->
+    <developers>
+        <developer>
+            <id>LiYuqing</id>
+            <name>CashBookCloud</name>
+            <email>1661898579@qq.com</email>
+            <roles><role>Project lead</role></roles>
+        </developer>
+    </developers>
+
+    <!--发布jar到私服-->
+<!--    <distributionManagement>
+        <repository>
+            <id>pro-releases</id>
+            <name>pro Release Repository</name>
+            <url>http://192.168.71.139:8081/repository/maven-releases/</url>
+        </repository>
+
+        <snapshotRepository>
+            <id>pro-snapshots</id>
+            <name>pro Snapshot Repository</name>
+            <url>http://192.168.71.139:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>-->
+</project>

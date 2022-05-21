@@ -1,0 +1,128 @@
+server:
+  port: 8003
+nacos:
+  server:
+    addr: 106.12.162.221:8848
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.12.162.221:3307/cashbook?serverTimezone=Asia/Shanghai
+    password: 123456
+    username: root
+  application:
+    name: cashbook-billlist-service
+  main:
+    allow-bean-definition-overriding: true # Spring Boot 2.1 需要设定
+  redis:
+    host: 106.12.162.221
+    port: 6379
+    timeout: 30000
+    jedis:
+      pool:
+        max-active: 8
+#  quartz:
+#    scheduler:
+#      instance-name: MyselfScheduler
+#      instance-id: NON_CLUSTERED # 使用集群：AUTO 不使用集群：NON_CLUSTERED
+#      skip-update-check: true
+#      job-factory:
+#        class: org.quartz.simpl.SimpleJobFactory
+#    job-store:
+#      class: org.quartz.impl.jdbcjobstore.JobStoreTX
+#      driver-delegate-class: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+#      #配置quartz的数据源 不能不配置会报错
+#      datasource: quartzDataSource
+#      #      会创建一个表
+#      table-prefix: QRTZ
+#      is-clustered: true
+#    thread-pool:
+#      class: org.quartz.simpl.SimpleThreadPool
+#      thread-count: 5
+#    datasource:
+#      #      quartz的具体数据源信息
+#      quartzDataSource:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://106.12.162.221:3307/cashbook?serverTimezone=Asia/Shanghai
+#        password: 123456
+#        username: root
+#        maxConnections: 5
+#        validationQuery: select 0
+#        connection-provider:
+#          class: com.lingdu.welend.config.quartz.DruidConnectionProvider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 106.12.162.221:8848
+        namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+#      config:
+#        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+#        file-extension: yml
+#        namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+#        group: CashBook-Group
+#        extension-configs:
+#          - refresh: true
+#            data-id: cashbookcloud-cat-service.yml
+#            group: COMMON_GROUP # 通用配置组
+dubbo:
+  cloud:
+    subscribed-services: cashbook-billlist-service
+  scan:
+    # dubbo 服务扫描基准包
+    base-packages: com.cashbookcloud
+  protocol:
+    # dubbo 协议
+    name: dubbo
+    port: 20893
+  registry:
+    address: nacos://106.12.162.221:8848
+  application:
+    id: cashbook-billlist-service
+    name: cashbook-billlist-service
+    qos:
+      port: 22310 # dubbo qos端口配置  命令行注入
+  consumer:
+    check: false
+    timeout: 3000
+    retries: -1
+
+
+#feign:
+#  okhttp:
+#    enabled: true
+#  httpclient:
+#    enabled: false
+
+  #ribbon:
+  #  ReadTimeout: 120000
+  #  ConnectTimeout: 30000
+
+  #hystrix:
+  #  command:
+  #    default:
+  #      execution:
+  #        timeout:
+  #          enabled: true
+  #        isolation:
+  #          thread:
+  #            timeoutInMilliseconds: 4000
+
+  #
+#  sentinel:
+#    enabled: true
+#  hystrix:
+#    enabled: false
+
+logging:
+  config: classpath:logback-spring.xml
+#logging:
+#  config: classpath:logback-spring.xml
+
+#swagger:
+#  enabled: true
+#  author: Pro-Cloud
+#  title: Pro-Cloud SpringCloud
+#  desc: Pro-Cloud SpringCloud doc
+#  version: v2.0
+#  termsOfServiceUrl: http://www.eduvipx.cn/termsOfServiceUrl
+#  host: 127.0.0.1:9999
+#  authUri: http://127.0.0.1:9999/auth/oauth/token

@@ -1,0 +1,23 @@
+server:
+  port: 8888
+
+
+spring:
+  application:
+    name: CashBookCloud-gateway
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 106.12.162.221:8848
+        namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
+        namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+        group: CashBook-Group
+        extension-configs:
+          - refresh: true
+            data-id: cashbook-gateway.yml
+            group: COMMON_GROUP # 通用配置组

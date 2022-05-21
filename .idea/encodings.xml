@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/CashBookCloud-bill/CashBookCloud-bill-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-bill/CashBookCloud-bill-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-bill/CashBookCloud-bill-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-bill/CashBookCloud-bill-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-billlist/CashBookCloud-billlist-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-billlist/CashBookCloud-billlist-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-billlist/CashBookCloud-billlist-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-billlist/CashBookCloud-billlist-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-cat/CashBookCloud-cat-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-cat/CashBookCloud-cat-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-cat/CashBookCloud-cat-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-cat/CashBookCloud-cat-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-common/CashBookCloud-result/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-common/CashBookCloud-result/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-common/CashBookCloud-swagger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-common/CashBookCloud-swagger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-common/CashBookCloud-utils/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-common/CashBookCloud-utils/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-gateway/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

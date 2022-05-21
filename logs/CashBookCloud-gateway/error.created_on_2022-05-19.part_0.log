@@ -1,0 +1,1459 @@
+2022-05-19 19:05:44 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [22d87180-1]  500 Server Error for HTTP GET "/bill/getAllBill"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:06:05 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [22d87180-2]  500 Server Error for HTTP GET "/bill/getAllBill"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:06:21 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [22d87180-3]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:07:32 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-6[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [22d87180-4]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:07:35 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [22d87180-5]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:10:15 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [bbab4dc1-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /172.18.113.87:20891
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:716)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:13:36 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [bbab4dc1-2]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:16:23 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [e8ac682a-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:19:48 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [7e72d2ce-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+io.netty.channel.ConnectTimeoutException: connection timed out: /127.0.0.1:8001
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:20:16 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [7e72d2ce-2]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+io.netty.channel.ConnectTimeoutException: connection timed out: /127.0.0.1:8001
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:20:46 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [b1803823-3]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+io.netty.channel.ConnectTimeoutException: connection timed out: /127.0.0.1:8001
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:22:51 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [5c5c6756-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+io.netty.channel.ConnectTimeoutException: connection timed out: /127.0.0.1:8001
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:26:43 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [a5c8928a-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:33:01 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [a5c8928a-2]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:37:09 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [0aec9632-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:37:23 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [0aec9632-2]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:42:27 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [83d46a11-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+io.netty.channel.ConnectTimeoutException: connection timed out: /172.18.113.87:20891
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:42:29 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [83d46a11-2]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:42:31 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [83d46a11-3]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:42:32 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [83d46a11-4]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:42:45 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [83d46a11-5]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:46:07 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [83d46a11-6]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:46:19 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [83d46a11-7]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:47:41 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [6f863b1d-1]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:48:54 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [6906df4b-1]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:51:06 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [5a0f7133-1]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:51:13 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [5a0f7133-2]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:51:24 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [5a0f7133-3]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:51:44 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [5a0f7133-4]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:51:48 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [5a0f7133-5]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:51:48 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [5a0f7133-6]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:59:18 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [42d8bb69-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 19:59:39 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-6[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [69a8c9e4-2]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:07:14 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [dd81c397-1]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+io.netty.channel.ConnectTimeoutException: connection timed out: /172.18.113.87:20891
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe$1.run(AbstractNioChannel.java:261)
+		at io.netty.util.concurrent.PromiseTask.runTask(PromiseTask.java:98)
+		at io.netty.util.concurrent.ScheduledFutureTask.run(ScheduledFutureTask.java:170)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute$$$capture(AbstractEventExecutor.java:164)
+		at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java)
+		at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:472)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:500)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:07:18 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [dd81c397-2]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:07:19 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [dd81c397-3]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:07:20 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [dd81c397-4]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:07:30 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [dd81c397-5]  500 Server Error for HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:07:41 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [dd81c397-6]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:07:45 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-5[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [dd81c397-7]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:07:47 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [dd81c397-8]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:07:47 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-3[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [dd81c397-9]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:13:48 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-8[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [cad7d4ea-5]  500 Server Error for HTTP GET "/cashbook-bill-service/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/cashbook-bill-service/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:17:28 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-7[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [f0856699-3]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 20:19:27 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-8[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [f0856699-4]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 22:45:29 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-1[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [f0856699-5]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
+2022-05-19 22:47:28 | [1;31mERROR[0;39m | [1;33mreactor-http-nio-4[0;39m | [1;32morg.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler[0;39m | [3f8398ee-1]  500 Server Error for HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2"
+java.lang.IllegalArgumentException: invalid version format: UNSUPPORTED
+	at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	|_ checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ org.springframework.boot.actuate.metrics.web.reactive.server.MetricsWebFilter [DefaultWebFilterChain]
+	|_ checkpoint ⇢ HTTP GET "/bill/bill/getAllBill?pagenum=1&pagesize=2" [ExceptionHandlingWebHandler]
+Stack trace:
+		at io.netty.handler.codec.http.HttpVersion.<init>(HttpVersion.java:120)
+		at io.netty.handler.codec.http.HttpVersion.valueOf(HttpVersion.java:77)
+		at io.netty.handler.codec.http.HttpResponseDecoder.createMessage(HttpResponseDecoder.java:118)
+		at io.netty.handler.codec.http.HttpObjectDecoder.decode(HttpObjectDecoder.java:210)
+		at io.netty.handler.codec.http.HttpClientCodec$Decoder.decode(HttpClientCodec.java:202)
+		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:498)
+		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:437)
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:276)
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:355)
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:377)
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:363)
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+		at java.lang.Thread.run(Thread.java:748)
