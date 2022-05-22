@@ -80,6 +80,7 @@
         <module>CashBookCloud-billlist</module>
         <module>CashBookCloud-upload</module>
         <module>CashBookCloud-menu</module>
+        <module>CashBookCloud-manager</module>
     </modules>
 
 
