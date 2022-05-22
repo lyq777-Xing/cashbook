@@ -1,0 +1,28 @@
+2022-05-22 13:53:18 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.diagnostics.LoggingFailureAnalysisReporter[0;39m | 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'corsFilter', defined in class path resource [com/cashbookcloud/gateway/config/CorsConfig.class], could not be registered. A bean with that name has already been defined in file [D:\所有Demo\CashBookCloud\CashBookCloud-gateway\target\classes\com\cashbookcloud\gateway\config\corsFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2022-05-22 13:57:47 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.diagnostics.LoggingFailureAnalysisReporter[0;39m | 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'corsFilter', defined in class path resource [com/cashbookcloud/gateway/config/corsFilter.class], could not be registered. A bean with that name has already been defined in file [D:\所有Demo\CashBookCloud\CashBookCloud-gateway\target\classes\com\cashbookcloud\gateway\config\corsFilter.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+

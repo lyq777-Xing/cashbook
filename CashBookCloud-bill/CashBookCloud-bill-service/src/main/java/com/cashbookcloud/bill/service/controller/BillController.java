@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@CrossOrigin
+//@CrossOrigin
 @RequestMapping("/bill")
 @RestController
 public class BillController {

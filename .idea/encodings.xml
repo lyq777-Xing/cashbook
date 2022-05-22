@@ -21,5 +21,11 @@
     <file url="file://$PROJECT_DIR$/CashBookCloud-common/CashBookCloud-utils/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CashBookCloud-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CashBookCloud-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-menu/CashBookCloud-menu-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-menu/CashBookCloud-menu-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-menu/CashBookCloud-menu-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-menu/CashBookCloud-menu-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-upload/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-upload/src/main/resources" charset="UTF-8" />
   </component>
 </project>

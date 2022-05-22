@@ -10,13 +10,16 @@
         <module name="CashBookCloud-bill-service" />
         <module name="CashBookCloud-swagger" />
         <module name="CashBookCloud-result" />
+        <module name="CashBookCloud-billlist-api" />
+        <module name="CashBookCloud-bill-api" />
+        <module name="CashBookCloud-menu-service" />
         <module name="CashBookCloud-cat-api" />
         <module name="CashBookCloud-cat-service" />
         <module name="CashBookCloud-gateway" />
         <module name="CashBookCloud-utils" />
-        <module name="CashBookCloud-billlist-api" />
-        <module name="CashBookCloud-bill-api" />
         <module name="CashBookCloud-billlist-service" />
+        <module name="CashBookCloud-upload" />
+        <module name="CashBookCloud-menu-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

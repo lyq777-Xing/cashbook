@@ -78,6 +78,8 @@
         <module>CashBookCloud-bill</module>
         <module>CashBookCloud-cat</module>
         <module>CashBookCloud-billlist</module>
+        <module>CashBookCloud-upload</module>
+        <module>CashBookCloud-menu</module>
     </modules>
 
 
