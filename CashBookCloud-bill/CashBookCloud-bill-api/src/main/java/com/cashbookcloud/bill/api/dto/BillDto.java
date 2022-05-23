@@ -67,5 +67,10 @@ public class BillDto {
      */
     private String billlistName;
 
+    /**
+     * 该项支出所属的用户id
+     */
+    private Integer userId;
+
 
 }

@@ -13,7 +13,6 @@ public class ManagerVo {
     /**
      * 该管理员的id
      */
-    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
@@ -50,4 +49,8 @@ public class ManagerVo {
      * 用户头像
      */
     private String mgHeader;
+    /**
+     * 角色名称
+     */
+    private String roleName;
 }

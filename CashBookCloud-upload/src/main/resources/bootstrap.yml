@@ -1,5 +1,5 @@
 server:
-  port: 8006
+  port: 8007
 nacos:
   server:
     addr: 106.12.162.221:8848
@@ -72,7 +72,7 @@ dubbo:
   protocol:
     # dubbo 协议
     name: dubbo
-    port: 20896
+    port: 20897
   registry:
     address: nacos://106.12.162.221:8848
   application:

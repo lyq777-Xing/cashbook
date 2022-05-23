@@ -72,7 +72,7 @@ dubbo:
   protocol:
     # dubbo 协议
     name: dubbo
-    port: 20891
+    port: 20894
   registry:
     address: nacos://106.12.162.221:8848
   application:

@@ -8,6 +8,9 @@ import com.cashbookcloud.manager.api.service.ManagerService;
 import com.cashbookcloud.manager.service.covert.ManagerCovert;
 import com.cashbookcloud.manager.service.entity.Manager;
 import com.cashbookcloud.manager.service.mapper.ManagerMapper;
+import com.cashbookcloud.role.api.dto.RoleDto;
+import com.cashbookcloud.role.api.service.RoleService;
+import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,6 +24,9 @@ public class IManagerService implements ManagerService {
 
     @Autowired
     private ManagerMapper managerMapper;
+
+    @Reference
+    private RoleService roleService;
 
     @Override
     public ManagerDto findByUsername(String username) {
@@ -46,7 +52,10 @@ public class IManagerService implements ManagerService {
             Page<ManagerDto> managerDtoPage = new Page<>();
             ArrayList<ManagerDto> managerDtos = new ArrayList<>();
             for (int i = 0; i < page1.getRecords().size(); i++) {
-                managerDtos.add(ManagerCovert.INSTANCE.entity2dto(page1.getRecords().get(i)));
+                ManagerDto managerDto = ManagerCovert.INSTANCE.entity2dto(page1.getRecords().get(i));
+                RoleDto byId = roleService.findById(managerDto.getRoleId());
+                managerDto.setRoleName(byId.getRoleName());
+                managerDtos.add(managerDto);
             }
             managerDtoPage.setRecords(managerDtos);
             managerDtoPage.setTotal(page1.getTotal());
@@ -61,7 +70,10 @@ public class IManagerService implements ManagerService {
             Page<ManagerDto> managerDtoPage = new Page<>();
             ArrayList<ManagerDto> managerDtos = new ArrayList<>();
             for (int i = 0; i < page1.getRecords().size(); i++) {
-                managerDtos.add(ManagerCovert.INSTANCE.entity2dto(page1.getRecords().get(i)));
+                ManagerDto managerDto = ManagerCovert.INSTANCE.entity2dto(page1.getRecords().get(i));
+                RoleDto byId = roleService.findById(managerDto.getRoleId());
+                managerDto.setRoleName(byId.getRoleName());
+                managerDtos.add(managerDto);
             }
             managerDtoPage.setRecords(managerDtos);
             managerDtoPage.setTotal(page1.getTotal());

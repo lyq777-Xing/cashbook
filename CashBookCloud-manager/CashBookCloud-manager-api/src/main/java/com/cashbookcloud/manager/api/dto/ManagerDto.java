@@ -4,10 +4,11 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Data
-public class ManagerDto {
+public class ManagerDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -50,4 +51,9 @@ public class ManagerDto {
      * 用户头像
      */
     private String mgHeader;
+
+    /**
+     * 角色名称
+     */
+    private String roleName;
 }

@@ -12,6 +12,8 @@
         <module name="CashBookCloud-result" />
         <module name="CashBookCloud-billlist-api" />
         <module name="CashBookCloud-bill-api" />
+        <module name="CashBookCloud-role-service" />
+        <module name="CashBookCloud-role-api" />
         <module name="CashBookCloud-manager-service" />
         <module name="CashBookCloud-menu-service" />
         <module name="CashBookCloud-cat-api" />
