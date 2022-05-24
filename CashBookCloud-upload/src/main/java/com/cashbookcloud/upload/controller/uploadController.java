@@ -13,7 +13,9 @@ import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
@@ -23,6 +25,8 @@ import java.util.UUID;
 
 import static com.cashbookcloud.upload.utils.CosUtils.createCOSClient;
 
+@RestController
+@RequestMapping("/upload")
 public class uploadController {
     @Autowired
     private RedisTemplate redisTemplate;

@@ -17,4 +17,5 @@ public interface ManagerService {
 
     ManagerDto addManager(ManagerDto managerDto);
 
+    ManagerDto findById(Integer id);
 }

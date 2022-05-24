@@ -13,6 +13,8 @@ import io.swagger.models.auth.In;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @RestController
 @RequestMapping("/manager")
 public class ManagerController {
@@ -58,12 +60,17 @@ public class ManagerController {
     }
 
     @PostMapping("/add")
-    public  ResponseResult add(@RequestBody ManagerVo managerVo){
+    public  ResponseResult add(@RequestBody ManagerDto managerDto){
         ResponseResult<Object> result = new ResponseResult<>();
         try{
-            ManagerDto managerDto = ManagerCovert.INSTANCE.vo2dto(managerVo);
-            ManagerDto managerDto1 = managerService.addManager(managerDto);
-            result.Success("添加成功",managerDto1);
+//          根据name判断该用户名是否已经被占用
+            ManagerDto byUsername = managerService.findByUsername(managerDto.getMgName());
+            if(byUsername!= null){
+                result.FAIL_NAMEALREDYUSE();
+            }else {
+                ManagerDto managerDto1 = managerService.addManager(managerDto);
+                result.Success("添加成功",managerDto1);
+            }
         }catch (Exception e){
             e.printStackTrace();
             result.FAIL_ADD();
@@ -75,12 +82,37 @@ public class ManagerController {
     public ResponseResult upd(@RequestBody ManagerVo managerVo){
         ResponseResult<Object> result = new ResponseResult<>();
         try{
-            ManagerDto managerDto = ManagerCovert.INSTANCE.vo2dto(managerVo);
-            ManagerDto managerDto1 = managerService.updateById(managerDto);
-            result.Success("更新成功",managerDto1);
+            ManagerDto byId = managerService.findById(managerVo.getId());
+            if(byId.getMgName().equals(managerVo.getMgName())){
+                ManagerDto managerDto = ManagerCovert.INSTANCE.vo2dto(managerVo);
+                ManagerDto managerDto1 = managerService.updateById(managerDto);
+                result.Success("更新成功",managerDto1);
+            }else {
+                ManagerDto byUsername = managerService.findByUsername(managerVo.getMgName());
+                if(byUsername != null){
+                    result.FAIL_NAMEALREDYUSE();
+                }else {
+                    ManagerDto managerDto = ManagerCovert.INSTANCE.vo2dto(managerVo);
+                    ManagerDto managerDto1 = managerService.updateById(managerDto);
+                    result.Success("更新成功",managerDto1);
+                }
+            }
         }catch (Exception e){
             e.printStackTrace();
             result.FAIL_ADD();
+        }
+        return result;
+    }
+
+    @GetMapping("/getById")
+    public ResponseResult findById(Integer id){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            ManagerDto byId = managerService.findById(id);
+            result.Success("查询成功",byId);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
         }
         return result;
     }

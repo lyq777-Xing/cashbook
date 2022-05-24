@@ -32,5 +32,10 @@ public class RoleDto implements Serializable {
      */
     private String roleDescribe;
 
+    /**
+     * 判断角色是admin的还是user的
+     */
+    private String rolePojo;
+
 
 }

@@ -341,4 +341,22 @@ public class ResponseResult<T> implements Serializable {
         meta.setMsg(msg);
         this.data=data;
     }
+//    FAIL_NAMEALREDYUSE
+
+    public void FAIL_NAMEALREDYUSE(){
+        meta.setMsg(ResponseCode.FAIL_NAMEALREDYUSE.getMessage());
+        meta.setStatus(ResponseCode.FAIL_NAMEALREDYUSE.getCode());
+    }
+
+
+    public void FAIL_NAMEALREDYUSE(String msg){
+        meta.setMsg(msg);
+        meta.setStatus(ResponseCode.FAIL_NAMEALREDYUSE.getCode());
+    }
+
+    public void FAIL_NAMEALREDYUSE(String msg,T data){
+        meta.setStatus(ResponseCode.FAIL_NAMEALREDYUSE.getCode());
+        meta.setMsg(msg);
+        this.data=data;
+    }
 }

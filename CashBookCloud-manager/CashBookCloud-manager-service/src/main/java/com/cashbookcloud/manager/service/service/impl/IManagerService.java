@@ -15,7 +15,10 @@ import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 @Service
 @org.springframework.stereotype.Service
@@ -101,9 +104,21 @@ public class IManagerService implements ManagerService {
 
     @Override
     public ManagerDto addManager(ManagerDto managerDto) {
+        Date date = new Date();
+//        String s = String.valueOf(date);
+//        managerDto.setMgDate((LocalDate) date);
+        LocalDate now = LocalDate.now();
+        managerDto.setMgDate(now);
         Manager manager = ManagerCovert.INSTANCE.dto2entity(managerDto);
         managerMapper.insert(manager);
         ManagerDto managerDto1 = ManagerCovert.INSTANCE.entity2dto(manager);
         return managerDto1;
+    }
+
+    @Override
+    public ManagerDto findById(Integer id) {
+        Manager manager = managerMapper.selectById(id);
+        ManagerDto managerDto = ManagerCovert.INSTANCE.entity2dto(manager);
+        return managerDto;
     }
 }
