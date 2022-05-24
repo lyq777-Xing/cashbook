@@ -1,0 +1,51 @@
+package com.cashbookcloud.user.service.covert;
+
+import com.cashbookcloud.user.api.dto.UserDto;
+import com.cashbookcloud.user.service.entity.User;
+import javax.annotation.Generated;
+
+@Generated(
+    value = "org.mapstruct.ap.MappingProcessor",
+    date = "2022-05-24T16:22:16+0800",
+    comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_302 (Amazon.com Inc.)"
+)
+public class UserCovertImpl implements UserCovert {
+
+    @Override
+    public UserDto entity2dto(User entity) {
+        if ( entity == null ) {
+            return null;
+        }
+
+        UserDto userDto = new UserDto();
+
+        userDto.setId( entity.getId() );
+        userDto.setUserName( entity.getUserName() );
+        userDto.setUserPassword( entity.getUserPassword() );
+        userDto.setUserPhone( entity.getUserPhone() );
+        userDto.setUserCreatedate( entity.getUserCreatedate() );
+        userDto.setRoleId( entity.getRoleId() );
+        userDto.setUserHeader( entity.getUserHeader() );
+
+        return userDto;
+    }
+
+    @Override
+    public User dto2entity(UserDto dto) {
+        if ( dto == null ) {
+            return null;
+        }
+
+        User user = new User();
+
+        user.setId( dto.getId() );
+        user.setUserName( dto.getUserName() );
+        user.setUserPassword( dto.getUserPassword() );
+        user.setUserPhone( dto.getUserPhone() );
+        user.setUserCreatedate( dto.getUserCreatedate() );
+        user.setRoleId( dto.getRoleId() );
+        user.setUserHeader( dto.getUserHeader() );
+
+        return user;
+    }
+}

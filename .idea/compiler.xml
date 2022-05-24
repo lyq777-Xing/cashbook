@@ -15,6 +15,7 @@
         <module name="CashBookCloud-role-service" />
         <module name="CashBookCloud-role-api" />
         <module name="CashBookCloud-manager-service" />
+        <module name="CashBookCloud-user-api" />
         <module name="CashBookCloud-menu-service" />
         <module name="CashBookCloud-cat-api" />
         <module name="CashBookCloud-cat-service" />
@@ -24,6 +25,7 @@
         <module name="CashBookCloud-upload" />
         <module name="CashBookCloud-manager-api" />
         <module name="CashBookCloud-menu-api" />
+        <module name="CashBookCloud-user-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

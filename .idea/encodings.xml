@@ -35,5 +35,9 @@
     <file url="file://$PROJECT_DIR$/CashBookCloud-role/CashBookCloud-role-service/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CashBookCloud-upload/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CashBookCloud-upload/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-user/CashBookCloud-user-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-user/CashBookCloud-user-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-user/CashBookCloud-user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CashBookCloud-user/CashBookCloud-user-service/src/main/resources" charset="UTF-8" />
   </component>
 </project>

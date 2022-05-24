@@ -82,6 +82,7 @@
         <module>CashBookCloud-menu</module>
         <module>CashBookCloud-manager</module>
         <module>CashBookCloud-role</module>
+        <module>CashBookCloud-user</module>
     </modules>
 
 

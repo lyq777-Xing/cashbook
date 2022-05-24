@@ -1,5 +1,5 @@
 server:
-  port: 8005
+  port: 8008
 nacos:
   server:
     addr: 106.12.162.221:8848
@@ -10,7 +10,7 @@ spring:
     password: 123456
     username: root
   application:
-    name: cashbook-manager-service
+    name: cashbook-user-service
   main:
     allow-bean-definition-overriding: true # Spring Boot 2.1 需要设定
   redis:
@@ -65,19 +65,19 @@ spring:
 #            group: COMMON_GROUP # 通用配置组
 dubbo:
   cloud:
-    subscribed-services: cashbook-manager-service
+    subscribed-services: cashbook-user-service
   scan:
     # dubbo 服务扫描基准包
     base-packages: com.cashbookcloud
   protocol:
     # dubbo 协议
     name: dubbo
-    port: 20895
+    port: 20898
   registry:
     address: nacos://106.12.162.221:8848
   application:
-    id: cashbook-manager-service
-    name: cashbook-manager-service
+    id: cashbook-user-service
+    name: cashbook-user-service
     qos:
       port: 22310 # dubbo qos端口配置  命令行注入
   consumer:
