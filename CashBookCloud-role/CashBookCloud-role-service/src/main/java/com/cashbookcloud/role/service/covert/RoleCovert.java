@@ -2,6 +2,7 @@ package com.cashbookcloud.role.service.covert;
 
 import com.cashbookcloud.role.api.dto.RoleDto;
 import com.cashbookcloud.role.service.entity.Role;
+import com.cashbookcloud.role.service.vo.RoleVo;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -26,10 +27,10 @@ public interface RoleCovert {
     /**
      * 将dto 转化为vo
      */
-//    RoleVo dto2vo(RoleDto dto);
+    RoleVo dto2vo(RoleDto dto);
 
     /**
      * 将vo 转化为dto
      */
-//    RoleDto vo2dto(RoleVo vo);
+    RoleDto vo2dto(RoleVo vo);
 }

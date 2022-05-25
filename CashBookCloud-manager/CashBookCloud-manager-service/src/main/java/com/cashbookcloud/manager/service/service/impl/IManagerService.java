@@ -121,4 +121,11 @@ public class IManagerService implements ManagerService {
         ManagerDto managerDto = ManagerCovert.INSTANCE.entity2dto(manager);
         return managerDto;
     }
+
+    @Override
+    public void delByRoleId(Integer rid) {
+        QueryWrapper<Manager> managerQueryWrapper = new QueryWrapper<>();
+        managerQueryWrapper.eq("role_id",rid);
+        managerMapper.delete(managerQueryWrapper);
+    }
 }

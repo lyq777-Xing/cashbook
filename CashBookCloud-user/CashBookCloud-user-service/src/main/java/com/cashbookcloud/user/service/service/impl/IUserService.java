@@ -110,4 +110,11 @@ public class IUserService implements UserService {
         UserDto userDto = UserCovert.INSTANCE.entity2dto(user);
         return userDto;
     }
+
+    @Override
+    public void delByRid(Integer rid) {
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.eq("role_id",rid);
+        userMapper.delete(userQueryWrapper);
+    }
 }

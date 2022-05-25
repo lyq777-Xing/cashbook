@@ -110,4 +110,17 @@ public class UserController {
         return result;
     }
 
+    @DeleteMapping("/del/user")
+    public ResponseResult delByRid(Integer rid){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            userService.delByRid(rid);
+            result.Success("删除成功");
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_DELETE();
+        }
+        return result;
+    }
+
 }
