@@ -65,7 +65,7 @@ spring:
 #            group: COMMON_GROUP # 通用配置组
 dubbo:
   cloud:
-    subscribed-services: cashbook-bill-service
+    subscribed-services: cashbook-manager-service
   scan:
     # dubbo 服务扫描基准包
     base-packages: com.cashbookcloud

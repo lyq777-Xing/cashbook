@@ -1,8 +1,11 @@
 package com.cashbookcloud.user.service.vo;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
+@Data
 public class UserVo implements Serializable {
     /**
      * 用户id
@@ -43,4 +46,9 @@ public class UserVo implements Serializable {
      * 用户角色
      */
     private String roleName;
+
+    /**
+     * 用户邮箱
+     */
+    private String userEmail;
 }
