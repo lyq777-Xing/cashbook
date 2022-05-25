@@ -50,4 +50,9 @@ public class UserDto implements Serializable {
      * 用户角色
      */
     private String roleName;
+
+    /**
+     * 用户邮箱
+     */
+    private String userEmail;
 }

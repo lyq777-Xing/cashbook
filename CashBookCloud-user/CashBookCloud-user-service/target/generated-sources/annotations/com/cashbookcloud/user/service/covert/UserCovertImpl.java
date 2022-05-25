@@ -2,11 +2,12 @@ package com.cashbookcloud.user.service.covert;
 
 import com.cashbookcloud.user.api.dto.UserDto;
 import com.cashbookcloud.user.service.entity.User;
+import com.cashbookcloud.user.service.vo.UserVo;
 import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-24T16:22:16+0800",
+    date = "2022-05-25T09:30:10+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_302 (Amazon.com Inc.)"
 )
 public class UserCovertImpl implements UserCovert {
@@ -47,5 +48,45 @@ public class UserCovertImpl implements UserCovert {
         user.setUserHeader( dto.getUserHeader() );
 
         return user;
+    }
+
+    @Override
+    public UserVo dto2vo(UserDto dto) {
+        if ( dto == null ) {
+            return null;
+        }
+
+        UserVo userVo = new UserVo();
+
+        userVo.setId( dto.getId() );
+        userVo.setUserName( dto.getUserName() );
+        userVo.setUserPassword( dto.getUserPassword() );
+        userVo.setUserPhone( dto.getUserPhone() );
+        userVo.setUserCreatedate( dto.getUserCreatedate() );
+        userVo.setRoleId( dto.getRoleId() );
+        userVo.setUserHeader( dto.getUserHeader() );
+        userVo.setRoleName( dto.getRoleName() );
+
+        return userVo;
+    }
+
+    @Override
+    public UserDto vo2dto(UserVo vo) {
+        if ( vo == null ) {
+            return null;
+        }
+
+        UserDto userDto = new UserDto();
+
+        userDto.setId( vo.getId() );
+        userDto.setUserName( vo.getUserName() );
+        userDto.setUserPassword( vo.getUserPassword() );
+        userDto.setUserPhone( vo.getUserPhone() );
+        userDto.setUserCreatedate( vo.getUserCreatedate() );
+        userDto.setRoleId( vo.getRoleId() );
+        userDto.setUserHeader( vo.getUserHeader() );
+        userDto.setRoleName( vo.getRoleName() );
+
+        return userDto;
     }
 }
