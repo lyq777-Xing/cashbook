@@ -2,6 +2,7 @@ package com.cashbookcloud.bill.service.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.bill.api.dto.BillDto;
+import com.cashbookcloud.bill.api.dto.KeepingDto;
 import com.cashbookcloud.bill.api.service.BillService;
 import com.cashbookcloud.bill.service.covert.BillCovert;
 import com.cashbookcloud.bill.service.vo.BillVo;
@@ -24,7 +25,7 @@ public class BillController {
     @Autowired
     private BillService billService;
 
-    @GetMapping("/getAllBill")
+    @GetMapping("/getall")
     public ResponseResult getAllPage(@RequestBody PageVo pageVo){
         ResponseResult<Object> result = new ResponseResult<>();
         try{
@@ -49,7 +50,7 @@ public class BillController {
         return result;
     }
 
-    @GetMapping("/getall")
+    @GetMapping("/getalltest")
     public ResponseResult getAll(){
         ResponseResult<Object> result = new ResponseResult<>();
         try{
@@ -113,6 +114,19 @@ public class BillController {
         }catch (Exception e){
             e.printStackTrace();
             result.FAIL_UPDATE();
+        }
+        return result;
+    }
+
+    @GetMapping("/getkeeping")
+    public ResponseResult getKeeping(Integer id){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            KeepingDto keeping = billService.getKeeping(id);
+            result.Success("查询成功",keeping);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
         }
         return result;
     }

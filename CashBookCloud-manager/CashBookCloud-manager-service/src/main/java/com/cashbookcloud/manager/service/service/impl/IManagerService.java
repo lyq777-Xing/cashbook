@@ -10,6 +10,9 @@ import com.cashbookcloud.manager.service.entity.Manager;
 import com.cashbookcloud.manager.service.mapper.ManagerMapper;
 import com.cashbookcloud.role.api.dto.RoleDto;
 import com.cashbookcloud.role.api.service.RoleService;
+import com.cashbookcloud.rolepermission.api.dto.RolePermissionDto;
+import com.cashbookcloud.rolepermission.api.service.RolePermissionService;
+import com.cashbookcloud.rolepermission.service.entity.RolePermission;
 import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
 @org.springframework.stereotype.Service
@@ -31,6 +35,9 @@ public class IManagerService implements ManagerService {
     @Reference
     private RoleService roleService;
 
+    @Reference
+    private RolePermissionService rolePermissionService;
+
     @Override
     public ManagerDto findByUsername(String username) {
         QueryWrapper<Manager> wrapper = new QueryWrapper<>();
@@ -42,7 +49,35 @@ public class IManagerService implements ManagerService {
 
     @Override
     public String getAuthorityInfo(Integer userId) {
-        return null;
+        String authority = "";
+//        获取用户的name
+        Manager manager = managerMapper.selectById(userId);
+        String managerName = manager.getMgName();
+//        获取角色
+        Integer roleId1 = manager.getRoleId();
+        RoleDto role = roleService.findById(roleId1);
+        if(role != null) {
+            if (role.getRoleKeyword() != null) {
+                authority = authority + role.getRoleKeyword();
+            }
+        }
+        List<RolePermissionDto> byRoleId = rolePermissionService.findByRoleId(roleId1);
+
+        for (RolePermissionDto rp:byRoleId) {
+            if(rp != null){
+//                Integer permissionId = rp.getPermissionId();
+//                QueryWrapper<CkPermissionApi> wrapper1 = new QueryWrapper<>();
+//                wrapper1.eq("permission_id",permissionId);
+//                CkPermissionApi api = permissionApiMapper.selectOne(wrapper1);
+//                if(api != null){
+//                    if(api.getPermissionKeyword() != null){
+//                        authority = authority + "," + api.getPermissionKeyword();
+//                    }
+//                }
+            }
+        }
+        return authority;
+
     }
 
     @Override
@@ -127,5 +162,38 @@ public class IManagerService implements ManagerService {
         QueryWrapper<Manager> managerQueryWrapper = new QueryWrapper<>();
         managerQueryWrapper.eq("role_id",rid);
         managerMapper.delete(managerQueryWrapper);
+    }
+
+    @Override
+    public List<String> findPermissionsByUserId(Integer id) {
+        ArrayList<String> authority = new ArrayList<>();
+//        获取用户的name
+        Manager manager = managerMapper.selectById(id);
+        String managerName = manager.getMgName();
+//        获取角色
+        Integer roleId1 = manager.getRoleId();
+        RoleDto role = roleService.findById(roleId1);
+        if(role != null){
+            if(role.getRoleKeyword() != null){
+                authority.add(role.getRoleKeyword());
+            }
+        }
+//        QueryWrapper<RolePermission> wrapper = new QueryWrapper<>();
+//        QueryWrapper<RolePermission> role_id = wrapper.eq("role_id", roleId1);
+//        List<CkRolePermission> ckRolePermissions = rolePermissionMapper.selectList(wrapper);
+//        for (CkRolePermission rp:ckRolePermissions) {
+//            if(rp != null){
+//                Integer permissionId = rp.getPermissionId();
+//                QueryWrapper<CkPermissionApi> wrapper1 = new QueryWrapper<>();
+//                wrapper1.eq("permission_id",permissionId);
+//                CkPermissionApi api = permissionApiMapper.selectOne(wrapper1);
+//                if(api != null){
+//                    if(api.getPermissionKeyword() != null){
+//                        authority = authority + "," + api.getPermissionKeyword();
+//                    }
+//                }
+//            }
+//        }
+        return authority;
     }
 }

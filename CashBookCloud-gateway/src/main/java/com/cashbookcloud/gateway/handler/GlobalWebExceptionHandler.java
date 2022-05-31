@@ -1,6 +1,7 @@
 package com.cashbookcloud.gateway.handler;
 
 import com.alibaba.fastjson.JSON;
+import com.cashbookcloud.common.result.ResponseResult;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.core.io.buffer.DataBufferFactory;
 import org.springframework.http.server.reactive.ServerHttpResponse;
@@ -25,8 +26,11 @@ public class GlobalWebExceptionHandler implements ErrorWebExceptionHandler {
                     map.put("errCode", "000");
                     map.put("errMsg", "当前在线人数较多");
 
+                    ResponseResult<Object> responseResult = new ResponseResult<>();
+                    responseResult.LOGINTOOMANY("当前在线人数较多");
+
                     //返回json异常原因给前端
-                    return bufferFactory.wrap(JSON.toJSONBytes(map));
+                    return bufferFactory.wrap(JSON.toJSONBytes(responseResult));
                 }));
     }
 }

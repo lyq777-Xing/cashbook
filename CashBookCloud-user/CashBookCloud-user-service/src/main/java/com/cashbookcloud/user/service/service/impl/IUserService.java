@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @org.springframework.stereotype.Service
@@ -116,5 +117,15 @@ public class IUserService implements UserService {
         QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("role_id",rid);
         userMapper.delete(userQueryWrapper);
+    }
+
+    @Override
+    public List<String> findPermissionsByUserId(Integer id) {
+        User user = userMapper.selectById(id);
+        Integer roleId = user.getRoleId();
+        RoleDto roleDto = roleService.findById(roleId);
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add(roleDto.getRoleKeyword());
+        return strings;
     }
 }

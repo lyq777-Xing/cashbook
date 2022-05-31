@@ -6,6 +6,7 @@ import com.cashbookcloud.menu.api.service.MenuService;
 import io.swagger.annotations.ApiOperation;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import java.util.List;
 //@CrossOrigin
 @RestController
 @RequestMapping("/menus")
+//@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')")
 public class MenuController {
 
     @Autowired

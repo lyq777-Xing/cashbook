@@ -7,7 +7,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-21T11:19:12+0800",
+    date = "2022-05-30T09:16:43+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_302 (Amazon.com Inc.)"
 )
 public class CatCovertImpl implements CatCovert {

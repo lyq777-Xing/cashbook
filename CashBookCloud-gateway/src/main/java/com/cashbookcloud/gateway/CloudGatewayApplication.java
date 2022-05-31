@@ -19,15 +19,24 @@
 package com.cashbookcloud.gateway;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 @EnableDiscoveryClient
+@EnableZuulProxy
 @SpringBootApplication
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class CloudGatewayApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CloudGatewayApplication.class, args);
+		SpringApplication application = new SpringApplication(CloudGatewayApplication.class);
+		// 该设置方式 也可以解决我的前一个问题
+		application.setWebApplicationType(WebApplicationType.REACTIVE);
+		application.run(args);
+//		SpringApplication.run(CloudGatewayApplication.class, args);
 	}
 
 }

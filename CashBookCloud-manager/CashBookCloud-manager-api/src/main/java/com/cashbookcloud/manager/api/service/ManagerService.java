@@ -23,4 +23,7 @@ public interface ManagerService {
     ManagerDto findById(Integer id);
 
     void  delByRoleId(Integer rid);
+
+    List<String> findPermissionsByUserId(Integer id);
+
 }

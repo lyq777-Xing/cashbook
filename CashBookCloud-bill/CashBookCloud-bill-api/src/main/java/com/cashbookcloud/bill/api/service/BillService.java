@@ -2,6 +2,7 @@ package com.cashbookcloud.bill.api.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.bill.api.dto.BillDto;
+import com.cashbookcloud.bill.api.dto.KeepingDto;
 import io.swagger.models.auth.In;
 
 public interface BillService {
@@ -39,4 +40,11 @@ public interface BillService {
      * @return
      */
     BillDto updateById(BillDto billDto);
+
+    /**
+     * 获取对应账单的支出结余等
+     * @param id
+     * @return
+     */
+    KeepingDto getKeeping(Integer id);
 }

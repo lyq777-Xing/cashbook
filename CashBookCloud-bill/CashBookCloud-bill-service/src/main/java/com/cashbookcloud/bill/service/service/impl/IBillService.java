@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.bill.api.dto.BillDto;
+import com.cashbookcloud.bill.api.dto.KeepingDto;
 import com.cashbookcloud.bill.api.service.BillService;
 import com.cashbookcloud.bill.service.covert.BillCovert;
 import com.cashbookcloud.bill.service.entity.Bill;
@@ -112,5 +113,65 @@ public class IBillService implements BillService {
         int i = billMapper.updateById(bill);
         BillDto dto = BillCovert.INSTANCE.entity2dto(bill);
         return dto;
+    }
+
+    @Override
+    public KeepingDto getKeeping(Integer id) {
+        QueryWrapper<Bill> wrapper = new QueryWrapper<>();
+        wrapper.eq("billlist_id",id).and(w -> w.eq("bill_describe","支出"));
+        List<Bill> zhichubills = billMapper.selectList(wrapper);
+
+        QueryWrapper<Bill> wrapper1 = new QueryWrapper<>();
+        wrapper1.eq("billlist_id",id).and(w -> w.eq("bill_describe","收入"));
+        List<Bill> shourubills = billMapper.selectList(wrapper1);
+
+        Double zhichu = 0.0;
+        Double shouru = 0.0;
+        Double jieyu = 0.0;
+
+        if(zhichubills.size() == 0 || zhichubills==null){
+            if(shourubills.size() == 0 || shourubills == null){
+
+                KeepingDto keepingDto = new KeepingDto();
+                keepingDto.setJieyu(jieyu);
+                keepingDto.setShouru(shouru);
+                keepingDto.setZhichu(zhichu);
+                return keepingDto;
+            }
+            else {
+                for (int i = 0; i < shourubills.size(); i++) {
+                    shouru = shouru + shourubills.get(i).getBillPrice();
+                }
+                KeepingDto keepingDto = new KeepingDto();
+                keepingDto.setJieyu(shouru);
+                keepingDto.setShouru(shouru);
+                keepingDto.setZhichu(zhichu);
+                return keepingDto;
+            }
+        }else {
+            if(shourubills.size() == 0 || shourubills == null){
+                for (int i = 0; i < zhichubills.size(); i++) {
+                    zhichu = zhichu + zhichubills.get(i).getBillPrice();
+                }
+                KeepingDto keepingDto = new KeepingDto();
+                keepingDto.setJieyu(jieyu-zhichu);
+                keepingDto.setShouru(shouru);
+                keepingDto.setZhichu(zhichu);
+                return keepingDto;
+            }
+            else {
+                for (int i = 0; i < zhichubills.size(); i++) {
+                    zhichu = zhichu + zhichubills.get(i).getBillPrice();
+                }
+                for (int i = 0; i < shourubills.size(); i++) {
+                    shouru = shouru + shourubills.get(i).getBillPrice();
+                }
+                KeepingDto keepingDto = new KeepingDto();
+                keepingDto.setJieyu(shouru-zhichu);
+                keepingDto.setShouru(shouru);
+                keepingDto.setZhichu(zhichu);
+                return keepingDto;
+            }
+        }
     }
 }

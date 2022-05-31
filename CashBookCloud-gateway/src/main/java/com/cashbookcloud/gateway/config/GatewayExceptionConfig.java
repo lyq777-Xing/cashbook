@@ -22,8 +22,7 @@ public class GatewayExceptionConfig {
     @Primary
     @Bean
     @Order(Ordered.HIGHEST_PRECEDENCE)
-    public ErrorWebExceptionHandler errorWebExceptionHandler(ObjectProvider<List<ViewResolver>> viewResolversProvider,
-                                                             ServerCodecConfigurer serverCodecConfigurer) {
+    public ErrorWebExceptionHandler errorWebExceptionHandler() {
         return new GlobalWebExceptionHandler();
     }
 }

@@ -7,15 +7,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/CashBookCloud-common/CashBookCloud-cache/pom.xml" />
-        <option value="$PROJECT_DIR$/CashBookCloud-common/CashBookCloud-data/pom.xml" />
-        <option value="$PROJECT_DIR$/CashBookCloud-common/CashBookCloud-entity/pom.xml" />
-        <option value="$PROJECT_DIR$/CashBookCloud-security-admin/pom.xml" />
-        <option value="$PROJECT_DIR$/CashBookCloud-swagger/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

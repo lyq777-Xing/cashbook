@@ -7,7 +7,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-21T15:23:06+0800",
+    date = "2022-05-30T09:17:06+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_302 (Amazon.com Inc.)"
 )
 public class BillCovertImpl implements BillCovert {
@@ -29,6 +29,7 @@ public class BillCovertImpl implements BillCovert {
         billDto.setBillImg( entity.getBillImg() );
         billDto.setBillName( entity.getBillName() );
         billDto.setBilllistId( entity.getBilllistId() );
+        billDto.setUserId( entity.getUserId() );
 
         return billDto;
     }
@@ -50,6 +51,7 @@ public class BillCovertImpl implements BillCovert {
         bill.setBillImg( dto.getBillImg() );
         bill.setBillName( dto.getBillName() );
         bill.setBilllistId( dto.getBilllistId() );
+        bill.setUserId( dto.getUserId() );
 
         return bill;
     }
@@ -75,6 +77,7 @@ public class BillCovertImpl implements BillCovert {
         if ( dto.getBilllistName() != null ) {
             billVo.setBilllistName( Integer.parseInt( dto.getBilllistName() ) );
         }
+        billVo.setUserId( dto.getUserId() );
 
         return billVo;
     }
@@ -100,6 +103,7 @@ public class BillCovertImpl implements BillCovert {
         if ( vo.getBilllistName() != null ) {
             billDto.setBilllistName( String.valueOf( vo.getBilllistName() ) );
         }
+        billDto.setUserId( vo.getUserId() );
 
         return billDto;
     }

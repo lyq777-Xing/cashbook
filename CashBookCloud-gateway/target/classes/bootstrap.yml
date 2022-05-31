@@ -21,3 +21,9 @@ spring:
           - refresh: true
             data-id: cashbook-gateway.yml
             group: COMMON_GROUP # 通用配置组
+secure:
+  ignore:
+    #配置白名单路径
+    urls:
+      - "/admin/login"
+      - "/user/login"
