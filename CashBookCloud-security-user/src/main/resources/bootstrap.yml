@@ -1,7 +1,7 @@
 server:
   port: 8013
   servlet:
-    context-path: /user
+    context-path: /users
 nacos:
   server:
     addr: 106.12.162.221:8848

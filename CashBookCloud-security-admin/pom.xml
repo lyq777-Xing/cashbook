@@ -197,21 +197,21 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>com.CashBookCloud</groupId>
-            <artifactId>CashBookCloud-manager-service</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.CashBookCloud</groupId>-->
+<!--            <artifactId>CashBookCloud-manager-service</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.CashBookCloud</groupId>
             <artifactId>CashBookCloud-manager-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.CashBookCloud</groupId>
-            <artifactId>CashBookCloud-manager</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.CashBookCloud</groupId>-->
+<!--            <artifactId>CashBookCloud-manager</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>

@@ -14,10 +14,12 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
     public static final String RESOURCE_ID = "res1";
 
-//    user资源配置
+    /**
+     * users资源配置
+     */
     @Configuration
     @EnableResourceServer
-    public class UserServerConfig extends ResourceServerConfigurerAdapter{
+    public class UsersServerConfig extends ResourceServerConfigurerAdapter{
         @Autowired
         private TokenStore tokenStore;
 
@@ -30,11 +32,13 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
-                    .antMatchers("/user/**").permitAll();
+                    .antMatchers("/users/**").permitAll();
         }
     }
 
-//    admin资源配置
+    /**
+     * admin资源配置
+     */
     @Configuration
     @EnableResourceServer
     public class AdminServerConfig extends ResourceServerConfigurerAdapter{
@@ -78,6 +82,76 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
                     .authorizeRequests()
                     .antMatchers("/menus/**").access("#oauth2.hasScope('ROLE_ADMIN')");
 //                    .antMatchers("/admin/**").access("#oauth2.hasScope('ROLE_ADMIN')");
+        }
+    }
+
+    /**
+     * upload资源配置
+     */
+    @Configuration
+    @EnableResourceServer
+    public class UploadApiServerConfig extends ResourceServerConfigurerAdapter{
+        @Autowired
+        private TokenStore tokenStore;
+
+        @Override
+        public void configure(ResourceServerSecurityConfigurer resources){
+            resources.tokenStore(tokenStore).resourceId(RESOURCE_ID)
+                    .stateless(true);
+        }
+
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .authorizeRequests()
+                    .antMatchers("/upload/**").permitAll();
+//                    .antMatchers("/admin/**").access("#oauth2.hasScope('ROLE_ADMIN')");
+        }
+    }
+
+    /**
+     * permission资源配置
+     */
+    @Configuration
+    @EnableResourceServer
+    public class PermissionApiServerConfig extends ResourceServerConfigurerAdapter{
+        @Autowired
+        private TokenStore tokenStore;
+
+        @Override
+        public void configure(ResourceServerSecurityConfigurer resources){
+            resources.tokenStore(tokenStore).resourceId(RESOURCE_ID)
+                    .stateless(true);
+        }
+
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http
+                    .authorizeRequests()
+                    .antMatchers("/upload/**").access("#oauth2.hasScope('ROLE_ADMIN')");
+//                    .antMatchers("/admin/**").access("#oauth2.hasScope('ROLE_ADMIN')");
+        }
+    }
+
+    /**
+     * user资源配置
+     */
+    @Configuration
+    @EnableResourceServer
+    public class UserServerConfig extends ResourceServerConfigurerAdapter{
+        @Autowired
+        private TokenStore tokenStore;
+
+        @Override
+        public void configure(ResourceServerSecurityConfigurer resources){
+            resources.tokenStore(tokenStore).resourceId(RESOURCE_ID)
+                    .stateless(true);
+        }
+
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http.authorizeRequests()
+                    .antMatchers("/user/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }
 

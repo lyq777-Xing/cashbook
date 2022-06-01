@@ -7,6 +7,8 @@ import com.cashbookcloud.user.api.service.UserService;
 import com.cashbookcloud.user.service.covert.UserCovert;
 import com.cashbookcloud.user.service.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -17,6 +19,10 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @PreAuthorize("hasAuthority('getalluser')")
     @GetMapping("/getall")
     public ResponseResult getAllPage(@RequestParam(required = true) Integer pagenum,
                                      @RequestParam(required = true) Integer pagesize,
@@ -35,6 +41,7 @@ public class UserController {
         return result;
     }
 
+    @PreAuthorize("hasAuthority('getalluser')")
     @GetMapping("/getById")
     public ResponseResult findById(Integer id){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -48,6 +55,7 @@ public class UserController {
         return result;
     }
 
+    @PreAuthorize("hasAuthority('adduser')")
     @PostMapping("/add")
     public ResponseResult add(@RequestBody UserVo userVo){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -60,6 +68,8 @@ public class UserController {
                 UserDto userDto = UserCovert.INSTANCE.vo2dto(userVo);
                 LocalDate now = LocalDate.now();
                 userDto.setUserCreatedate(now);
+                String encode = passwordEncoder.encode(userDto.getUserPassword());
+                userDto.setUserPassword(encode);
                 UserDto add = userService.add(userDto);
                 result.Success("添加成功",add);
             }
@@ -70,6 +80,7 @@ public class UserController {
         return result;
     }
 
+    @PreAuthorize("hasAuthority('deluser')")
     @DeleteMapping("/del")
     public ResponseResult del(Integer id){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -83,6 +94,7 @@ public class UserController {
         return result;
     }
 
+    @PreAuthorize("hasAuthority('upduser')")
     @PutMapping("/upd")
     public ResponseResult upd(@RequestBody UserVo userVo){
         ResponseResult<Object> result = new ResponseResult<>();

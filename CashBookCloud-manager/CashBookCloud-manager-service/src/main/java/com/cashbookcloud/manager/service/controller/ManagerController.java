@@ -1,18 +1,30 @@
 package com.cashbookcloud.manager.service.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.common.result.ResponseResult;
 import com.cashbookcloud.manager.api.dto.ManagerDto;
 import com.cashbookcloud.manager.api.service.ManagerService;
+import com.cashbookcloud.manager.service.common.EncryptUtil;
 import com.cashbookcloud.manager.service.covert.ManagerCovert;
 import com.cashbookcloud.manager.service.vo.ManagerVo;
+import com.cashbookcloud.manager.service.vo.ManagerVovv;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.charset.Charset;
 import java.util.Date;
 
 @RestController
@@ -22,11 +34,15 @@ public class ManagerController {
     @Autowired
     private ManagerService managerService;
 
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
     /**
      * 获取管理员列表（带分页） 并且根据query查询信息
      */
 //    @ApiOperation("获取管理员列表（带分页） 并且根据query查询信息")
 //    @ApiImplicitParam(value = "query",required = false)
+    @PreAuthorize("hasAuthority('getallmanager')")
     @GetMapping("/getall")
     public ResponseResult getAllAdminPage(@RequestParam(required = true) Integer pagenum,
                                           @RequestParam(required = true) Integer pagesize,
@@ -46,6 +62,7 @@ public class ManagerController {
         return result;
     }
 
+    @PreAuthorize("hasAuthority('delmanager')")
     @DeleteMapping("/del")
     public ResponseResult del(Integer id){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -59,6 +76,7 @@ public class ManagerController {
         return result;
     }
 
+    @PreAuthorize("hasAuthority('addmanager')")
     @PostMapping("/add")
     public  ResponseResult add(@RequestBody ManagerDto managerDto){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -68,6 +86,8 @@ public class ManagerController {
             if(byUsername!= null){
                 result.FAIL_NAMEALREDYUSE();
             }else {
+                String encode = passwordEncoder.encode(managerDto.getMgPassword());
+                managerDto.setMgPassword(encode);
                 ManagerDto managerDto1 = managerService.addManager(managerDto);
                 result.Success("添加成功",managerDto1);
             }
@@ -78,6 +98,7 @@ public class ManagerController {
         return result;
     }
 
+    @PreAuthorize("hasAuthority('updmanager')")
     @PostMapping("/upd")
     public ResponseResult upd(@RequestBody ManagerVo managerVo){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -104,6 +125,7 @@ public class ManagerController {
         return result;
     }
 
+    @PreAuthorize("hasAuthority('getallmanager')")
     @GetMapping("/getById")
     public ResponseResult findById(Integer id){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -127,6 +149,22 @@ public class ManagerController {
             e.printStackTrace();
             result.FAIL_DELETE();
         }
+        return result;
+    }
+
+    @GetMapping("/getImg")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ResponseResult test() throws JsonProcessingException {
+        ResponseResult<Object> result = new ResponseResult<>();
+        String principal = String.valueOf(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+//        ManagerVovv json = (ManagerVovv) JSON.toJSON(principal);
+//        String string = JSON.toJSONString(principal);
+//        ObjectMapper objectMapper = new ObjectMapper();
+//        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+//        objectMapper.registerModule(new JavaTimeModule());
+//        ManagerVovv ManagerVo = objectMapper.convertValue(principal, ManagerVovv.class);
+//        ManagerVovv ManagerVo = objectMapper.readValue(principal, ManagerVovv.class);
+        result.Success("ok!",principal);
         return result;
     }
 

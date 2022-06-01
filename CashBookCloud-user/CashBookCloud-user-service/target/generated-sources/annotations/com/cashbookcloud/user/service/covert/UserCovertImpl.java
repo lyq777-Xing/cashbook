@@ -7,7 +7,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-25T09:30:10+0800",
+    date = "2022-06-01T15:04:45+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_302 (Amazon.com Inc.)"
 )
 public class UserCovertImpl implements UserCovert {
@@ -27,6 +27,7 @@ public class UserCovertImpl implements UserCovert {
         userDto.setUserCreatedate( entity.getUserCreatedate() );
         userDto.setRoleId( entity.getRoleId() );
         userDto.setUserHeader( entity.getUserHeader() );
+        userDto.setUserEmail( entity.getUserEmail() );
 
         return userDto;
     }
@@ -46,6 +47,7 @@ public class UserCovertImpl implements UserCovert {
         user.setUserCreatedate( dto.getUserCreatedate() );
         user.setRoleId( dto.getRoleId() );
         user.setUserHeader( dto.getUserHeader() );
+        user.setUserEmail( dto.getUserEmail() );
 
         return user;
     }
@@ -66,6 +68,7 @@ public class UserCovertImpl implements UserCovert {
         userVo.setRoleId( dto.getRoleId() );
         userVo.setUserHeader( dto.getUserHeader() );
         userVo.setRoleName( dto.getRoleName() );
+        userVo.setUserEmail( dto.getUserEmail() );
 
         return userVo;
     }
@@ -86,6 +89,7 @@ public class UserCovertImpl implements UserCovert {
         userDto.setRoleId( vo.getRoleId() );
         userDto.setUserHeader( vo.getUserHeader() );
         userDto.setRoleName( vo.getRoleName() );
+        userDto.setUserEmail( vo.getUserEmail() );
 
         return userDto;
     }

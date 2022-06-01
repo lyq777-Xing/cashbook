@@ -90,6 +90,7 @@
         <module>CashBookCloud-security-user</module>
         <module>CashBookCloud-rolepermission</module>
         <module>CashBookCloud-permission</module>
+        <module>CashBookCloud-permissionapi</module>
     </modules>
 
 

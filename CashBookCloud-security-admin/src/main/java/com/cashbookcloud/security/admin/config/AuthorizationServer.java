@@ -2,6 +2,7 @@ package com.cashbookcloud.security.admin.config;
 
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -43,6 +44,9 @@ public class AuthorizationServer extends AuthorizationServerConfigurerAdapter {
     @Autowired
     private TokenStore tokenStore;
 
+//    @Qualifier("org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter")
+//    @Qualifier(value = "AuthorizationServerTokenServicesConfiguration.class")
+//    @Qualifier(value = "jwtTokenEnhancer")
     @Autowired
     private JwtAccessTokenConverter jwtAccessTokenConverter;
 

@@ -8,6 +8,8 @@ import com.cashbookcloud.manager.api.service.ManagerService;
 import com.cashbookcloud.manager.service.covert.ManagerCovert;
 import com.cashbookcloud.manager.service.entity.Manager;
 import com.cashbookcloud.manager.service.mapper.ManagerMapper;
+import com.cashbookcloud.permissionapi.api.dto.PermissionApiDto;
+import com.cashbookcloud.permissionapi.api.service.PermissionApiSerivce;
 import com.cashbookcloud.role.api.dto.RoleDto;
 import com.cashbookcloud.role.api.service.RoleService;
 import com.cashbookcloud.rolepermission.api.dto.RolePermissionDto;
@@ -16,6 +18,7 @@ import com.cashbookcloud.rolepermission.service.entity.RolePermission;
 import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
@@ -37,6 +40,9 @@ public class IManagerService implements ManagerService {
 
     @Reference
     private RolePermissionService rolePermissionService;
+
+    @Reference
+    private PermissionApiSerivce permissionApiSerivce;
 
     @Override
     public ManagerDto findByUsername(String username) {
@@ -65,15 +71,13 @@ public class IManagerService implements ManagerService {
 
         for (RolePermissionDto rp:byRoleId) {
             if(rp != null){
-//                Integer permissionId = rp.getPermissionId();
-//                QueryWrapper<CkPermissionApi> wrapper1 = new QueryWrapper<>();
-//                wrapper1.eq("permission_id",permissionId);
-//                CkPermissionApi api = permissionApiMapper.selectOne(wrapper1);
-//                if(api != null){
-//                    if(api.getPermissionKeyword() != null){
-//                        authority = authority + "," + api.getPermissionKeyword();
-//                    }
-//                }
+                Integer permissionId = rp.getPermissionId();
+                PermissionApiDto api = permissionApiSerivce.findByPermissionId(permissionId);
+                if(api != null){
+                    if(api.getPermissionKeyword() != null){
+                        authority = authority + "," + api.getPermissionKeyword();
+                    }
+                }
             }
         }
         return authority;
@@ -178,22 +182,20 @@ public class IManagerService implements ManagerService {
                 authority.add(role.getRoleKeyword());
             }
         }
-//        QueryWrapper<RolePermission> wrapper = new QueryWrapper<>();
-//        QueryWrapper<RolePermission> role_id = wrapper.eq("role_id", roleId1);
-//        List<CkRolePermission> ckRolePermissions = rolePermissionMapper.selectList(wrapper);
-//        for (CkRolePermission rp:ckRolePermissions) {
-//            if(rp != null){
-//                Integer permissionId = rp.getPermissionId();
-//                QueryWrapper<CkPermissionApi> wrapper1 = new QueryWrapper<>();
-//                wrapper1.eq("permission_id",permissionId);
-//                CkPermissionApi api = permissionApiMapper.selectOne(wrapper1);
-//                if(api != null){
-//                    if(api.getPermissionKeyword() != null){
+        List<RolePermissionDto> byRoleId = rolePermissionService.findByRoleId(roleId1);
+
+        for (RolePermissionDto rp:byRoleId) {
+            if(rp != null){
+                Integer permissionId = rp.getPermissionId();
+                PermissionApiDto api = permissionApiSerivce.findByPermissionId(permissionId);
+                if(api != null){
+                    if(api.getPermissionKeyword() != null){
+                        authority.add(api.getPermissionKeyword());
 //                        authority = authority + "," + api.getPermissionKeyword();
-//                    }
-//                }
-//            }
-//        }
+                    }
+                }
+            }
+        }
         return authority;
     }
 }

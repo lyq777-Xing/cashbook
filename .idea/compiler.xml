@@ -12,6 +12,7 @@
         <module name="CashBookCloud-rolepermission-api" />
         <module name="CashBookCloud-billlist-api" />
         <module name="CashBookCloud-bill-api" />
+        <module name="CashBookCloud-permissionapi-service" />
         <module name="CashBookCloud-permission-api" />
         <module name="CashBookCloud-manager-service" />
         <module name="CashBookCloud-user-api" />
@@ -29,6 +30,7 @@
         <module name="CashBookCloud-role-api" />
         <module name="CashBookCloud-discovery" />
         <module name="CashBookCloud-security-admin" />
+        <module name="CashBookCloud-permissionapi-api" />
         <module name="CashBookCloud-permission-service" />
         <module name="CashBookCloud-cat-service" />
         <module name="CashBookCloud-gateway" />

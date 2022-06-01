@@ -57,4 +57,8 @@ public class ManagerDto implements Serializable {
      * 角色名称
      */
     private String roleName;
+
+
+    public ManagerDto() {
+    }
 }
