@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.role.api.dto.RoleDto;
 import io.swagger.models.auth.In;
 
+import java.util.List;
+
 public interface RoleService {
     RoleDto findById(Integer id);
 
@@ -16,5 +18,11 @@ public interface RoleService {
     RoleDto findByName(String roleName);
 
     Page<RoleDto> findAllPage(Integer pagenum,Integer pagesize,String query);
+
+    List<RoleDto> findAll();
+
+    List<RoleDto> findAllAdmin();
+
+    List<RoleDto> findAllUser();
 
 }

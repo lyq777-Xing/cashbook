@@ -122,6 +122,7 @@ public class UserController {
         return result;
     }
 
+    @PreAuthorize("hasAuthority('delrole')")
     @DeleteMapping("/del/user")
     public ResponseResult delByRid(Integer rid){
         ResponseResult<Object> result = new ResponseResult<>();

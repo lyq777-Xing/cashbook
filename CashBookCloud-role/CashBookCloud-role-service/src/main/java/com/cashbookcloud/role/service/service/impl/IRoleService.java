@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @org.apache.dubbo.config.annotation.Service
@@ -98,5 +99,42 @@ public class IRoleService implements RoleService {
             roleDtoPage.setSize(roleDtoPage.getSize());
             return roleDtoPage;
         }
+    }
+
+    @Override
+    public List<RoleDto> findAll() {
+        List<Role> roles = roleMapper.selectList(null);
+        ArrayList<RoleDto> roleDtos = new ArrayList<>();
+        for (Role r:roles) {
+            RoleDto roleDto = RoleCovert.INSTANCE.entity2dto(r);
+            roleDtos.add(roleDto);
+        }
+        return roleDtos;
+    }
+
+    @Override
+    public List<RoleDto> findAllAdmin() {
+        QueryWrapper<Role> wrapper = new QueryWrapper<>();
+        wrapper.eq("role_pojo","admin");
+        List<Role> roles = roleMapper.selectList(wrapper);
+        ArrayList<RoleDto> roleDtos = new ArrayList<>();
+        for (Role r:roles) {
+            RoleDto roleDto = RoleCovert.INSTANCE.entity2dto(r);
+            roleDtos.add(roleDto);
+        }
+        return roleDtos;
+    }
+
+    @Override
+    public List<RoleDto> findAllUser() {
+        QueryWrapper<Role> wrapper = new QueryWrapper<>();
+        wrapper.eq("role_pojo","user");
+        List<Role> roles = roleMapper.selectList(wrapper);
+        ArrayList<RoleDto> roleDtos = new ArrayList<>();
+        for (Role r:roles) {
+            RoleDto roleDto = RoleCovert.INSTANCE.entity2dto(r);
+            roleDtos.add(roleDto);
+        }
+        return roleDtos;
     }
 }

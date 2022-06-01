@@ -139,6 +139,7 @@ public class ManagerController {
         return result;
     }
 
+    @PreAuthorize("hasAuthority('delrole')")
     @DeleteMapping("/del/manager")
     public ResponseResult delByRid(Integer rid){
         ResponseResult<Object> result = new ResponseResult<>();
