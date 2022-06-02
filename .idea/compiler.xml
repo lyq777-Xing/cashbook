@@ -39,5 +39,10 @@
         <module name="CashBookCloud-user-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="CashBookCloud-security-manager" target="8" />
+      <module name="CashBookCloud-security-manager-api" target="8" />
+      <module name="CashBookCloud-security-manager-service" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

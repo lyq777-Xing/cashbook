@@ -98,7 +98,7 @@ public class RoleController {
         return result;
     }
 
-    @PreAuthorize("hasAuthority('getallrole')")
+    @PreAuthorize("hasAnyAuthority('getallrole','getallmanager')")
     @GetMapping("/getById")
     public ResponseResult getById(Integer id){
         ResponseResult<Object> result = new ResponseResult<>();

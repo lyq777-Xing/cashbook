@@ -10,7 +10,7 @@ import java.util.List;
 public interface ManagerService {
     ManagerDto findByUsername(String username);
 
-    String getAuthorityInfo(Integer userId);
+//    String getAuthorityInfo(Integer userId);
 
     Page<ManagerDto> findAllManagerPage(Integer pagenum, Integer pagesize, String query);
 
@@ -24,6 +24,6 @@ public interface ManagerService {
 
     void  delByRoleId(Integer rid);
 
-    List<String> findPermissionsByUserId(Integer id);
+//    List<String> findPermissionsByUserId(Integer id);
 
 }

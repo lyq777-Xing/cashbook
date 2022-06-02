@@ -32,7 +32,8 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
 
         http
                 .authorizeRequests()
-                .antMatchers("/**").access("#oauth2.hasScope('ROLE_ADMIN')")
+//                .antMatchers("/**").access("#oauth2.hasScope('ROLE_ADMIN')")
+                .antMatchers("/**").permitAll()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }

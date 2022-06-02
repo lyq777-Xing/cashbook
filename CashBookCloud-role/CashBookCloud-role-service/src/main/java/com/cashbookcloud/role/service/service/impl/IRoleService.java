@@ -16,7 +16,7 @@ import java.util.List;
 
 @Service
 @org.apache.dubbo.config.annotation.Service
-@Transactional
+//@Transactional
 public class IRoleService implements RoleService {
 
     @Autowired

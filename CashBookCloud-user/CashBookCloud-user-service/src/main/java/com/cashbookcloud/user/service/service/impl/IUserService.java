@@ -2,13 +2,15 @@ package com.cashbookcloud.user.service.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.cashbookcloud.role.api.dto.RoleDto;
-import com.cashbookcloud.role.api.service.RoleService;
+import com.cashbookcloud.common.result.ResponseResult;
 import com.cashbookcloud.user.api.dto.UserDto;
 import com.cashbookcloud.user.api.service.UserService;
+import com.cashbookcloud.user.service.client.RoleClient;
 import com.cashbookcloud.user.service.covert.UserCovert;
+import com.cashbookcloud.user.service.dto.RoleDto;
 import com.cashbookcloud.user.service.entity.User;
 import com.cashbookcloud.user.service.mapper.UserMapper;
+import net.sf.json.JSONObject;
 import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +27,11 @@ public class IUserService implements UserService {
     @Autowired
     private UserMapper userMapper;
 
-    @Reference
-    private RoleService roleService;
+    @Autowired
+    private RoleClient roleClient;
+
+//    @Reference
+//    private RoleService roleService;
 
     @Override
     public Page<UserDto> findAllPage(Integer pagenum, Integer pagesize, String query) {
@@ -39,9 +44,14 @@ public class IUserService implements UserService {
             for (int i = 0; i < userPage1.getRecords().size(); i++) {
                 User user = userPage1.getRecords().get(i);
                 Integer roleId = user.getRoleId();
-                RoleDto byId = roleService.findById(roleId);
+//                RoleDto byId = roleService.findById(roleId);
+                ResponseResult result = roleClient.getById(roleId);
+                // 将数据转成json字符串
+                JSONObject jsonObject= JSONObject.fromObject(result.getData());
+                //将json转成需要的对象
+                RoleDto roleDto = (RoleDto)JSONObject.toBean(jsonObject, RoleDto.class);
                 UserDto userDto = UserCovert.INSTANCE.entity2dto(user);
-                userDto.setRoleName(byId.getRoleName());
+                userDto.setRoleName(roleDto.getRoleName());
                 userDtos.add(userDto);
             }
             Page<UserDto> userDtoPage = new Page<>();
@@ -59,9 +69,13 @@ public class IUserService implements UserService {
             for (int i = 0; i < userPage1.getRecords().size(); i++) {
                 User user = userPage1.getRecords().get(i);
                 Integer roleId = user.getRoleId();
-                RoleDto byId = roleService.findById(roleId);
+                ResponseResult result = roleClient.getById(roleId);
+                // 将数据转成json字符串
+                JSONObject jsonObject= JSONObject.fromObject(result.getData());
+                //将json转成需要的对象
+                RoleDto roleDto = (RoleDto)JSONObject.toBean(jsonObject, RoleDto.class);
                 UserDto userDto = UserCovert.INSTANCE.entity2dto(user);
-                userDto.setRoleName(byId.getRoleName());
+                userDto.setRoleName(roleDto.getRoleName());
                 userDtos.add(userDto);
             }
             Page<UserDto> userDtoPage = new Page<>();
@@ -123,7 +137,11 @@ public class IUserService implements UserService {
     public List<String> findPermissionsByUserId(Integer id) {
         User user = userMapper.selectById(id);
         Integer roleId = user.getRoleId();
-        RoleDto roleDto = roleService.findById(roleId);
+        ResponseResult result = roleClient.getById(roleId);
+        // 将数据转成json字符串
+        JSONObject jsonObject= JSONObject.fromObject(result.getData());
+        //将json转成需要的对象
+        RoleDto roleDto = (RoleDto)JSONObject.toBean(jsonObject, RoleDto.class);
         ArrayList<String> strings = new ArrayList<>();
         strings.add(roleDto.getRoleKeyword());
         return strings;

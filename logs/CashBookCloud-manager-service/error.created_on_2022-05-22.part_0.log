@@ -1,4 +1,4 @@
-2022-05-22 14:36:18 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.diagnostics.LoggingFailureAnalysisReporter[0;39m | 
+2022-05-22 14:36:18 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.diagnostics.LoggingFailureAnalysisReporter[0;39m |
 
 ***************************
 APPLICATION FAILED TO START
@@ -58,7 +58,7 @@ org.apache.dubbo.rpc.RpcException: Fail to start server(url: dubbo://172.18.113.
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.manager.service.CashBookManagerServiceApplication.main(CashBookManagerServiceApplication.java:16)
+	at com.cashbookcloud.manager.service.CashBookSecurityManagerServiceApplication.main(CashBookManagerServiceApplication.java:16)
 Caused by: org.apache.dubbo.remoting.RemotingException: Failed to bind NettyServer on /172.18.113.87:20891, cause: Address already in use: bind
 	at org.apache.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:77)
 	at org.apache.dubbo.remoting.transport.netty4.NettyServer.<init>(NettyServer.java:77)

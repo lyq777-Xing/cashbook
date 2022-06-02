@@ -19,6 +19,8 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -154,7 +156,7 @@ public class ManagerController {
     }
 
     @GetMapping("/getImg")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseResult test() throws JsonProcessingException {
         ResponseResult<Object> result = new ResponseResult<>();
         String principal = String.valueOf(SecurityContextHolder.getContext().getAuthentication().getPrincipal());

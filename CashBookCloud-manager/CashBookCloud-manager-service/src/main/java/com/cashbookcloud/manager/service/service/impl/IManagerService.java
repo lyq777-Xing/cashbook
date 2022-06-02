@@ -3,22 +3,18 @@ package com.cashbookcloud.manager.service.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.cashbookcloud.common.result.ResponseResult;
 import com.cashbookcloud.manager.api.dto.ManagerDto;
 import com.cashbookcloud.manager.api.service.ManagerService;
+import com.cashbookcloud.manager.service.client.RoleClient;
 import com.cashbookcloud.manager.service.covert.ManagerCovert;
+import com.cashbookcloud.manager.service.dto.RoleDto;
 import com.cashbookcloud.manager.service.entity.Manager;
 import com.cashbookcloud.manager.service.mapper.ManagerMapper;
-import com.cashbookcloud.permissionapi.api.dto.PermissionApiDto;
-import com.cashbookcloud.permissionapi.api.service.PermissionApiSerivce;
-import com.cashbookcloud.role.api.dto.RoleDto;
-import com.cashbookcloud.role.api.service.RoleService;
-import com.cashbookcloud.rolepermission.api.dto.RolePermissionDto;
-import com.cashbookcloud.rolepermission.api.service.RolePermissionService;
-import com.cashbookcloud.rolepermission.service.entity.RolePermission;
-import org.apache.dubbo.config.annotation.Reference;
+import net.sf.json.JSONObject;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
@@ -29,20 +25,23 @@ import java.util.List;
 
 @Service
 @org.springframework.stereotype.Service
-@Transactional
+//@Transactional
 public class IManagerService implements ManagerService {
 
     @Autowired
     private ManagerMapper managerMapper;
 
-    @Reference
-    private RoleService roleService;
+    @Autowired
+    private RoleClient roleClient;
 
-    @Reference
-    private RolePermissionService rolePermissionService;
+//    @Reference
+//    private RoleService roleService;
 
-    @Reference
-    private PermissionApiSerivce permissionApiSerivce;
+//    @Reference
+//    private RolePermissionService rolePermissionService;
+
+//    @Reference
+//    private PermissionApiSerivce permissionApiSerivce;
 
     @Override
     public ManagerDto findByUsername(String username) {
@@ -51,37 +50,6 @@ public class IManagerService implements ManagerService {
         Manager manager = managerMapper.selectOne(wrapper);
         ManagerDto managerDto = ManagerCovert.INSTANCE.entity2dto(manager);
         return managerDto;
-    }
-
-    @Override
-    public String getAuthorityInfo(Integer userId) {
-        String authority = "";
-//        获取用户的name
-        Manager manager = managerMapper.selectById(userId);
-        String managerName = manager.getMgName();
-//        获取角色
-        Integer roleId1 = manager.getRoleId();
-        RoleDto role = roleService.findById(roleId1);
-        if(role != null) {
-            if (role.getRoleKeyword() != null) {
-                authority = authority + role.getRoleKeyword();
-            }
-        }
-        List<RolePermissionDto> byRoleId = rolePermissionService.findByRoleId(roleId1);
-
-        for (RolePermissionDto rp:byRoleId) {
-            if(rp != null){
-                Integer permissionId = rp.getPermissionId();
-                PermissionApiDto api = permissionApiSerivce.findByPermissionId(permissionId);
-                if(api != null){
-                    if(api.getPermissionKeyword() != null){
-                        authority = authority + "," + api.getPermissionKeyword();
-                    }
-                }
-            }
-        }
-        return authority;
-
     }
 
     @Override
@@ -95,8 +63,12 @@ public class IManagerService implements ManagerService {
             ArrayList<ManagerDto> managerDtos = new ArrayList<>();
             for (int i = 0; i < page1.getRecords().size(); i++) {
                 ManagerDto managerDto = ManagerCovert.INSTANCE.entity2dto(page1.getRecords().get(i));
-                RoleDto byId = roleService.findById(managerDto.getRoleId());
-                managerDto.setRoleName(byId.getRoleName());
+                ResponseResult result = roleClient.getById(managerDto.getRoleId());
+                // 将数据转成json字符串
+                JSONObject jsonObject= JSONObject.fromObject(result.getData());
+                //将json转成需要的对象
+                RoleDto roleDto = (RoleDto)JSONObject.toBean(jsonObject, RoleDto.class);
+                managerDto.setRoleName(roleDto.getRoleName());
                 managerDtos.add(managerDto);
             }
             managerDtoPage.setRecords(managerDtos);
@@ -113,8 +85,10 @@ public class IManagerService implements ManagerService {
             ArrayList<ManagerDto> managerDtos = new ArrayList<>();
             for (int i = 0; i < page1.getRecords().size(); i++) {
                 ManagerDto managerDto = ManagerCovert.INSTANCE.entity2dto(page1.getRecords().get(i));
-                RoleDto byId = roleService.findById(managerDto.getRoleId());
-                managerDto.setRoleName(byId.getRoleName());
+                ResponseResult result = roleClient.getById(managerDto.getRoleId());
+                JSONObject jsonObject= JSONObject.fromObject(result.getData());
+                RoleDto roleDto = (RoleDto)JSONObject.toBean(jsonObject, RoleDto.class);
+                managerDto.setRoleName(roleDto.getRoleName());
                 managerDtos.add(managerDto);
             }
             managerDtoPage.setRecords(managerDtos);
@@ -168,34 +142,4 @@ public class IManagerService implements ManagerService {
         managerMapper.delete(managerQueryWrapper);
     }
 
-    @Override
-    public List<String> findPermissionsByUserId(Integer id) {
-        ArrayList<String> authority = new ArrayList<>();
-//        获取用户的name
-        Manager manager = managerMapper.selectById(id);
-        String managerName = manager.getMgName();
-//        获取角色
-        Integer roleId1 = manager.getRoleId();
-        RoleDto role = roleService.findById(roleId1);
-        if(role != null){
-            if(role.getRoleKeyword() != null){
-                authority.add(role.getRoleKeyword());
-            }
-        }
-        List<RolePermissionDto> byRoleId = rolePermissionService.findByRoleId(roleId1);
-
-        for (RolePermissionDto rp:byRoleId) {
-            if(rp != null){
-                Integer permissionId = rp.getPermissionId();
-                PermissionApiDto api = permissionApiSerivce.findByPermissionId(permissionId);
-                if(api != null){
-                    if(api.getPermissionKeyword() != null){
-                        authority.add(api.getPermissionKeyword());
-//                        authority = authority + "," + api.getPermissionKeyword();
-                    }
-                }
-            }
-        }
-        return authority;
-    }
 }

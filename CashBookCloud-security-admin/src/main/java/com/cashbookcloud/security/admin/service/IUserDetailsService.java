@@ -1,9 +1,10 @@
 package com.cashbookcloud.security.admin.service;
 
 import com.alibaba.fastjson.JSON;
-import com.cashbookcloud.manager.api.dto.ManagerDto;
-import com.cashbookcloud.manager.api.service.ManagerService;
+import com.cashbookcloud.security.admin.getAuthorization.dto.ManagerDto;
+import com.cashbookcloud.security.admin.getAuthorization.service.ManagerService;
 import org.apache.dubbo.config.annotation.Reference;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -18,7 +19,7 @@ import java.util.List;
 @Service
 public class IUserDetailsService implements UserDetailsService {
 
-    @Reference
+    @Autowired
     private ManagerService managerService;
 
     @Override

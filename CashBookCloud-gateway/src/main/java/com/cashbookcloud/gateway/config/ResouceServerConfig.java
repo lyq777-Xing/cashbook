@@ -128,7 +128,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         public void configure(HttpSecurity http) throws Exception {
             http
                     .authorizeRequests()
-                    .antMatchers("/upload/**").access("#oauth2.hasScope('ROLE_ADMIN')");
+                    .antMatchers("/permission/**").access("#oauth2.hasScope('ROLE_ADMIN')");
 //                    .antMatchers("/admin/**").access("#oauth2.hasScope('ROLE_ADMIN')");
         }
     }
