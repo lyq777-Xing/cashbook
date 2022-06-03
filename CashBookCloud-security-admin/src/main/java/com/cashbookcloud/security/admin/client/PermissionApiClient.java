@@ -1,6 +1,6 @@
 package com.cashbookcloud.security.admin.client;
 
-import com.cashbookcloud.security.admin.getAuthorization.entity.PermissionApiDto;
+import com.cashbookcloud.security.admin.getAuthorization.dto.PermissionApiDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;

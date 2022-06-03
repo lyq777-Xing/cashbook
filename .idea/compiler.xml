@@ -28,7 +28,6 @@
         <module name="CashBookCloud-security-user" />
         <module name="CashBookCloud-role-service" />
         <module name="CashBookCloud-role-api" />
-        <module name="CashBookCloud-discovery" />
         <module name="CashBookCloud-security-admin" />
         <module name="CashBookCloud-permissionapi-api" />
         <module name="CashBookCloud-permission-service" />
@@ -40,6 +39,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="CashBookCloud-discovery" target="8" />
       <module name="CashBookCloud-security-manager" target="8" />
       <module name="CashBookCloud-security-manager-api" target="8" />
       <module name="CashBookCloud-security-manager-service" target="8" />

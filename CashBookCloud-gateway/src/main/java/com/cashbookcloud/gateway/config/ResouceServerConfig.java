@@ -156,6 +156,28 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
     }
 
     /**
+     * billlist资源配置
+     */
+    @Configuration
+    @EnableResourceServer
+    public class BillListServerConfig extends ResourceServerConfigurerAdapter{
+        @Autowired
+        private TokenStore tokenStore;
+
+        @Override
+        public void configure(ResourceServerSecurityConfigurer resources){
+            resources.tokenStore(tokenStore).resourceId(RESOURCE_ID)
+                    .stateless(true);
+        }
+
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http.authorizeRequests()
+                    .antMatchers("/billlist/**").access("#oauth2.hasScope('ROLE_USER')");
+        }
+    }
+
+    /**
      * role资源配置
      */
     @Configuration

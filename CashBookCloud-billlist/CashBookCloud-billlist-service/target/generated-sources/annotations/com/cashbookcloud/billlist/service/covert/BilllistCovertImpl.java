@@ -7,7 +7,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-05-30T09:16:59+0800",
+    date = "2022-06-03T16:13:10+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_302 (Amazon.com Inc.)"
 )
 public class BilllistCovertImpl implements BilllistCovert {
@@ -22,6 +22,8 @@ public class BilllistCovertImpl implements BilllistCovert {
 
         billlistDto.setId( entity.getId() );
         billlistDto.setBilllistName( entity.getBilllistName() );
+        billlistDto.setBilllistImg( entity.getBilllistImg() );
+        billlistDto.setUserId( entity.getUserId() );
 
         return billlistDto;
     }
@@ -36,6 +38,8 @@ public class BilllistCovertImpl implements BilllistCovert {
 
         billlist.setId( dto.getId() );
         billlist.setBilllistName( dto.getBilllistName() );
+        billlist.setBilllistImg( dto.getBilllistImg() );
+        billlist.setUserId( dto.getUserId() );
 
         return billlist;
     }
@@ -50,7 +54,25 @@ public class BilllistCovertImpl implements BilllistCovert {
 
         billlistVo.setId( dto.getId() );
         billlistVo.setBilllistName( dto.getBilllistName() );
+        billlistVo.setBilllistImg( dto.getBilllistImg() );
+        billlistVo.setUserId( dto.getUserId() );
 
         return billlistVo;
+    }
+
+    @Override
+    public BilllistDto vo2dto(BilllistVo billlistVo) {
+        if ( billlistVo == null ) {
+            return null;
+        }
+
+        BilllistDto billlistDto = new BilllistDto();
+
+        billlistDto.setId( billlistVo.getId() );
+        billlistDto.setBilllistName( billlistVo.getBilllistName() );
+        billlistDto.setBilllistImg( billlistVo.getBilllistImg() );
+        billlistDto.setUserId( billlistVo.getUserId() );
+
+        return billlistDto;
     }
 }

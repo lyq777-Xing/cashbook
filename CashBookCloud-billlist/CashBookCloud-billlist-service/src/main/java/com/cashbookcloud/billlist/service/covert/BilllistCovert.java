@@ -1,5 +1,6 @@
 package com.cashbookcloud.billlist.service.covert;
 
+
 import com.cashbookcloud.billlist.api.dto.BilllistDto;
 import com.cashbookcloud.billlist.service.entity.Billlist;
 import com.cashbookcloud.billlist.service.vo.BilllistVo;
@@ -28,4 +29,9 @@ public interface BilllistCovert {
      * 将dto 转化为vo
      */
     BilllistVo dto2vo(BilllistDto dto);
+
+    /**
+     * 将vo 转化为dto
+     */
+    BilllistDto vo2dto(BilllistVo billlistVo);
 }

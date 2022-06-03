@@ -86,7 +86,6 @@
         <module>CashBookCloud-captcha</module>
         <module>CashBookCloud-security-test</module>
         <module>CashBookCloud-security-admin</module>
-        <module>CashBookCloud-discovery</module>
         <module>CashBookCloud-security-user</module>
         <module>CashBookCloud-rolepermission</module>
         <module>CashBookCloud-permission</module>

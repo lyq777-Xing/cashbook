@@ -13,5 +13,9 @@ public class BilllistDto implements Serializable {
 
     private String billlistName;
 
+    private String billlistImg;
+
+    private Integer userId;
+
 
 }
