@@ -20,6 +20,14 @@ spring:
     jedis:
       pool:
         max-active: 8
+
+#修改调用超时时间2s
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2000
 #  quartz:
 #    scheduler:
 #      instance-name: MyselfScheduler

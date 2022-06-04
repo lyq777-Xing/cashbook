@@ -6,6 +6,7 @@ import com.cashbookcloud.bill.api.dto.KeepingDto;
 import com.cashbookcloud.bill.api.service.BillService;
 import com.cashbookcloud.bill.service.covert.BillCovert;
 import com.cashbookcloud.bill.service.vo.BillVo;
+import com.cashbookcloud.bill.service.vo.CountVo;
 import com.cashbookcloud.bill.service.vo.PageVo;
 import com.cashbookcloud.common.result.ResponseResult;
 import io.swagger.models.auth.In;
@@ -124,6 +125,21 @@ public class BillController {
         try{
             KeepingDto keeping = billService.getKeeping(id);
             result.Success("查询成功",keeping);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
+
+    @GetMapping("/getcount")
+    public ResponseResult getCount(Integer billlistId){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            Integer count = billService.getCount(billlistId);
+            CountVo countVo = new CountVo();
+            countVo.setCount(count);
+            result.Success("ok",countVo);
         }catch (Exception e){
             e.printStackTrace();
             result.FAIL_QUERY();

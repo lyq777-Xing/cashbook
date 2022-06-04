@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
         (scanBasePackages ={"com.cashbookcloud"})
 //@SpringCloudApplication
-@EnableDubbo
+//@EnableDubbo
 public class CashBookRolePermissionApiServiceApplication {
 
     public static void main(String[] args) {

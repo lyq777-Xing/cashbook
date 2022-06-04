@@ -7,14 +7,15 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.bill.api.dto.BillDto;
 import com.cashbookcloud.bill.api.dto.KeepingDto;
 import com.cashbookcloud.bill.api.service.BillService;
+import com.cashbookcloud.bill.service.client.BilllistClient;
+import com.cashbookcloud.bill.service.client.CatClient;
 import com.cashbookcloud.bill.service.covert.BillCovert;
+import com.cashbookcloud.bill.service.dto.BilllistDto;
+import com.cashbookcloud.bill.service.dto.CatDto;
 import com.cashbookcloud.bill.service.entity.Bill;
 import com.cashbookcloud.bill.service.mapper.BillMapper;
-import com.cashbookcloud.billlist.api.dto.BilllistDto;
-import com.cashbookcloud.billlist.api.service.BilllistService;
-import com.cashbookcloud.cat.api.dto.CatDto;
-import com.cashbookcloud.cat.api.service.CatService;
-import org.apache.dubbo.config.annotation.Reference;
+import com.cashbookcloud.common.result.ResponseResult;
+import net.sf.json.JSONObject;
 import org.apache.dubbo.config.annotation.Service;
 import org.checkerframework.checker.units.qual.A;
 import org.hibernate.validator.constraints.br.TituloEleitoral;
@@ -32,11 +33,17 @@ public class IBillService implements BillService {
     @Autowired
     private BillMapper billMapper;
 
-    @Reference
-    private CatService catService;
+//    @Reference
+//    private CatService catService;
+//
+//    @Reference
+//    private BilllistService billlistService;
 
-    @Reference
-    private BilllistService billlistService;
+    @Autowired
+    private CatClient catClient;
+
+    @Autowired
+    private BilllistClient billlistClient;
 
     @Override
     public Page<BillDto> findAllPage(Integer pagenum, Integer pagesize,String query) {
@@ -47,9 +54,17 @@ public class IBillService implements BillService {
             List<BillDto> billDtos = new ArrayList<>();
             for (int i = 0; i < billPage.getRecords().size(); i++) {
                 BillDto billDto = BillCovert.INSTANCE.entity2dto(billPage.getRecords().get(i));
-                CatDto catById = catService.findCatById(billDto.getCatId());
-                billDto.setCatName(catById.getCatName());
-                BilllistDto byId = billlistService.findById(billDto.getBilllistId());
+                ResponseResult result = catClient.findById(billDto.getCatId());
+                // 将数据转成json字符串
+                JSONObject jsonObject= JSONObject.fromObject(result.getData());
+                //将json转成需要的对象
+                CatDto catDto = (CatDto)JSONObject.toBean(jsonObject, CatDto.class);
+                billDto.setCatName(catDto.getCatName());
+                ResponseResult result1 = billlistClient.findById(billDto.getCatId());
+                // 将数据转成json字符串
+                JSONObject jsonObject1= JSONObject.fromObject(result.getData());
+                //将json转成需要的对象
+                BilllistDto byId = (BilllistDto)JSONObject.toBean(jsonObject1, BilllistDto.class);
                 billDto.setBilllistName(byId.getBilllistName());
                 billDtos.add(billDto);
             }
@@ -69,9 +84,17 @@ public class IBillService implements BillService {
             List<BillDto> billDtos = new ArrayList<>();
             for (int i = 0; i < billPage.getRecords().size(); i++) {
                 BillDto billDto = BillCovert.INSTANCE.entity2dto(billPage.getRecords().get(i));
-                CatDto catById = catService.findCatById(billDto.getCatId());
-                billDto.setCatName(catById.getCatName());
-                BilllistDto byId = billlistService.findById(billDto.getBilllistId());
+                ResponseResult result = catClient.findById(billDto.getCatId());
+                // 将数据转成json字符串
+                JSONObject jsonObject= JSONObject.fromObject(result.getData());
+                //将json转成需要的对象
+                CatDto catDto = (CatDto)JSONObject.toBean(jsonObject, CatDto.class);
+                billDto.setCatName(catDto.getCatName());
+                ResponseResult result1 = billlistClient.findById(billDto.getCatId());
+                // 将数据转成json字符串
+                JSONObject jsonObject1= JSONObject.fromObject(result.getData());
+                //将json转成需要的对象
+                BilllistDto byId = (BilllistDto)JSONObject.toBean(jsonObject1, BilllistDto.class);
                 billDto.setBilllistName(byId.getBilllistName());
                 billDtos.add(billDto);
             }
@@ -173,5 +196,13 @@ public class IBillService implements BillService {
                 return keepingDto;
             }
         }
+    }
+
+    @Override
+    public Integer getCount(Integer billlistId) {
+        QueryWrapper<Bill> wrapper = new QueryWrapper<>();
+        wrapper.eq("billlist_id",billlistId);
+        Integer aLong = Math.toIntExact(billMapper.selectCount(wrapper));
+        return aLong;
     }
 }

@@ -47,4 +47,6 @@ public interface BillService {
      * @return
      */
     KeepingDto getKeeping(Integer id);
+
+    Integer getCount(Integer billlistId);
 }

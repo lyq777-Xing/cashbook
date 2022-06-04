@@ -22,6 +22,7 @@ spring:
     jedis:
       pool:
         max-active: 8
+
 #  quartz:
 #    scheduler:
 #      instance-name: MyselfScheduler
@@ -65,6 +66,13 @@ spring:
 #          - refresh: true
 #            data-id: cashbookcloud-bill-service.yml
 #            group: COMMON_GROUP # 通用配置组
+#修改调用超时时间2s
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2000
 dubbo:
   cloud:
     subscribed-services: cashbook-users-service

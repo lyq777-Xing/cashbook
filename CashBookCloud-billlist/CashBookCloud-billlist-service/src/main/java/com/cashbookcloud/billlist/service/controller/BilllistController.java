@@ -134,4 +134,17 @@ public class BilllistController {
         result.Success("ok!",principal);
         return result;
     }
+
+    @GetMapping("/findById")
+    public ResponseResult findById(Integer id){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            BilllistDto byId = billlistService.findById(id);
+            result.Success("查询成功",byId);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
 }
