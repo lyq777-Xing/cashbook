@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.reactive.CorsWebFilter;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 import org.springframework.web.util.pattern.PathPatternParser;
@@ -20,8 +21,17 @@ public class CorsConfig {
     @RefreshScope
     @Bean
     public CorsWebFilter corsWebFilter(GlobalCorsProperties globalCorsProperties){
+
+        CorsConfiguration config = new CorsConfiguration();
+        config.setAllowCredentials(Boolean.TRUE);
+        config.addAllowedMethod("*");
+        config.addAllowedOrigin("*");
+        config.addAllowedHeader("*");
+
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(new PathPatternParser());
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(new PathPatternParser());
         globalCorsProperties.getCorsConfigurations().forEach(source::registerCorsConfiguration);
+        source.registerCorsConfiguration("/**", config);
         return new CorsWebFilter(source);
     }
 }

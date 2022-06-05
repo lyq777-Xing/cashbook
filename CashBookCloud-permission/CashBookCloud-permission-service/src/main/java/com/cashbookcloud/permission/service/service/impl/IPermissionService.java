@@ -66,4 +66,62 @@ public class IPermissionService implements PermissionService {
         }
         return permissionDtos;
     }
+
+    @Override
+    public List<PermissionDto> findAllAminList() {
+        QueryWrapper<Permission> wrapper = new QueryWrapper<>();
+        wrapper.eq("permission_level",0).eq("permission_path","admin");
+        List<Permission> permissions = permissionMapper.selectList(wrapper);
+        QueryWrapper<Permission> wrapper1 = new QueryWrapper<>();
+        wrapper1.eq("permission_level",1).eq("permission_path","admin");
+        List<Permission> permissions1 = permissionMapper.selectList(wrapper1);
+        ArrayList<PermissionDto> permissionDtos = new ArrayList<>();
+        ArrayList<PermissionDto> permissionDtos1 = new ArrayList<>();
+        for (Permission p:permissions) {
+            permissionDtos.add(PermissionCovert.INSTANCE.entity2dto(p));
+        }
+        for (Permission p:permissions1) {
+            permissionDtos1.add(PermissionCovert.INSTANCE.entity2dto(p));
+        }
+
+        for (PermissionDto p:permissionDtos) {
+            ArrayList<PermissionDto> list = new ArrayList<>();
+            for (PermissionDto c:permissionDtos1) {
+                if(c.getPermissionPid().intValue() == p.getId().intValue()){
+                    list.add(c);
+                }
+            }
+            p.setChildren(list);
+        }
+        return permissionDtos;
+    }
+
+    @Override
+    public List<PermissionDto> findAllUserList() {
+        QueryWrapper<Permission> wrapper = new QueryWrapper<>();
+        wrapper.eq("permission_level",0).eq("permission_path","user");
+        List<Permission> permissions = permissionMapper.selectList(wrapper);
+        QueryWrapper<Permission> wrapper1 = new QueryWrapper<>();
+        wrapper1.eq("permission_level",1).eq("permission_path","user");
+        List<Permission> permissions1 = permissionMapper.selectList(wrapper1);
+        ArrayList<PermissionDto> permissionDtos = new ArrayList<>();
+        ArrayList<PermissionDto> permissionDtos1 = new ArrayList<>();
+        for (Permission p:permissions) {
+            permissionDtos.add(PermissionCovert.INSTANCE.entity2dto(p));
+        }
+        for (Permission p:permissions1) {
+            permissionDtos1.add(PermissionCovert.INSTANCE.entity2dto(p));
+        }
+
+        for (PermissionDto p:permissionDtos) {
+            ArrayList<PermissionDto> list = new ArrayList<>();
+            for (PermissionDto c:permissionDtos1) {
+                if(c.getPermissionPid().intValue() == p.getId().intValue()){
+                    list.add(c);
+                }
+            }
+            p.setChildren(list);
+        }
+        return permissionDtos;
+    }
 }

@@ -40,7 +40,7 @@ org.apache.dubbo.rpc.RpcException: Fail to start server(url: dubbo://172.18.113.
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:16)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:16)
 Caused by: org.apache.dubbo.remoting.RemotingException: Failed to bind NettyServer on /172.18.113.87:20916, cause: Address already in use: bind
 	at org.apache.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:77)
 	at org.apache.dubbo.remoting.transport.netty4.NettyServer.<init>(NettyServer.java:77)

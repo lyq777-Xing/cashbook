@@ -91,6 +91,10 @@ public class BilllistController {
                 BilllistDto byName = billlistService.findByName(billlistVo.getBilllistName(),billlistVo.getUserId());
                 if(byName != null){
                     result.FAIL_NAMEALREDYUSE();
+                }else {
+                    BilllistDto billlistDto = BilllistCovert.INSTANCE.vo2dto(billlistVo);
+                    BilllistDto upd = billlistService.upd(billlistDto);
+                    result.Success("更新成功",upd);
                 }
             }
         }catch (Exception e){

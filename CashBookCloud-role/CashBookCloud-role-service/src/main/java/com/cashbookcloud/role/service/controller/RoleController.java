@@ -139,4 +139,17 @@ public class RoleController {
         }
         return result;
     }
+
+    @GetMapping("/getpermissionbyroleid")
+    public ResponseResult getPermissionByRoleId(Integer id){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            RoleDto permissionByRoleId = roleService.findPermissionByRoleId(id);
+            result.Success("查询成功",permissionByRoleId);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
 }

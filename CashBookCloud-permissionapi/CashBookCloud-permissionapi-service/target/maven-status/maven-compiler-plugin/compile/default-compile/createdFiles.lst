@@ -1,0 +1,7 @@
+com\cashbookcloud\permissionapi\service\CashBookPermissionApiServiceApplication.class
+com\cashbookcloud\permissionapi\service\service\impl\IPermisssionApiService.class
+com\cashbookcloud\permissionapi\service\covert\PermissionApiCovertImpl.class
+com\cashbookcloud\permissionapi\service\entity\PermissionApi.class
+com\cashbookcloud\permissionapi\service\mapper\PermissionApiMapper.class
+com\cashbookcloud\permissionapi\service\covert\PermissionApiCovert.class
+com\cashbookcloud\permissionapi\service\controller\PermissionApiController.class

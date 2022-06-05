@@ -10,4 +10,8 @@ public interface PermissionService {
     List<PermissionDto> findAll();
 
     List<PermissionDto> findAllList();
+
+    List<PermissionDto> findAllAminList();
+
+    List<PermissionDto> findAllUserList();
 }

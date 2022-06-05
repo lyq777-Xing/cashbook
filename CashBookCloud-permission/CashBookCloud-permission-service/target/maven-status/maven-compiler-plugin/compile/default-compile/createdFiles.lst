@@ -1,0 +1,12 @@
+com\cashbookcloud\permission\service\config\WebSecurityConfig.class
+com\cashbookcloud\permission\service\entity\Permission.class
+com\cashbookcloud\permission\service\common\EncryptUtil.class
+com\cashbookcloud\permission\service\mapper\PermissionMapper.class
+com\cashbookcloud\permission\service\controller\PermissionController.class
+com\cashbookcloud\permission\service\filter\TokenAuthenticationFilter.class
+com\cashbookcloud\permission\service\CashBookPermissionServiceApplication.class
+com\cashbookcloud\permission\service\dto\ManagerDto.class
+com\cashbookcloud\permission\service\config\ResouceServerConfig.class
+com\cashbookcloud\permission\service\covert\PermissionCovert.class
+com\cashbookcloud\permission\service\covert\PermissionCovertImpl.class
+com\cashbookcloud\permission\service\service\impl\IPermissionService.class

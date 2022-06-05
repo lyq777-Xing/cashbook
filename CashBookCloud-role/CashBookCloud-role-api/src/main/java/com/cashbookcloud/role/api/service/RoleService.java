@@ -25,4 +25,6 @@ public interface RoleService {
 
     List<RoleDto> findAllUser();
 
+    RoleDto findPermissionByRoleId(Integer roleId);
+
 }

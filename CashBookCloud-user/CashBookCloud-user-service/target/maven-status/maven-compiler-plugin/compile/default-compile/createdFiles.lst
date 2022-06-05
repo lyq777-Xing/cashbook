@@ -1,0 +1,17 @@
+com\cashbookcloud\user\service\entity\User.class
+com\cashbookcloud\user\service\config\WebSecurityConfig.class
+com\cashbookcloud\user\service\config\FeignConfig.class
+com\cashbookcloud\user\service\filter\TokenAuthenticationFilter.class
+com\cashbookcloud\user\service\vo\UserVo.class
+com\cashbookcloud\user\service\controller\UserController.class
+com\cashbookcloud\user\service\common\EncryptUtil.class
+com\cashbookcloud\user\service\covert\UserCovert.class
+com\cashbookcloud\user\service\mapper\UserMapper.class
+com\cashbookcloud\user\service\config\ResouceServerConfig.class
+com\cashbookcloud\user\service\config\TokenConfig.class
+com\cashbookcloud\user\service\covert\UserCovertImpl.class
+com\cashbookcloud\user\service\dto\ManagerDto.class
+com\cashbookcloud\user\service\client\RoleClient.class
+com\cashbookcloud\user\service\dto\RoleDto.class
+com\cashbookcloud\user\service\service\impl\IUserService.class
+com\cashbookcloud\user\service\CashBookUserServiceApplication.class

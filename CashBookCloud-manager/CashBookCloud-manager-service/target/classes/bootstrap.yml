@@ -20,6 +20,8 @@ spring:
     jedis:
       pool:
         max-active: 8
+
+
 #  quartz:
 #    scheduler:
 #      instance-name: MyselfScheduler
@@ -54,6 +56,13 @@ spring:
       discovery:
         server-addr: 106.12.162.221:8848
         namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+#修改调用超时时间2s
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 2000
 #      config:
 #        server-addr: ${spring.cloud.nacos.discovery.server-addr}
 #        file-extension: yaml

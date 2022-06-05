@@ -1,0 +1,7 @@
+com\cashbookcloud\rolepermission\service\CashBookRolePermissionServiceApplication.class
+com\cashbookcloud\rolepermission\service\controller\RolePermissionController.class
+com\cashbookcloud\rolepermission\service\covert\RolePermissionCovertImpl.class
+com\cashbookcloud\rolepermission\service\entity\RolePermission.class
+com\cashbookcloud\rolepermission\service\mapper\RolePermissionMapper.class
+com\cashbookcloud\rolepermission\service\covert\RolePermissionCovert.class
+com\cashbookcloud\rolepermission\service\service\impl\IRolePermissionService.class

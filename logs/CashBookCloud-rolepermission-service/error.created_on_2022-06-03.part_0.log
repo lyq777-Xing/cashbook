@@ -40,7 +40,7 @@ org.apache.dubbo.rpc.RpcException: Fail to start server(url: dubbo://172.18.113.
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 Caused by: org.apache.dubbo.remoting.RemotingException: Failed to bind NettyServer on /172.18.113.87:20921, cause: Address already in use: bind
 	at org.apache.dubbo.remoting.transport.AbstractServer.<init>(AbstractServer.java:77)
 	at org.apache.dubbo.remoting.transport.netty4.NettyServer.<init>(NettyServer.java:77)
@@ -115,7 +115,7 @@ com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 2022-06-03 19:52:39 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.SpringApplication[0;39m | Application run failed
 java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147)
@@ -155,7 +155,7 @@ java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: connect
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:496)
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:401)
@@ -207,7 +207,7 @@ com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 2022-06-03 22:43:30 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.SpringApplication[0;39m | Application run failed
 java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147)
@@ -247,7 +247,7 @@ java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: connect
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:496)
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:401)
@@ -299,7 +299,7 @@ com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 2022-06-03 22:46:58 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.SpringApplication[0;39m | Application run failed
 java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147)
@@ -339,7 +339,7 @@ java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: connect
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:496)
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:401)
@@ -391,7 +391,7 @@ com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 2022-06-03 22:48:31 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.SpringApplication[0;39m | Application run failed
 java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147)
@@ -431,7 +431,7 @@ java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: connect
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:496)
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:401)
@@ -464,7 +464,7 @@ java.net.ConnectException: no available server
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 2022-06-03 23:00:12 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.config.http.ServerHttpAgent[0;39m | [NACOS SocketTimeoutException httpGet] currentServerAddr:http://localhost:8848， err : connect timed out
 2022-06-03 23:00:14 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.config.http.ServerHttpAgent[0;39m | [NACOS SocketTimeoutException httpGet] currentServerAddr:http://localhost:8848， err : connect timed out
 2022-06-03 23:00:14 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.config.http.ServerHttpAgent[0;39m | no available server
@@ -489,8 +489,8 @@ java.net.ConnectException: no available server
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:00:29 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:00:29 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -553,8 +553,8 @@ java.net.ConnectException: Connection refused: connect
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:00:33 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:00:33 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -617,8 +617,8 @@ java.net.ConnectException: Connection refused: connect
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:00:34 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:00:34 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -654,7 +654,7 @@ java.net.ConnectException: Connection refused: connect
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-2022-06-03 23:00:37 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+2022-06-03 23:00:37 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -717,8 +717,8 @@ java.net.ConnectException: Connection refused: connect
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:00:38 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:00:38 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -754,7 +754,7 @@ java.net.ConnectException: Connection refused: connect
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-2022-06-03 23:00:41 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+2022-06-03 23:00:41 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -817,8 +817,8 @@ java.net.ConnectException: Connection refused: connect
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:00:42 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:00:42 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -898,7 +898,7 @@ com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 2022-06-03 23:00:44 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.SpringApplication[0;39m | Application run failed
 java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147)
@@ -938,7 +938,7 @@ java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: connect
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:496)
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:401)
@@ -971,7 +971,7 @@ java.net.ConnectException: no available server
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 2022-06-03 23:08:44 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.config.http.ServerHttpAgent[0;39m | [NACOS SocketTimeoutException httpGet] currentServerAddr:http://localhost:8848， err : connect timed out
 2022-06-03 23:08:46 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.config.http.ServerHttpAgent[0;39m | [NACOS SocketTimeoutException httpGet] currentServerAddr:http://localhost:8848， err : connect timed out
 2022-06-03 23:08:46 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.config.http.ServerHttpAgent[0;39m | no available server
@@ -996,8 +996,8 @@ java.net.ConnectException: no available server
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:09:01 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:09:01 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -1060,8 +1060,8 @@ java.net.ConnectException: Connection refused: connect
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:09:05 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:09:05 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -1124,8 +1124,8 @@ java.net.ConnectException: Connection refused: connect
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:09:06 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:09:06 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -1161,7 +1161,7 @@ java.net.ConnectException: Connection refused: connect
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-2022-06-03 23:09:09 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+2022-06-03 23:09:09 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -1224,8 +1224,8 @@ java.net.ConnectException: Connection refused: connect
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:09:10 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:09:10 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -1261,7 +1261,7 @@ java.net.ConnectException: Connection refused: connect
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
-2022-06-03 23:09:13 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+2022-06-03 23:09:13 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -1324,8 +1324,8 @@ java.net.ConnectException: Connection refused: connect
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:09:14 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:09:14 | [1;31mERROR[0;39m | [1;33mcom.alibaba.nacos.naming.beat.sender[0;39m | [1;32mcom.alibaba.nacos.client.naming[0;39m | [NA] failed to request
 java.net.ConnectException: Connection refused: connect
 	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
 	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
@@ -1405,8 +1405,8 @@ com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
-2022-06-03 23:09:16 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.diagnostics.LoggingFailureAnalysisReporter[0;39m | 
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+2022-06-03 23:09:16 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.diagnostics.LoggingFailureAnalysisReporter[0;39m |
 
 ***************************
 APPLICATION FAILED TO START
@@ -1463,7 +1463,7 @@ com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 2022-06-03 23:12:39 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.SpringApplication[0;39m | Application run failed
 java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147)
@@ -1503,7 +1503,7 @@ java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: connect
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:496)
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:401)
@@ -1555,7 +1555,7 @@ com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 2022-06-03 23:16:25 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.springframework.boot.SpringApplication[0;39m | Application run failed
 java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.util.ReflectionUtils.rethrowRuntimeException(ReflectionUtils.java:147)
@@ -1595,7 +1595,7 @@ java.lang.reflect.UndeclaredThrowableException: null
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionApiServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
+	at com.cashbookcloud.rolepermission.service.CashBookRolePermissionServiceApplication.main(CashBookRolePermissionApiServiceApplication.java:19)
 Caused by: com.alibaba.nacos.api.exception.NacosException: failed to req API:/api//nacos/v1/ns/instance after all servers([localhost:8848]) tried: java.net.ConnectException: Connection refused: connect
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:496)
 	at com.alibaba.nacos.client.naming.net.NamingProxy.reqAPI(NamingProxy.java:401)

@@ -2,12 +2,20 @@ package com.cashbookcloud.role.service.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.cashbookcloud.common.result.ResponseResult;
+import com.cashbookcloud.role.api.dto.PermissionDto;
 import com.cashbookcloud.role.api.dto.RoleDto;
+import com.cashbookcloud.role.api.dto.RolePermissionDto;
 import com.cashbookcloud.role.api.service.RoleService;
+import com.cashbookcloud.role.service.client.PermissionClient;
+import com.cashbookcloud.role.service.client.RolePermissionClient;
 import com.cashbookcloud.role.service.covert.RoleCovert;
 import com.cashbookcloud.role.service.entity.Role;
 import com.cashbookcloud.role.service.mapper.RoleMapper;
+import net.sf.json.JSONObject;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +29,12 @@ public class IRoleService implements RoleService {
 
     @Autowired
     private RoleMapper roleMapper;
+
+    @Autowired
+    private RolePermissionClient rolePermissionClient;
+
+    @Autowired
+    private PermissionClient permissionClient;
 
     @Override
     public RoleDto findById(Integer id) {
@@ -73,6 +87,33 @@ public class IRoleService implements RoleService {
                 RoleDto roleDto = RoleCovert.INSTANCE.entity2dto(rolePage.getRecords().get(i));
                 roleDtos.add(roleDto);
             }
+            for (RoleDto r:roleDtos) {
+                Integer roleId = r.getId();
+                List<RolePermissionDto> byRid = rolePermissionClient.findByRid(roleId);
+                ArrayList<PermissionDto> first = new ArrayList<>();
+                ArrayList<PermissionDto> two = new ArrayList<>();
+                for (RolePermissionDto rp:byRid) {
+                    Integer permissionId = rp.getPermissionId();
+                    ResponseResult result = permissionClient.findById(permissionId);
+                    JSONObject jsonObject = JSONObject.fromObject(result.getData());
+                    PermissionDto permissionDto = (PermissionDto) JSONObject.toBean(jsonObject, PermissionDto.class);
+                    if(Integer.parseInt(permissionDto.getPermissionLevel()) == 0){
+                        first.add(permissionDto);
+                    }else {
+                        two.add(permissionDto);
+                    }
+                }
+                for (PermissionDto p:first) {
+                    ArrayList<PermissionDto> list = new ArrayList<>();
+                    for (PermissionDto c :two) {
+                        if(c.getPermissionPid().intValue() == p.getId().intValue()){
+                            list.add(c);
+                        }
+                    }
+                    p.setChildren(list);
+                }
+                r.setChildren(first);
+            }
             Page<RoleDto> roleDtoPage = new Page<>();
             roleDtoPage.setRecords(roleDtos);
             roleDtoPage.setPages(rolePage.getPages());
@@ -89,6 +130,7 @@ public class IRoleService implements RoleService {
                 RoleDto roleDto = RoleCovert.INSTANCE.entity2dto(rolePage.getRecords().get(i));
                 roleDtos.add(roleDto);
             }
+
             Page<RoleDto> roleDtoPage = new Page<>();
             roleDtoPage.setRecords(roleDtos);
             roleDtoPage.setPages(rolePage.getPages());
@@ -108,6 +150,33 @@ public class IRoleService implements RoleService {
         for (Role r:roles) {
             RoleDto roleDto = RoleCovert.INSTANCE.entity2dto(r);
             roleDtos.add(roleDto);
+        }
+        for (RoleDto r:roleDtos) {
+            Integer roleId = r.getId();
+            List<RolePermissionDto> byRid = rolePermissionClient.findByRid(roleId);
+            ArrayList<PermissionDto> first = new ArrayList<>();
+            ArrayList<PermissionDto> two = new ArrayList<>();
+            for (RolePermissionDto rp:byRid) {
+                Integer permissionId = rp.getPermissionId();
+                ResponseResult result = permissionClient.findById(permissionId);
+                JSONObject jsonObject = JSONObject.fromObject(result.getData());
+                PermissionDto permissionDto = (PermissionDto) JSONObject.toBean(jsonObject, PermissionDto.class);
+                if(Integer.parseInt(permissionDto.getPermissionLevel()) == 0){
+                    first.add(permissionDto);
+                }else {
+                    two.add(permissionDto);
+                }
+            }
+            for (PermissionDto p:first) {
+                ArrayList<PermissionDto> list = new ArrayList<>();
+                for (PermissionDto c :two) {
+                    if(c.getPermissionPid().intValue() == p.getId().intValue()){
+                        list.add(c);
+                    }
+                }
+                p.setChildren(list);
+            }
+           r.setChildren(first);
         }
         return roleDtos;
     }
@@ -136,5 +205,36 @@ public class IRoleService implements RoleService {
             roleDtos.add(roleDto);
         }
         return roleDtos;
+    }
+
+    @Override
+    public RoleDto findPermissionByRoleId(Integer roleId) {
+        List<RolePermissionDto> byRid = rolePermissionClient.findByRid(roleId);
+        ArrayList<PermissionDto> first = new ArrayList<>();
+        ArrayList<PermissionDto> two = new ArrayList<>();
+        for (RolePermissionDto rp:byRid) {
+            Integer permissionId = rp.getPermissionId();
+            ResponseResult result = permissionClient.findById(permissionId);
+            JSONObject jsonObject = JSONObject.fromObject(result.getData());
+            PermissionDto permissionDto = (PermissionDto) JSONObject.toBean(jsonObject, PermissionDto.class);
+            if(Integer.parseInt(permissionDto.getPermissionLevel()) == 0){
+                first.add(permissionDto);
+            }else {
+                two.add(permissionDto);
+            }
+        }
+        for (PermissionDto p:first) {
+            ArrayList<PermissionDto> list = new ArrayList<>();
+            for (PermissionDto c :two) {
+                if(c.getPermissionPid().intValue() == p.getId().intValue()){
+                    list.add(c);
+                }
+            }
+            p.setChildren(list);
+        }
+        Role role = roleMapper.selectById(roleId);
+        RoleDto roleDto = RoleCovert.INSTANCE.entity2dto(role);
+        roleDto.setChildren(first);
+        return roleDto;
     }
 }

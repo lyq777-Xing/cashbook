@@ -28,4 +28,56 @@ public class PermissionController {
         }
         return result;
     }
+
+    @GetMapping("/gettree")
+    public ResponseResult getTree(){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            List<PermissionDto> all = permissionService.findAll();
+            result.Success("查询成功",all);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
+
+    @GetMapping("/getadmintree")
+    public ResponseResult getAdminTree(){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            List<PermissionDto> allAminList = permissionService.findAllAminList();
+            result.Success("查询成功",allAminList);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
+
+    @GetMapping("/getusertree")
+    public ResponseResult getUserTree(){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            List<PermissionDto> allAminList = permissionService.findAllUserList();
+            result.Success("查询成功",allAminList);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
+
+    @GetMapping("/findById")
+    public ResponseResult findById(Integer id){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            PermissionDto byId = permissionService.findById(id);
+            result.Success("ok!",byId);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
 }

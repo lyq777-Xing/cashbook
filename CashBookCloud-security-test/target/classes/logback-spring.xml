@@ -7,7 +7,7 @@
 	<property name="DEFAULT_CONSOLE_PRO"
 			  value="%date [%thread] %-5level [%logger{50}] %file:%line - %msg%n"/>
 
-	<property name="LOG_HOME" value="logs/CashBookCloud-security-admin"/>
+	<property name="LOG_HOME" value="logs/CashBookCloud-security-test"/>
 
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
 		<filter class="ch.qos.logback.classic.filter.LevelFilter">

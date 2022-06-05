@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 public class RoleDto implements Serializable {
@@ -36,6 +37,8 @@ public class RoleDto implements Serializable {
      * 判断角色是admin的还是user的
      */
     private String rolePojo;
+
+    private List<PermissionDto> children;
 
 
 }
