@@ -3,6 +3,7 @@ package com.cashbookcloud.user.service.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.common.result.ResponseResult;
+import com.cashbookcloud.user.api.dto.ReportDto;
 import com.cashbookcloud.user.api.dto.UserDto;
 import com.cashbookcloud.user.api.service.UserService;
 import com.cashbookcloud.user.service.client.RoleClient;
@@ -10,8 +11,9 @@ import com.cashbookcloud.user.service.covert.UserCovert;
 import com.cashbookcloud.user.service.dto.RoleDto;
 import com.cashbookcloud.user.service.entity.User;
 import com.cashbookcloud.user.service.mapper.UserMapper;
+import io.swagger.models.auth.In;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
-import org.apache.dubbo.config.annotation.Reference;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -145,5 +147,33 @@ public class IUserService implements UserService {
         ArrayList<String> strings = new ArrayList<>();
         strings.add(roleDto.getRoleKeyword());
         return strings;
+    }
+
+    /**
+     * 获取会员与普通用户的数量
+     * @return
+     */
+    @Override
+    public List<ReportDto> getReport() {
+        ResponseResult result = roleClient.getAllUser();
+        JSONArray jsonObject = JSONArray.fromObject(result.getData());
+//        ArrayList<RoleDto> roleDtos = (ArrayList<RoleDto>) JSONArray.toArray(jsonObject, ArrayList.class);
+        ArrayList<RoleDto> roleDtos = new ArrayList<>();
+        for (int i = 0; i < jsonObject.size(); i++) {
+            RoleDto roleDto = (RoleDto) JSONObject.toBean(jsonObject.getJSONObject(i), RoleDto.class);
+            roleDtos.add(roleDto);
+        }
+        ArrayList<ReportDto> reportDtos = new ArrayList<>();
+        for (RoleDto r:roleDtos) {
+            Integer rId = r.getId();
+            QueryWrapper<User> wrapper = new QueryWrapper<>();
+            wrapper.eq("role_id",rId);
+            Integer count = Math.toIntExact(userMapper.selectCount(wrapper));
+            ReportDto reportDto = new ReportDto();
+            reportDto.setName(r.getRoleName());
+            reportDto.setValue(count);
+            reportDtos.add(reportDto);
+        }
+        return reportDtos;
     }
 }

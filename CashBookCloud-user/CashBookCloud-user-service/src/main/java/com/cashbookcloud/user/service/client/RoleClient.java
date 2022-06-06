@@ -14,4 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface RoleClient {
     @GetMapping("/role/getById")
     public ResponseResult getById(@RequestParam("id") Integer id);
+
+    @GetMapping("/role/getalluser")
+    public ResponseResult getAllUser();
 }

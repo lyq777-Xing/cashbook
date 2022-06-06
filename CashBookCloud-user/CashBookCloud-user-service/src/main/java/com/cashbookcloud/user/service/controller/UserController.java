@@ -2,6 +2,7 @@ package com.cashbookcloud.user.service.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.common.result.ResponseResult;
+import com.cashbookcloud.user.api.dto.ReportDto;
 import com.cashbookcloud.user.api.dto.UserDto;
 import com.cashbookcloud.user.api.service.UserService;
 import com.cashbookcloud.user.service.covert.UserCovert;
@@ -12,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 @RequestMapping("/user")
@@ -135,5 +137,19 @@ public class UserController {
         }
         return result;
     }
+
+    @GetMapping("/getreport")
+    public ResponseResult getReport(){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            List<ReportDto> report = userService.getReport();
+            result.Success("查询成功",report);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
+
 
 }
