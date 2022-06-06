@@ -6,4 +6,11 @@ import java.util.List;
 
 public interface RolePermissionService {
     List<RolePermissionDto> findByRoleId(Integer rid);
+
+    void delByRoleIdAndPermissionId(Integer roleId,Integer PermissionId);
+
+    void delByRoleId(Integer rid);
+
+    void add(Integer roleId,Integer[] permissionIds);
+
 }

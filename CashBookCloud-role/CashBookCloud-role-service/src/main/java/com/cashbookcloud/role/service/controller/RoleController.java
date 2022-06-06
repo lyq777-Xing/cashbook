@@ -2,6 +2,7 @@ package com.cashbookcloud.role.service.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.common.result.ResponseResult;
+import com.cashbookcloud.role.api.dto.PermissionDto;
 import com.cashbookcloud.role.api.dto.RoleDto;
 import com.cashbookcloud.role.api.service.RoleService;
 import com.cashbookcloud.role.service.covert.RoleCovert;
@@ -152,4 +153,31 @@ public class RoleController {
         }
         return result;
     }
+
+    @DeleteMapping("/delrolepermission")
+    public ResponseResult delRolePermission(Integer roleId,Integer permissionId){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            List<PermissionDto> permissionDtos = roleService.removeRightByPermissionId(roleId, permissionId);
+            result.Success("删除成功",permissionDtos);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_DELETE();
+        }
+        return result;
+    }
+
+    @PostMapping("/updrolerights/{roleId}/{permissionIds}")
+    public ResponseResult updRoleRights(@PathVariable("roleId") Integer roleId,@PathVariable("permissionIds") Integer[] permissionIds){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            roleService.updRolePermissionByRoleIAndPermissionIds(roleId,permissionIds);
+            result.Success("更新权限成功");
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_UPDATE();
+        }
+        return result;
+    }
+
 }

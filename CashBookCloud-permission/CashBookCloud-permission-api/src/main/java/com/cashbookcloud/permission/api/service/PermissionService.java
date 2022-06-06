@@ -14,4 +14,6 @@ public interface PermissionService {
     List<PermissionDto> findAllAminList();
 
     List<PermissionDto> findAllUserList();
+
+    List<PermissionDto> findByPid(Integer pid);
 }

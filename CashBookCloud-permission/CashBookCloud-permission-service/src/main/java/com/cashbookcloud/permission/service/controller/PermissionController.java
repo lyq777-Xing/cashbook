@@ -80,4 +80,10 @@ public class PermissionController {
         }
         return result;
     }
+
+    @GetMapping("/findByPid")
+    public List<PermissionDto> findByPid(Integer pid){
+        List<PermissionDto> byPid = permissionService.findByPid(pid);
+        return byPid;
+    }
 }

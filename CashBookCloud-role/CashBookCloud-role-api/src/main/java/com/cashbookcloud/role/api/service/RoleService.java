@@ -1,6 +1,7 @@
 package com.cashbookcloud.role.api.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.cashbookcloud.role.api.dto.PermissionDto;
 import com.cashbookcloud.role.api.dto.RoleDto;
 import io.swagger.models.auth.In;
 
@@ -26,5 +27,9 @@ public interface RoleService {
     List<RoleDto> findAllUser();
 
     RoleDto findPermissionByRoleId(Integer roleId);
+
+    List<PermissionDto> removeRightByPermissionId(Integer roleId,Integer permissionId);
+
+    void updRolePermissionByRoleIAndPermissionIds(Integer roleId,Integer[] permissionIds);
 
 }

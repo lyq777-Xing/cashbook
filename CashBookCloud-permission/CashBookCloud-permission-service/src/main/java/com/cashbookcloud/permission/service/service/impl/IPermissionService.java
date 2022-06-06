@@ -124,4 +124,17 @@ public class IPermissionService implements PermissionService {
         }
         return permissionDtos;
     }
+
+    @Override
+    public List<PermissionDto> findByPid(Integer pid) {
+        QueryWrapper<Permission> wrapper = new QueryWrapper<>();
+        wrapper.eq("permission_pid",pid);
+        List<Permission> permissions = permissionMapper.selectList(wrapper);
+        ArrayList<PermissionDto> list = new ArrayList<>();
+        for (Permission p:permissions) {
+            PermissionDto permissionDto = PermissionCovert.INSTANCE.entity2dto(p);
+            list.add(permissionDto);
+        }
+        return list;
+    }
 }

@@ -237,4 +237,67 @@ public class IRoleService implements RoleService {
         roleDto.setChildren(first);
         return roleDto;
     }
+
+    @Override
+    public List<PermissionDto> removeRightByPermissionId(Integer roleId, Integer permissionId) {
+//        先判断permissionId的pid是否为0
+        ResponseResult result = permissionClient.findById(permissionId);
+        JSONObject jsonObject = JSONObject.fromObject(result.getData());
+        PermissionDto permissionDto = (PermissionDto)JSONObject.toBean(jsonObject, PermissionDto.class);
+        if(permissionDto.getPermissionPid().intValue() == 0){
+//            说明是父权限 需要将子权限一起删除
+            List<PermissionDto> permissionDtos = permissionClient.findByPid(permissionId);
+//            根据roleid判断有没有对应的子权限
+            for (PermissionDto pd:permissionDtos) {
+                Integer pdId = pd.getId();
+                List<RolePermissionDto> list = rolePermissionClient.findByRid(roleId);
+                for (RolePermissionDto rp:list) {
+                    if(rp.getPermissionId().intValue() == pdId){
+//                        说明有该子权限 删除
+                        rolePermissionClient.del(roleId,pdId);
+                    }
+                }
+            }
+//            最后删除父权限
+            rolePermissionClient.del(roleId,permissionId);
+        }else {
+//            说明是子权限 直接删除即可
+            rolePermissionClient.del(roleId,permissionId);
+        }
+//        根据roleid查询权限
+        List<RolePermissionDto> byRid = rolePermissionClient.findByRid(roleId);
+        ArrayList<PermissionDto> first = new ArrayList<>();
+        ArrayList<PermissionDto> two = new ArrayList<>();
+        for (RolePermissionDto rp:byRid) {
+            Integer permissionId2 = rp.getPermissionId();
+            ResponseResult result2 = permissionClient.findById(permissionId2);
+            JSONObject jsonObject2 = JSONObject.fromObject(result2.getData());
+            PermissionDto permissionDto2 = (PermissionDto) JSONObject.toBean(jsonObject2, PermissionDto.class);
+            if(Integer.parseInt(permissionDto2.getPermissionLevel()) == 0){
+                first.add(permissionDto2);
+            }else {
+                two.add(permissionDto2);
+            }
+        }
+        for (PermissionDto p:first) {
+            ArrayList<PermissionDto> list = new ArrayList<>();
+            for (PermissionDto c :two) {
+                if(c.getPermissionPid().intValue() == p.getId().intValue()){
+                    list.add(c);
+                }
+            }
+            p.setChildren(list);
+        }
+        return first;
+    }
+
+    @Override
+    public void updRolePermissionByRoleIAndPermissionIds(Integer roleId, Integer[] permissionIds) {
+//        先根据roleId删除对应的数据内容
+        // TODO: 2022/6/6
+        rolePermissionClient.del(roleId);
+//        在根据roleId加权限id对表重新添加数据
+        // TODO: 2022/6/6
+        rolePermissionClient.add(roleId, permissionIds);
+    }
 }

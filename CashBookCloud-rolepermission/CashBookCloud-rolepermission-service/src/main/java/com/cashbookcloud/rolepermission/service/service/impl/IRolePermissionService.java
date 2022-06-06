@@ -32,4 +32,28 @@ public class IRolePermissionService implements RolePermissionService {
         }
         return rolePermissionDtos;
     }
+
+    @Override
+    public void delByRoleIdAndPermissionId(Integer roleId, Integer PermissionId) {
+        QueryWrapper<RolePermission> wrapper = new QueryWrapper<>();
+        wrapper.eq("role_id",roleId).eq("permission_id",PermissionId);
+        rolePermissionMapper.delete(wrapper);
+    }
+
+    @Override
+    public void delByRoleId(Integer rid) {
+        QueryWrapper<RolePermission> wrapper = new QueryWrapper<>();
+        wrapper.eq("role_id",rid);
+        rolePermissionMapper.delete(wrapper);
+    }
+
+    @Override
+    public void add(Integer roleId, Integer[] permissionIds) {
+        for (int i = 0; i < permissionIds.length; i++) {
+            RolePermission rolePermission = new RolePermission();
+            rolePermission.setPermissionId(permissionIds[i]);
+            rolePermission.setRoleId(roleId);
+            rolePermissionMapper.insert(rolePermission);
+        }
+    }
 }
