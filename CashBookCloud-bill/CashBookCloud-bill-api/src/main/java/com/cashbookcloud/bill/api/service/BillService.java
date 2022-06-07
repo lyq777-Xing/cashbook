@@ -5,6 +5,8 @@ import com.cashbookcloud.bill.api.dto.BillDto;
 import com.cashbookcloud.bill.api.dto.KeepingDto;
 import io.swagger.models.auth.In;
 
+import java.util.List;
+
 public interface BillService {
     /**
      * 获取所有支出收入
@@ -49,4 +51,6 @@ public interface BillService {
     KeepingDto getKeeping(Integer id);
 
     Integer getCount(Integer billlistId);
+
+    List<BillDto> findAllByUserIdAndBilllistId(Integer userId,Integer billlistId);
 }

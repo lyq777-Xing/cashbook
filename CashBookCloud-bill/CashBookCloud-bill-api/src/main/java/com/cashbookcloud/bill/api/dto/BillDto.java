@@ -72,5 +72,7 @@ public class BillDto {
      */
     private Integer userId;
 
+    private String catImg;
+
 
 }

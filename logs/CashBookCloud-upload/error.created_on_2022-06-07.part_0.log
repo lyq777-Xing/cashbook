@@ -1,0 +1,53 @@
+2022-06-07 13:07:01 | [1;31mERROR[0;39m | [1;33mmain[0;39m | [1;32morg.apache.dubbo.metadata.store.InMemoryWritableMetadataService[0;39m |  [DUBBO] publishProvider interfaceName is empty . providerUrl: consumer://172.18.113.87/com.alibaba.cloud.dubbo.service.DubboMetadataService?application=cashbook-upload-service&check=false&dubbo=2.0.2&generic=true&group=cashbook-bill-service&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=1284&qos.enable=false&qos.port=22310&release=2.7.6&retries=-1&side=consumer&sticky=false&timeout=3000&timestamp=1654578420615&version=1.0.0, dubbo version: 2.7.6, current host: 172.18.113.87
+2022-06-07 18:31:23 | [1;31mERROR[0;39m | [1;33mdubbo-client-idleCheck-thread-1[0;39m | [1;32morg.apache.dubbo.remoting.exchange.support.header.ReconnectTimerTask[0;39m |  [DUBBO] Fail to connect to HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [/172.18.113.87:54528 -> /172.18.113.87:20899]], dubbo version: 2.7.6, current host: 172.18.113.87
+org.apache.dubbo.remoting.RemotingException: client(url: dubbo://172.18.113.87:20899/com.alibaba.cloud.dubbo.service.DubboMetadataService?anyhost=true&application=cashbook-upload-service&bind.ip=172.18.113.87&bind.port=20899&check=false&codec=dubbo&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=cashbook-bill-service&heartbeat=60000&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=1284&qos.enable=false&qos.port=22310&register.ip=172.18.113.87&release=2.7.6&remote.application=cashbook-bill-service&retries=-1&revision=2.2.1.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1654578401482&version=1.0.0) failed to connect to server /172.18.113.87:20899, error message is:Connection refused: no further information: /172.18.113.87:20899
+	at org.apache.dubbo.remoting.transport.netty4.NettyClient.doConnect(NettyClient.java:169)
+	at org.apache.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:191)
+	at org.apache.dubbo.remoting.transport.AbstractClient.reconnect(AbstractClient.java:247)
+	at org.apache.dubbo.remoting.exchange.support.header.HeaderExchangeClient.reconnect(HeaderExchangeClient.java:166)
+	at org.apache.dubbo.remoting.exchange.support.header.ReconnectTimerTask.doTask(ReconnectTimerTask.java:49)
+	at org.apache.dubbo.remoting.exchange.support.header.AbstractTimerTask.run(AbstractTimerTask.java:87)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:648)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:727)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$Worker.run(HashedWheelTimer.java:449)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /172.18.113.87:20899
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:716)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+2022-06-07 18:37:30 | [1;31mERROR[0;39m | [1;33mdubbo-client-idleCheck-thread-1[0;39m | [1;32morg.apache.dubbo.remoting.exchange.support.header.ReconnectTimerTask[0;39m |  [DUBBO] Fail to connect to HeaderExchangeClient [channel=org.apache.dubbo.remoting.transport.netty4.NettyClient [/172.18.113.87:52923 -> /172.18.113.87:20899]], dubbo version: 2.7.6, current host: 172.18.113.87
+org.apache.dubbo.remoting.RemotingException: client(url: dubbo://172.18.113.87:20899/com.alibaba.cloud.dubbo.service.DubboMetadataService?anyhost=true&application=cashbook-upload-service&bind.ip=172.18.113.87&bind.port=20899&check=false&codec=dubbo&deprecated=false&dubbo=2.0.2&dynamic=true&generic=true&group=cashbook-bill-service&heartbeat=60000&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&methods=getAllServiceKeys,getServiceRestMetadata,getExportedURLs,getAllExportedURLs&pid=1284&qos.enable=false&qos.port=22310&register.ip=172.18.113.87&release=2.7.6&remote.application=cashbook-bill-service&retries=-1&revision=2.2.1.RELEASE&side=consumer&sticky=false&timeout=3000&timestamp=1654578401482&version=1.0.0) failed to connect to server /172.18.113.87:20899, error message is:Connection refused: no further information: /172.18.113.87:20899
+	at org.apache.dubbo.remoting.transport.netty4.NettyClient.doConnect(NettyClient.java:169)
+	at org.apache.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:191)
+	at org.apache.dubbo.remoting.transport.AbstractClient.reconnect(AbstractClient.java:247)
+	at org.apache.dubbo.remoting.exchange.support.header.HeaderExchangeClient.reconnect(HeaderExchangeClient.java:166)
+	at org.apache.dubbo.remoting.exchange.support.header.ReconnectTimerTask.doTask(ReconnectTimerTask.java:49)
+	at org.apache.dubbo.remoting.exchange.support.header.AbstractTimerTask.run(AbstractTimerTask.java:87)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$HashedWheelTimeout.expire(HashedWheelTimer.java:648)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$HashedWheelBucket.expireTimeouts(HashedWheelTimer.java:727)
+	at org.apache.dubbo.common.timer.HashedWheelTimer$Worker.run(HashedWheelTimer.java:449)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /172.18.113.87:20899
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:716)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:702)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)

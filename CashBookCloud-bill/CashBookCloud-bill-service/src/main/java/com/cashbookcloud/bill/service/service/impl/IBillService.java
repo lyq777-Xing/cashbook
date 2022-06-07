@@ -90,9 +90,9 @@ public class IBillService implements BillService {
                 //将json转成需要的对象
                 CatDto catDto = (CatDto)JSONObject.toBean(jsonObject, CatDto.class);
                 billDto.setCatName(catDto.getCatName());
-                ResponseResult result1 = billlistClient.findById(billDto.getCatId());
+                ResponseResult result1 = billlistClient.findById(billDto.getBilllistId());
                 // 将数据转成json字符串
-                JSONObject jsonObject1= JSONObject.fromObject(result.getData());
+                JSONObject jsonObject1= JSONObject.fromObject(result1.getData());
                 //将json转成需要的对象
                 BilllistDto byId = (BilllistDto)JSONObject.toBean(jsonObject1, BilllistDto.class);
                 billDto.setBilllistName(byId.getBilllistName());
@@ -127,6 +127,16 @@ public class IBillService implements BillService {
     public BillDto selectById(Integer id) {
         Bill bill = billMapper.selectById(id);
         BillDto billDto = BillCovert.INSTANCE.entity2dto(bill);
+        ResponseResult result = catClient.findById(billDto.getCatId());
+        JSONObject jsonObject = JSONObject.fromObject(result.getData());
+        CatDto catDto= (CatDto) JSONObject.toBean(jsonObject, CatDto.class);
+        billDto.setCatName(catDto.getCatName());
+        ResponseResult result1 = billlistClient.findById(billDto.getBilllistId());
+        // 将数据转成json字符串
+        JSONObject jsonObject1= JSONObject.fromObject(result1.getData());
+        //将json转成需要的对象
+        BilllistDto byId = (BilllistDto)JSONObject.toBean(jsonObject1, BilllistDto.class);
+        billDto.setBilllistName(byId.getBilllistName());
         return billDto;
     }
 
@@ -204,5 +214,29 @@ public class IBillService implements BillService {
         wrapper.eq("billlist_id",billlistId);
         Integer aLong = Math.toIntExact(billMapper.selectCount(wrapper));
         return aLong;
+    }
+
+    @Override
+    public List<BillDto> findAllByUserIdAndBilllistId(Integer userId, Integer billlistId) {
+        QueryWrapper<Bill> wrapper = new QueryWrapper<>();
+        wrapper.eq("user_id",userId).eq("billlist_id",billlistId);
+        List<Bill> bills = billMapper.selectList(wrapper);
+        ArrayList<BillDto> billDtos = new ArrayList<>();
+        for (Bill b:bills) {
+            BillDto billDto = BillCovert.INSTANCE.entity2dto(b);
+            Integer catId = billDto.getCatId();
+            ResponseResult result = catClient.findById(catId);
+            JSONObject jsonObject = JSONObject.fromObject(result.getData());
+            CatDto catDto= (CatDto) JSONObject.toBean(jsonObject, CatDto.class);
+//            ResponseResult result = catClient.findById(billDto.getCatId());
+            // 将数据转成json字符串
+//            JSONObject jsonObject= JSONObject.fromObject(result.getData());
+            //将json转成需要的对象
+//            CatDto catDto = (CatDto)JSONObject.toBean(jsonObject, CatDto.class);
+            billDto.setCatImg(catDto.getCatImg());
+            billDto.setCatName(catDto.getCatName());
+            billDtos.add(billDto);
+        }
+        return billDtos;
     }
 }

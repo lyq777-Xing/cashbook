@@ -74,9 +74,7 @@ public class BillCovertImpl implements BillCovert {
         billVo.setBillName( dto.getBillName() );
         billVo.setBilllistId( dto.getBilllistId() );
         billVo.setCatName( dto.getCatName() );
-        if ( dto.getBilllistName() != null ) {
-            billVo.setBilllistName( Integer.parseInt( dto.getBilllistName() ) );
-        }
+        billVo.setBilllistName( dto.getBilllistName());
         billVo.setUserId( dto.getUserId() );
 
         return billVo;
@@ -100,9 +98,7 @@ public class BillCovertImpl implements BillCovert {
         billDto.setBillName( vo.getBillName() );
         billDto.setBilllistId( vo.getBilllistId() );
         billDto.setCatName( vo.getCatName() );
-        if ( vo.getBilllistName() != null ) {
-            billDto.setBilllistName( String.valueOf( vo.getBilllistName() ) );
-        }
+        billDto.setBilllistName( vo.getBilllistName()  );
         billDto.setUserId( vo.getUserId() );
 
         return billDto;

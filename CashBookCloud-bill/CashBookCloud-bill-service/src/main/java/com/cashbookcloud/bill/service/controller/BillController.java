@@ -96,8 +96,8 @@ public class BillController {
         ResponseResult<Object> result = new ResponseResult<>();
         try{
             BillDto billDto = billService.selectById(id);
-            BillVo billVo = BillCovert.INSTANCE.dto2vo(billDto);
-            result.Success("查询成功",billVo);
+//            BillVo billVo = BillCovert.INSTANCE.dto2vo(billDto);
+            result.Success("查询成功",billDto);
         }catch (Exception e){
             e.printStackTrace();
             result.FAIL_QUERY("查询失败");
@@ -105,7 +105,7 @@ public class BillController {
         return result;
     }
 
-    @PutMapping("/update")
+    @PutMapping("/upd")
     public ResponseResult update(@RequestBody BillVo billVo){
         ResponseResult<Object> result = new ResponseResult<>();
         try{
@@ -140,6 +140,19 @@ public class BillController {
             CountVo countVo = new CountVo();
             countVo.setCount(count);
             result.Success("ok",countVo);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
+
+    @GetMapping("/get")
+    public ResponseResult Get(Integer userId,Integer billlistId){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            List<BillDto> list = billService.findAllByUserIdAndBilllistId(userId, billlistId);
+            result.Success("查询成功",list);
         }catch (Exception e){
             e.printStackTrace();
             result.FAIL_QUERY();

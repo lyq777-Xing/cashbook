@@ -1,6 +1,11 @@
 package com.cashbookcloud.cat.service.vo;
 
-public class CatVo {
+import lombok.Data;
+
+import java.io.Serializable;
+
+@Data
+public class CatVo implements Serializable {
 
     /**
      * 该分类的id
@@ -11,4 +16,6 @@ public class CatVo {
      * 该分类的名称
      */
     private String catName;
+
+    private String catImg;
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value="cashbook-billlist-service",configuration={FeignConfig.class})
 public interface BilllistClient {
 
-    @GetMapping("/findById")
+    @GetMapping("/billlist/findById")
     public ResponseResult findById(@RequestParam("id") Integer id);
 }
 

@@ -110,13 +110,6 @@ public class BilllistController {
         ResponseResult<Object> result = new ResponseResult<>();
         try{
             List<BilllistDto> allList = billlistService.getAllList(userId);
-//            ArrayList<RangeVo> rangeVos = new ArrayList<>();
-//            for (int i = 0; i < allList.size(); i++) {
-//                RangeVo rangeVo = new RangeVo();
-//                rangeVo.setValue(allList.get(i).getId());
-//                rangeVo.setText(allList.get(i).getBilllistName());
-//                rangeVos.add(rangeVo);
-//            }
             result.Success("查询成功",allList);
         }catch (Exception e){
             result.FAIL_QUERY();
@@ -128,13 +121,6 @@ public class BilllistController {
     public ResponseResult getDetail(){
         ResponseResult<Object> result = new ResponseResult<>();
         String principal = String.valueOf(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
-//        ManagerVovv json = (ManagerVovv) JSON.toJSON(principal);
-//        String string = JSON.toJSONString(principal);
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-//        objectMapper.registerModule(new JavaTimeModule());
-//        ManagerVovv ManagerVo = objectMapper.convertValue(principal, ManagerVovv.class);
-//        ManagerVovv ManagerVo = objectMapper.readValue(principal, ManagerVovv.class);
         result.Success("ok!",principal);
         return result;
     }

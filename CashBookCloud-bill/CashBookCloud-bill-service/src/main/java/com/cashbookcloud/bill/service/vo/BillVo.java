@@ -63,11 +63,13 @@ public class BillVo implements Serializable {
     /**
      * 该项支出所属于的账单名称
      */
-    private Integer billlistName;
+    private String billlistName;
 
     /**
      * 该项支出所属的用户id
      */
     private Integer userId;
+
+    private String catImg;
 
 }
