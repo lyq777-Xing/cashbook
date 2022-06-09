@@ -1,5 +1,7 @@
 server:
   port: 8009
+  servlet:
+    context-path: /captcha
 nacos:
   server:
     addr: 106.12.162.221:8848

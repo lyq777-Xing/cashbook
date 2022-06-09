@@ -80,6 +80,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         public void configure(HttpSecurity http) throws Exception {
             http
                     .authorizeRequests()
+                    .antMatchers("/menus/v2/api-docs").permitAll()
                     .antMatchers("/menus/**").access("#oauth2.hasScope('ROLE_ADMIN')");
 //                    .antMatchers("/admin/**").access("#oauth2.hasScope('ROLE_ADMIN')");
         }
@@ -128,6 +129,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         public void configure(HttpSecurity http) throws Exception {
             http
                     .authorizeRequests()
+                    .antMatchers("/permission/v2/api-docs").permitAll()
                     .antMatchers("/permission/**").access("#oauth2.hasScope('ROLE_ADMIN')");
 //                    .antMatchers("/admin/**").access("#oauth2.hasScope('ROLE_ADMIN')");
         }
@@ -151,6 +153,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
+                    .antMatchers("/user/v2/api-docs").permitAll()
                     .antMatchers("/user/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }
@@ -173,6 +176,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
+                    .antMatchers("/billlist/v2/api-docs").permitAll()
                     .antMatchers("/billlist/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }
@@ -195,6 +199,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
+                    .antMatchers("/role/v2/api-docs").permitAll()
                     .antMatchers("/role/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }
@@ -217,6 +222,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         @Override
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
+                    .antMatchers("/bill/v2/api-docs").permitAll()
                     .antMatchers("/bill/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }

@@ -16,7 +16,7 @@ import java.util.List;
 
 //@CrossOrigin
 @RestController
-@RequestMapping("/billlist")
+//@RequestMapping("/billlist")
 public class BilllistController {
 
     @Autowired

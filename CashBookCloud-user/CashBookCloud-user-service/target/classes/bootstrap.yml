@@ -1,5 +1,7 @@
 server:
   port: 8008
+  servlet:
+    context-path: /user
 nacos:
   server:
     addr: 106.12.162.221:8848

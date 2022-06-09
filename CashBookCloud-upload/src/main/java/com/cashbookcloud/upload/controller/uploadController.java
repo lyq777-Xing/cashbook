@@ -27,7 +27,7 @@ import java.util.UUID;
 import static com.cashbookcloud.upload.utils.CosUtils.createCOSClient;
 
 @RestController
-@RequestMapping("/upload")
+//@RequestMapping("/upload")
 public class uploadController {
     @Autowired
     private RedisTemplate redisTemplate;

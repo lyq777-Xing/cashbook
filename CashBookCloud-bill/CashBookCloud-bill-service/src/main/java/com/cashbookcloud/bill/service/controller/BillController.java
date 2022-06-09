@@ -2,6 +2,8 @@ package com.cashbookcloud.bill.service.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.bill.api.dto.BillDto;
+import com.cashbookcloud.bill.api.dto.CashReportDto;
+import com.cashbookcloud.bill.api.dto.CatReportDto;
 import com.cashbookcloud.bill.api.dto.KeepingDto;
 import com.cashbookcloud.bill.api.service.BillService;
 import com.cashbookcloud.bill.service.covert.BillCovert;
@@ -19,7 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 //@CrossOrigin
-@RequestMapping("/bill")
+//@RequestMapping("/bill")
 @RestController
 public class BillController {
 
@@ -153,6 +155,31 @@ public class BillController {
         try{
             List<BillDto> list = billService.findAllByUserIdAndBilllistId(userId, billlistId);
             result.Success("查询成功",list);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
+
+    @GetMapping("/getreportone")
+    public ResponseResult getReportOne(Integer userId){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            CashReportDto reportOne = billService.getReportOne(userId);
+            result.Success("查询成功",reportOne);
+        }catch (Exception e){
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
+
+    @GetMapping("/getreporttwo")
+    public ResponseResult getReportTwo(Integer userId){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try {
+            List<CatReportDto> reportTwo = billService.getReportTwo(userId);
+            result.Success("查询成功",reportTwo);
         }catch (Exception e){
             e.printStackTrace();
             result.FAIL_QUERY();

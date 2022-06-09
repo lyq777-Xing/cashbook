@@ -26,5 +26,7 @@ public class Cat implements Serializable {
 
     private String catImg;
 
+    private String catDesc;
+
 
 }

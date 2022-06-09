@@ -7,7 +7,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-06-05T19:24:07+0800",
+    date = "2022-06-08T18:53:59+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_302 (Amazon.com Inc.)"
 )
 public class BillCovertImpl implements BillCovert {
@@ -74,8 +74,9 @@ public class BillCovertImpl implements BillCovert {
         billVo.setBillName( dto.getBillName() );
         billVo.setBilllistId( dto.getBilllistId() );
         billVo.setCatName( dto.getCatName() );
-        billVo.setBilllistName( dto.getBilllistName());
+        billVo.setBilllistName( dto.getBilllistName() );
         billVo.setUserId( dto.getUserId() );
+        billVo.setCatImg( dto.getCatImg() );
 
         return billVo;
     }
@@ -98,8 +99,9 @@ public class BillCovertImpl implements BillCovert {
         billDto.setBillName( vo.getBillName() );
         billDto.setBilllistId( vo.getBilllistId() );
         billDto.setCatName( vo.getCatName() );
-        billDto.setBilllistName( vo.getBilllistName()  );
+        billDto.setBilllistName( vo.getBilllistName() );
         billDto.setUserId( vo.getUserId() );
+        billDto.setCatImg( vo.getCatImg() );
 
         return billDto;
     }

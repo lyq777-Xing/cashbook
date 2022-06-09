@@ -37,6 +37,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
 //                .antMatchers("/r/r1").hasAuthority("p2")
 //                .antMatchers("/r/r2").hasAuthority("p2")
+                .antMatchers("/doc.html").permitAll()
+                .antMatchers("/swagger-resources/**").permitAll()
+                .antMatchers("/swagger/**").permitAll()
+                .antMatchers("/webjars/springfox-swagger-ui/**").permitAll()
+                .antMatchers("/**/*.js").permitAll()
+                .antMatchers("/**/*.css").permitAll()
+                .antMatchers("/**/*.png").permitAll()
+                .antMatchers("/**/*.ico").permitAll()
+                .antMatchers("/**/v2/api-docs").permitAll()
                 .antMatchers("/manager/**").authenticated()//所有/r/**的请求必须认证通过
                 .antMatchers("/login/**").permitAll()//除了/r/**，其它的请求可以访问
                 .antMatchers("/login*").permitAll()//除了/r/**，其它的请求可以访问

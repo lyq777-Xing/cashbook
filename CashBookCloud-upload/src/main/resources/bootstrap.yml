@@ -1,5 +1,7 @@
 server:
   port: 8077
+  servlet:
+    context-path: /upload
 nacos:
   server:
     addr: 106.12.162.221:8848

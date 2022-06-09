@@ -30,7 +30,7 @@ import java.nio.charset.Charset;
 import java.util.Date;
 
 @RestController
-@RequestMapping("/manager")
+//@RequestMapping("/manager")
 public class ManagerController {
 
     @Autowired

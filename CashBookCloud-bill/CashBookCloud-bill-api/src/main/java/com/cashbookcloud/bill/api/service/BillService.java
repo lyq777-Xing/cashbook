@@ -2,6 +2,8 @@ package com.cashbookcloud.bill.api.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.bill.api.dto.BillDto;
+import com.cashbookcloud.bill.api.dto.CashReportDto;
+import com.cashbookcloud.bill.api.dto.CatReportDto;
 import com.cashbookcloud.bill.api.dto.KeepingDto;
 import io.swagger.models.auth.In;
 
@@ -53,4 +55,11 @@ public interface BillService {
     Integer getCount(Integer billlistId);
 
     List<BillDto> findAllByUserIdAndBilllistId(Integer userId,Integer billlistId);
+
+    /**
+     * 获取统计表数据
+     */
+    CashReportDto getReportOne(Integer userId);
+
+    List<CatReportDto> getReportTwo(Integer userId);
 }

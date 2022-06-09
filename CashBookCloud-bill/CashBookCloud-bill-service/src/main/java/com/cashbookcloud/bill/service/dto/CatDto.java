@@ -21,5 +21,6 @@ public class CatDto implements Serializable {
 
     private String catImg;
 
+    private String catDesc;
 
 }

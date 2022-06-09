@@ -34,6 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/r/r1").hasAuthority("p2")
 //                .antMatchers("/r/r2").hasAuthority("p2")
 //                .antMatchers("/menus/**").authenticated()//所有/r/**的请求必须认证通过
+//                .antMatchers("/menus/v2/api-docs").permitAll()
                 .antMatchers("/menus/**").permitAll()//除了/r/**，其它的请求可以访问
 //                .antMatchers("/login*").permitAll()//除了/r/**，其它的请求可以访问
                 .and()

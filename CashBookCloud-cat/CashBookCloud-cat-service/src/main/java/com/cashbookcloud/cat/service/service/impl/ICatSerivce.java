@@ -1,5 +1,6 @@
 package com.cashbookcloud.cat.service.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.cashbookcloud.cat.api.dto.CatDto;
 import com.cashbookcloud.cat.api.service.CatService;
 import com.cashbookcloud.cat.service.covert.CatCovert;
@@ -8,6 +9,10 @@ import com.cashbookcloud.cat.service.mapper.CatMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.xml.namespace.QName;
+import java.util.ArrayList;
+import java.util.List;
 
 @Transactional
 @Service
@@ -22,5 +27,39 @@ public class ICatSerivce implements CatService {
         Cat cat = catMapper.selectById(id);
         CatDto catDto = CatCovert.INSTANCE.entity2dto(cat);
         return catDto;
+    }
+
+    @Override
+    public List<CatDto> getAllCat() {
+        List<Cat> cats = catMapper.selectList(null);
+        ArrayList<CatDto> catDtos = new ArrayList<>();
+        for (Cat c:cats) {
+            catDtos.add(CatCovert.INSTANCE.entity2dto(c));
+        }
+        return catDtos;
+    }
+
+    @Override
+    public List<CatDto> getAllCatPut() {
+        QueryWrapper<Cat> wrapper = new QueryWrapper<>();
+        wrapper.eq("cat_desc","支出");
+        List<Cat> cats = catMapper.selectList(wrapper);
+        ArrayList<CatDto> catDtos = new ArrayList<>();
+        for (Cat c:cats) {
+            catDtos.add(CatCovert.INSTANCE.entity2dto(c));
+        }
+        return catDtos;
+    }
+
+    @Override
+    public List<CatDto> getAllCatInput() {
+        QueryWrapper<Cat> wrapper = new QueryWrapper<>();
+        wrapper.eq("cat_desc","收入");
+        List<Cat> cats = catMapper.selectList(wrapper);
+        ArrayList<CatDto> catDtos = new ArrayList<>();
+        for (Cat c:cats) {
+            catDtos.add(CatCovert.INSTANCE.entity2dto(c));
+        }
+        return catDtos;
     }
 }

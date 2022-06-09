@@ -4,8 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.cashbookcloud.bill.api.dto.BillDto;
-import com.cashbookcloud.bill.api.dto.KeepingDto;
+import com.cashbookcloud.bill.api.dto.*;
 import com.cashbookcloud.bill.api.service.BillService;
 import com.cashbookcloud.bill.service.client.BilllistClient;
 import com.cashbookcloud.bill.service.client.CatClient;
@@ -15,14 +14,19 @@ import com.cashbookcloud.bill.service.dto.CatDto;
 import com.cashbookcloud.bill.service.entity.Bill;
 import com.cashbookcloud.bill.service.mapper.BillMapper;
 import com.cashbookcloud.common.result.ResponseResult;
+import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.dubbo.config.annotation.Service;
 import org.checkerframework.checker.units.qual.A;
 import org.hibernate.validator.constraints.br.TituloEleitoral;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Transactional
@@ -238,5 +242,98 @@ public class IBillService implements BillService {
             billDtos.add(billDto);
         }
         return billDtos;
+    }
+
+    @Override
+    public CashReportDto getReportOne(Integer userId) {
+        CashReportDto cashReportDto = new CashReportDto();
+        Date date = new Date();
+        int daysOfMonth = getDaysOfMonth(date);
+        if(daysOfMonth == 31){
+            cashReportDto.setX(DateConstant.ThirtyAndOne_DAY);
+        }else if(daysOfMonth == 30){
+            cashReportDto.setX(DateConstant.Thirty_DAY);
+        }else if(daysOfMonth == 28){
+            cashReportDto.setX(DateConstant.TewentyAndEight_DAY);
+        }else if(daysOfMonth == 29){
+            cashReportDto.setX(DateConstant.TewentyAndNine_DAY);
+        }
+        ArrayList<Double> list = new ArrayList<>();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
+        String string = new SimpleDateFormat("yyyy-MM").format(new Date()).toString();
+        for (int i = 0; i < cashReportDto.getX().size(); i++) {
+            int k = i + 1;
+            String m = string + "-" + k;
+            QueryWrapper<Bill> wrapper = new QueryWrapper<>();
+            wrapper.eq("user_id",userId).eq("bill_date",m).eq("bill_describe","支出");
+            List<Bill> bills = billMapper.selectList(wrapper);
+            if (bills.size() == 0 || bills == null){
+//                表明当天未记账
+                list.add(0.0);
+            }else {
+                Double sum = 0.0;
+                for (Bill b :bills) {
+                    Double billPrice = b.getBillPrice();
+                    sum = sum + billPrice;
+                }
+                list.add(sum);
+            }
+        }
+        cashReportDto.setY(list);
+        return cashReportDto;
+    }
+
+    @Override
+    public List<CatReportDto> getReportTwo(Integer userId) {
+        Date date = new Date();
+//        获取当前月有多少天
+        int daysOfMonth = getDaysOfMonth(date);
+//        获取当前年月
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
+//        将当前年月转化为字符串格式
+        String string = new SimpleDateFormat("yyyy-MM").format(new Date()).toString();
+        String max = string + "-" + daysOfMonth;
+        String min = string + "-1";
+
+        ArrayList<CatReportDto> catReportDtos = new ArrayList<>();
+
+        ResponseResult result = catClient.getAllCats();
+//        ArrayList<CatDto> catDtos = new ArrayList<>();
+        JSONArray jsonArray = JSONArray.fromObject(result.getData());
+        for (int i = 0; i < jsonArray.size(); i++) {
+            CatDto catDto = (CatDto) JSONObject.toBean(jsonArray.getJSONObject(i), CatDto.class);
+            QueryWrapper<Bill> wrapper = new QueryWrapper<>();
+            wrapper.eq("user_id",userId).lt("bill_date",max).ge("bill_date",min).eq("cat_id",catDto.getId()).eq("bill_describe","支出");
+            List<Bill> bills = billMapper.selectList(wrapper);
+//            说明该月并无此分类的账单
+            if(bills.size() == 0 || bills == null){
+                CatReportDto catReportDto = new CatReportDto();
+                catReportDto.setName(catDto.getCatName());
+                catReportDto.setValue(0.0);
+                catReportDtos.add(catReportDto);
+            }else {
+//                说明该月有此分类的账单
+                Double sum = 0.0;
+                for (Bill b:bills) {
+                    sum = sum + b.getBillPrice();
+                }
+                CatReportDto catReportDto = new CatReportDto();
+                catReportDto.setName(catDto.getCatName());
+                catReportDto.setValue(sum);
+                catReportDtos.add(catReportDto);
+            }
+        }
+        return catReportDtos;
+    }
+
+    /**
+     * 获取一个月天数
+     * @param date
+     * @return
+     */
+    public static int getDaysOfMonth(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
     }
 }

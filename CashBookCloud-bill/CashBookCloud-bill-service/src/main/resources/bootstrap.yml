@@ -1,5 +1,7 @@
 server:
   port: 8001
+  servlet:
+    context-path: /bill
 nacos:
   server:
     addr: 106.12.162.221:8848

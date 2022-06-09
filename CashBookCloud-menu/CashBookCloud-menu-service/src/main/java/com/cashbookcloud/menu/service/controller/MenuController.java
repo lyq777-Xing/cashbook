@@ -3,6 +3,7 @@ package com.cashbookcloud.menu.service.controller;
 import com.cashbookcloud.common.result.ResponseResult;
 import com.cashbookcloud.menu.api.dto.MenuDto;
 import com.cashbookcloud.menu.api.service.MenuService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,9 @@ import java.util.List;
 
 //@CrossOrigin
 @RestController
-@RequestMapping("/menus")
+//@RequestMapping("/menus")
 //@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')")
+@Api(value = "管理员端左侧菜单栏")
 public class MenuController {
 
     @Autowired

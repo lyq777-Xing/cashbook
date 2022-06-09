@@ -32,6 +32,15 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
 
         http
                 .authorizeRequests()
+                .antMatchers("/doc.html").permitAll()
+                .antMatchers("/swagger-resources/**").permitAll()
+                .antMatchers("/swagger/**").permitAll()
+                .antMatchers("/webjars/springfox-swagger-ui/**").permitAll()
+                .antMatchers("/**/*.js").permitAll()
+                .antMatchers("/**/*.css").permitAll()
+                .antMatchers("/**/*.png").permitAll()
+                .antMatchers("/**/*.ico").permitAll()
+                .antMatchers("/**/v2/api-docs").permitAll()
                 .antMatchers("/**").permitAll()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

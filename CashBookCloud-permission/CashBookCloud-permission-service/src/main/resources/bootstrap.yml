@@ -1,5 +1,7 @@
 server:
   port: 8016
+  servlet:
+    context-path: /permission
 nacos:
   server:
     addr: 106.12.162.221:8848

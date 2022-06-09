@@ -67,7 +67,7 @@ spring:
 #            group: COMMON_GROUP # 通用配置组
 dubbo:
   cloud:
-    subscribed-services: cashbook-admin-service
+    subscribed-services: cashbook-test-service
   scan:
     # dubbo 服务扫描基准包
     base-packages: com.cashbookcloud
@@ -78,8 +78,8 @@ dubbo:
   registry:
     address: nacos://106.12.162.221:8848
   application:
-    id: cashbook-admin-service
-    name: cashbook-admin-service
+    id: cashbook-test-service
+    name: cashbook-test-service
     qos:
       port: 22310 # dubbo qos端口配置  命令行注入
   consumer:

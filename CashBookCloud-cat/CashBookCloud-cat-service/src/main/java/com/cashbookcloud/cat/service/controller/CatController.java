@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 //@CrossOrigin
-@RequestMapping("/cat")
+//@RequestMapping("/cat")
 @RestController
 public class CatController {
 
@@ -23,11 +25,50 @@ public class CatController {
     public ResponseResult findById(Integer id){
         ResponseResult<Object> result = new ResponseResult<>();
         try{
-            CatDto catById = catService.findCatById(1);
+            CatDto catById = catService.findCatById(id);
             result.Success("查询成功",catById);
         }catch (Exception e){
             e.printStackTrace();
             result.FAIL_QUERY("查询失败");
+        }
+        return result;
+    }
+
+    @GetMapping("/getall")
+    public ResponseResult getAllCats(){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            List<CatDto> allCat = catService.getAllCat();
+            result.Success("查询成功",allCat);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
+
+    @GetMapping("/getput")
+    public ResponseResult getAllCatPut(){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            List<CatDto> allCatPut = catService.getAllCatPut();
+            result.Success("查询成功",allCatPut);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
+
+    @GetMapping("/getinput")
+    public ResponseResult getInput(){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            List<CatDto> allCatInput = catService.getAllCatInput();
+            result.Success("查询成功",allCatInput);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
         }
         return result;
     }

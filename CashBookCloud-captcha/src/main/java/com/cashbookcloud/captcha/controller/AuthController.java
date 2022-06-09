@@ -22,7 +22,7 @@ import java.util.UUID;
 @CrossOrigin
 @RestController
 @Api(tags = "登录验证码",description = "提供验证码API")
-@RequestMapping("/captcha")
+//@RequestMapping("/captcha")
 public class AuthController extends BaseController {
     @Autowired
     private Producer producer;
