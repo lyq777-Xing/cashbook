@@ -6,6 +6,9 @@ import com.cashbookcloud.billlist.service.covert.BilllistCovert;
 import com.cashbookcloud.billlist.service.vo.BilllistVo;
 import com.cashbookcloud.billlist.service.vo.RangeVo;
 import com.cashbookcloud.common.result.ResponseResult;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,11 +20,19 @@ import java.util.List;
 //@CrossOrigin
 @RestController
 //@RequestMapping("/billlist")
+@Api(value = "账本管理")
 public class BilllistController {
 
     @Autowired
     private BilllistService billlistService;
 
+    /**
+     * 获取所有账本
+     * @param userId
+     * @return
+     */
+    @ApiOperation(value = "根据useId获取所有账本,返回range格式",notes = "list形式",httpMethod = "Get",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "userId")
     @PreAuthorize("hasAuthority('getallbilllist')")
     @GetMapping("/getall")
     public ResponseResult getAllList(Integer userId){
@@ -42,6 +53,13 @@ public class BilllistController {
         return result;
     }
 
+    /**
+     * 添加账本
+     * @param billlistVo
+     * @return
+     */
+    @ApiOperation(value = "添加账本",httpMethod = "Post",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = BilllistVo.class,required = true,value = "BilllistVo")
     @PreAuthorize("hasAuthority('addbilllist')")
     @PostMapping("/add")
     public ResponseResult add(@RequestBody BilllistVo billlistVo){
@@ -63,6 +81,13 @@ public class BilllistController {
         return result;
     }
 
+    /**
+     * 删除账本
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "删除账本",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('delbillist')")
     @DeleteMapping("/del")
     public ResponseResult del(Integer id){
@@ -77,6 +102,13 @@ public class BilllistController {
         return result;
     }
 
+    /**
+     * 更新账本
+     * @param billlistVo
+     * @return
+     */
+    @ApiOperation(value = "更新账本",httpMethod = "Post",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = BilllistVo.class,required = true,value = "BilllistVo")
     @PreAuthorize("hasAuthority('updbilllist')")
     @PostMapping("/upd")
     public ResponseResult upd(@RequestBody BilllistVo billlistVo){
@@ -104,6 +136,13 @@ public class BilllistController {
         return result;
     }
 
+    /**
+     * 根据userId获取其对应的所有账本
+     * @param userId
+     * @return
+     */
+    @ApiOperation(value = "根据userId获取其对应的所有账本",notes = "list形式",httpMethod = "Get",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "userId")
     @PreAuthorize("hasAuthority('getallbilllist')")
     @GetMapping("/getallb")
     public ResponseResult getAllListb(Integer userId){
@@ -117,6 +156,11 @@ public class BilllistController {
         return result;
     }
 
+    /**
+     * 获取登录用户的信息
+     * @return
+     */
+    @ApiOperation(value = "获取登录用户的信息",notes = "获取登录用户的信息",httpMethod = "Get",response = ResponseResult.class)
     @GetMapping("/getdetail")
     public ResponseResult getDetail(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -125,6 +169,13 @@ public class BilllistController {
         return result;
     }
 
+    /**
+     * 根据账本id获取账本信息
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "根据账本id获取账本信息",notes = "根据账本id获取账本信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @GetMapping("/findById")
     public ResponseResult findById(Integer id){
         ResponseResult<Object> result = new ResponseResult<>();

@@ -6,6 +6,9 @@ import com.qcloud.cos.COSClient;
 import com.qcloud.cos.model.ObjectMetadata;
 import com.qcloud.cos.model.PutObjectRequest;
 import com.qcloud.cos.model.PutObjectResult;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -28,10 +31,19 @@ import static com.cashbookcloud.upload.utils.CosUtils.createCOSClient;
 
 @RestController
 //@RequestMapping("/upload")
+@Api("文件上传管理")
 public class uploadController {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    /**
+     * 上传文件
+     * @param imgFile
+     * @return
+     * @throws IOException
+     */
+    @ApiOperation(value = "上传文件",notes = "上传文件",httpMethod = "Post",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = MultipartFile.class,required = true,value = "imgFile")
     @PostMapping("/upload")
     public ResponseResult upload(@RequestParam("imgFile") MultipartFile imgFile) throws IOException {
 //        System.out.println(imgFile);

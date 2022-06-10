@@ -7,15 +7,20 @@ import com.cashbookcloud.user.api.dto.UserDto;
 import com.cashbookcloud.user.api.service.UserService;
 import com.cashbookcloud.user.service.covert.UserCovert;
 import com.cashbookcloud.user.service.vo.UserVo;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @RestController
+@Api("用户管理")
 //@RequestMapping("/user")
 public class UserController {
     @Autowired
@@ -24,6 +29,14 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    /**
+     * 获取所有用户信息
+     * @param pagenum
+     * @param pagesize
+     * @param query
+     * @return
+     */
+    @ApiOperation(value = "获取所有用户信息",notes = "获取所有用户信息",httpMethod = "Get",response = ResponseResult.class)
     @PreAuthorize("hasAuthority('getalluser')")
     @GetMapping("/getall")
     public ResponseResult getAllPage(@RequestParam(required = true) Integer pagenum,
@@ -43,6 +56,13 @@ public class UserController {
         return result;
     }
 
+    /**
+     * 根据id查询用户信息
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "根据id查询用户信息",notes = "根据id查询用户信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('getalluser')")
     @GetMapping("/getById")
     public ResponseResult findById(Integer id){
@@ -57,6 +77,13 @@ public class UserController {
         return result;
     }
 
+    /**
+     * 添加用户
+     * @param userVo
+     * @return
+     */
+    @ApiOperation(value = "添加用户",notes = "添加用户",httpMethod = "Post",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = UserVo.class,required = true,value = "userVo")
     @PreAuthorize("hasAuthority('adduser')")
     @PostMapping("/add")
     public ResponseResult add(@RequestBody UserVo userVo){
@@ -82,6 +109,13 @@ public class UserController {
         return result;
     }
 
+    /**
+     * 根据id删除用户
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "根据id删除用户",notes = "根据id删除用户",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('deluser')")
     @DeleteMapping("/del")
     public ResponseResult del(Integer id){
@@ -96,6 +130,13 @@ public class UserController {
         return result;
     }
 
+    /**
+     * 更新用户信息
+     * @param userVo
+     * @return
+     */
+    @ApiOperation(value = "更新用户信息",notes = "更新用户信息",httpMethod = "Put",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = UserVo.class,required = true,value = "userVo")
     @PreAuthorize("hasAuthority('upduser')")
     @PutMapping("/upd")
     public ResponseResult upd(@RequestBody UserVo userVo){
@@ -124,6 +165,13 @@ public class UserController {
         return result;
     }
 
+    /**
+     * 根据角色id删除用户
+     * @param rid
+     * @return
+     */
+    @ApiOperation(value = "根据角色id删除用户",notes = "根据角色id删除用户",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "rid")
     @PreAuthorize("hasAuthority('delrole')")
     @DeleteMapping("/del/user")
     public ResponseResult delByRid(Integer rid){
@@ -138,6 +186,11 @@ public class UserController {
         return result;
     }
 
+    /**
+     * 获取角色统计数据
+     * @return
+     */
+    @ApiOperation(value = "获取角色统计数据",notes = "获取角色统计数据",httpMethod = "Get",response = ResponseResult.class)
     @GetMapping("/getreport")
     public ResponseResult getReport(){
         ResponseResult<Object> result = new ResponseResult<>();

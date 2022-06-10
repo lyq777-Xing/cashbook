@@ -14,6 +14,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
@@ -31,6 +32,7 @@ import java.util.Date;
 
 @RestController
 //@RequestMapping("/manager")
+@Api(value = "管理员管理")
 public class ManagerController {
 
     @Autowired
@@ -39,11 +41,11 @@ public class ManagerController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
     /**
      * 获取管理员列表（带分页） 并且根据query查询信息
      */
-//    @ApiOperation("获取管理员列表（带分页） 并且根据query查询信息")
-//    @ApiImplicitParam(value = "query",required = false)
+    @ApiOperation(value = "获取管理员列表（带分页） 并且根据query查询信息",notes = "获取管理员列表（带分页） 并且根据query查询信息",httpMethod = "Get",response = ResponseResult.class)
     @PreAuthorize("hasAuthority('getallmanager')")
     @GetMapping("/getall")
     public ResponseResult getAllAdminPage(@RequestParam(required = true) Integer pagenum,
@@ -64,6 +66,13 @@ public class ManagerController {
         return result;
     }
 
+    /**
+     * 删除管理员
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "删除管理员",notes = "删除管理员",httpMethod = "Get",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('delmanager')")
     @DeleteMapping("/del")
     public ResponseResult del(Integer id){
@@ -78,6 +87,13 @@ public class ManagerController {
         return result;
     }
 
+    /**
+     * 添加管理员
+     * @param managerDto
+     * @return
+     */
+    @ApiOperation(value = "添加管理员",notes = "添加管理员",httpMethod = "Post",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = ManagerDto.class,required = true,value = "managerDto")
     @PreAuthorize("hasAuthority('addmanager')")
     @PostMapping("/add")
     public  ResponseResult add(@RequestBody ManagerDto managerDto){
@@ -100,6 +116,13 @@ public class ManagerController {
         return result;
     }
 
+    /**
+     * 更新管理员信息
+     * @param managerVo
+     * @return
+     */
+    @ApiOperation(value = "更新管理员信息",notes = "更新管理员信息",httpMethod = "Post",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = ManagerDto.class,required = true,value = "managerDto")
     @PreAuthorize("hasAuthority('updmanager')")
     @PostMapping("/upd")
     public ResponseResult upd(@RequestBody ManagerVo managerVo){
@@ -127,6 +150,13 @@ public class ManagerController {
         return result;
     }
 
+    /**
+     * 根据Id查询管理员信息
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "根据Id查询管理员信息",notes = "根据Id查询管理员信息",httpMethod = "Post",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('getallmanager')")
     @GetMapping("/getById")
     public ResponseResult findById(Integer id){
@@ -141,6 +171,13 @@ public class ManagerController {
         return result;
     }
 
+    /**
+     * 根据rid删除管理员
+     * @param rid
+     * @return
+     */
+    @ApiOperation(value = "根据rid删除管理员",notes = "根据rid删除管理员",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "rid")
     @PreAuthorize("hasAuthority('delrole')")
     @DeleteMapping("/del/manager")
     public ResponseResult delByRid(Integer rid){
@@ -155,18 +192,17 @@ public class ManagerController {
         return result;
     }
 
+    /**
+     * 获取管理员登录信息
+     * @return
+     * @throws JsonProcessingException
+     */
+    @ApiOperation(value = "获取管理员登录信息",notes = "获取管理员登录信息",httpMethod = "Get",response = ResponseResult.class)
     @GetMapping("/getImg")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseResult test() throws JsonProcessingException {
         ResponseResult<Object> result = new ResponseResult<>();
         String principal = String.valueOf(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
-//        ManagerVovv json = (ManagerVovv) JSON.toJSON(principal);
-//        String string = JSON.toJSONString(principal);
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-//        objectMapper.registerModule(new JavaTimeModule());
-//        ManagerVovv ManagerVo = objectMapper.convertValue(principal, ManagerVovv.class);
-//        ManagerVovv ManagerVo = objectMapper.readValue(principal, ManagerVovv.class);
         result.Success("ok!",principal);
         return result;
     }

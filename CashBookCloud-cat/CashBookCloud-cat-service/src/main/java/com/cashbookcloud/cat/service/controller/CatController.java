@@ -3,6 +3,9 @@ package com.cashbookcloud.cat.service.controller;
 import com.cashbookcloud.cat.api.dto.CatDto;
 import com.cashbookcloud.cat.api.service.CatService;
 import com.cashbookcloud.common.result.ResponseResult;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +19,19 @@ import java.util.List;
 //@CrossOrigin
 //@RequestMapping("/cat")
 @RestController
+@Api(value = "分类管理")
 public class CatController {
 
     @Autowired
     private CatService catService;
 
+    /**
+     * 根据分类id获取账本信息
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "根据分类id获取账本信息",notes = "根据账本id获取账本信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @GetMapping("/findById")
     public ResponseResult findById(Integer id){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -34,6 +45,11 @@ public class CatController {
         return result;
     }
 
+    /**
+     * 获取所有分类
+     * @return
+     */
+    @ApiOperation(value = "获取所有分类",notes = "获取所有分类",httpMethod = "Get",response = ResponseResult.class)
     @GetMapping("/getall")
     public ResponseResult getAllCats(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -47,6 +63,11 @@ public class CatController {
         return result;
     }
 
+    /**
+     * 获取所有支出分类
+     * @return
+     */
+    @ApiOperation(value = "获取所有支出分类",notes = "获取所有支出分类",httpMethod = "Get",response = ResponseResult.class)
     @GetMapping("/getput")
     public ResponseResult getAllCatPut(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -60,6 +81,11 @@ public class CatController {
         return result;
     }
 
+    /**
+     * 获取所有收入分类
+     * @return
+     */
+    @ApiOperation(value = "获取所有收入分类",notes = "获取所有收入分类",httpMethod = "Get",response = ResponseResult.class)
     @GetMapping("/getinput")
     public ResponseResult getInput(){
         ResponseResult<Object> result = new ResponseResult<>();
