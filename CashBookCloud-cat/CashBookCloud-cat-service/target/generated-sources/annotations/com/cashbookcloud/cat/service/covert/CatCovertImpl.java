@@ -7,7 +7,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-06-09T13:24:46+0800",
+    date = "2022-06-11T19:48:19+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_302 (Amazon.com Inc.)"
 )
 public class CatCovertImpl implements CatCovert {
@@ -23,6 +23,7 @@ public class CatCovertImpl implements CatCovert {
         catDto.setId( entity.getId() );
         catDto.setCatName( entity.getCatName() );
         catDto.setCatImg( entity.getCatImg() );
+        catDto.setCatDesc( entity.getCatDesc() );
 
         return catDto;
     }
@@ -38,6 +39,7 @@ public class CatCovertImpl implements CatCovert {
         cat.setId( dto.getId() );
         cat.setCatName( dto.getCatName() );
         cat.setCatImg( dto.getCatImg() );
+        cat.setCatDesc( dto.getCatDesc() );
 
         return cat;
     }
@@ -53,6 +55,7 @@ public class CatCovertImpl implements CatCovert {
         catVo.setId( dto.getId() );
         catVo.setCatName( dto.getCatName() );
         catVo.setCatImg( dto.getCatImg() );
+        catVo.setCatDesc( dto.getCatDesc() );
 
         return catVo;
     }

@@ -62,4 +62,6 @@ public interface BillService {
     CashReportDto getReportOne(Integer userId);
 
     List<CatReportDto> getReportTwo(Integer userId);
+
+    void delByCatId(Integer catId);
 }

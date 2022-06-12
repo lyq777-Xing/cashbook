@@ -6,6 +6,7 @@ import com.cashbookcloud.cat.api.service.CatService;
 import com.cashbookcloud.cat.service.covert.CatCovert;
 import com.cashbookcloud.cat.service.entity.Cat;
 import com.cashbookcloud.cat.service.mapper.CatMapper;
+import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,5 +62,31 @@ public class ICatSerivce implements CatService {
             catDtos.add(CatCovert.INSTANCE.entity2dto(c));
         }
         return catDtos;
+    }
+
+    @Override
+    public void add(CatDto catDto) {
+        Cat cat = CatCovert.INSTANCE.dto2entity(catDto);
+        catMapper.insert(cat);
+    }
+
+    @Override
+    public CatDto findByCatName(String catName) {
+        QueryWrapper<Cat> wrapper = new QueryWrapper<>();
+        wrapper.eq("cat_name",catName);
+        Cat cat = catMapper.selectOne(wrapper);
+        CatDto catDto = CatCovert.INSTANCE.entity2dto(cat);
+        return catDto;
+    }
+
+    @Override
+    public void upd(CatDto catDto) {
+        Cat cat = CatCovert.INSTANCE.dto2entity(catDto);
+        catMapper.updateById(cat);
+    }
+
+    @Override
+    public void del(Integer id) {
+        catMapper.deleteById(id);
     }
 }

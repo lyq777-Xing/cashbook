@@ -326,6 +326,13 @@ public class IBillService implements BillService {
         return catReportDtos;
     }
 
+    @Override
+    public void delByCatId(Integer catId) {
+        QueryWrapper<Bill> wrapper = new QueryWrapper<>();
+        wrapper.eq("cat_id",catId);
+        billMapper.delete(wrapper);
+    }
+
     /**
      * 获取一个月天数
      * @param date

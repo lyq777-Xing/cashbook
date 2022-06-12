@@ -21,4 +21,12 @@ public interface CatService {
      * @return
      */
     List<CatDto> getAllCatInput();
+
+    void add(CatDto catDto);
+
+    CatDto findByCatName(String catName);
+
+    void upd(CatDto catDto);
+
+    void del(Integer id);
 }

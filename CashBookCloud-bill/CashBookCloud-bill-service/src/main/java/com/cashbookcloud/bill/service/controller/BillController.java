@@ -260,4 +260,24 @@ public class BillController {
         }
         return result;
     }
+
+    /**
+     * 根据分类ID删除账单
+     * @param catId
+     * @return
+     */
+    @ApiOperation(value = "根据分类ID删除账单",notes = "根据分类ID删除账单",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "catId")
+    @DeleteMapping("/delByCatId")
+    public ResponseResult delByCatId(Integer catId){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            billService.delByCatId(catId);
+            result.Success("删除成功");
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_DELETE();
+        }
+        return result;
+    }
 }

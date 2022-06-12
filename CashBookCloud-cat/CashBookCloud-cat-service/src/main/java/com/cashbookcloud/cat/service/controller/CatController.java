@@ -9,11 +9,9 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.security.PublicKey;
 import java.util.List;
 
 //@CrossOrigin
@@ -49,7 +47,7 @@ public class CatController {
      * 获取所有分类
      * @return
      */
-    @ApiOperation(value = "获取所有分类",notes = "获取所有分类",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取所有分类（List）",notes = "获取所有分类(List)",httpMethod = "Get",response = ResponseResult.class)
     @GetMapping("/getall")
     public ResponseResult getAllCats(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -95,6 +93,82 @@ public class CatController {
         }catch (Exception e){
             e.printStackTrace();
             result.FAIL_QUERY();
+        }
+        return result;
+    }
+
+    /**
+     * 添加分类
+     * @param catDto
+     * @return
+     */
+    @ApiOperation(value = "添加分类",notes = "添加分类",httpMethod = "Post",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = CatDto.class,required = true,value = "catDto")
+    @PostMapping("/add")
+    public ResponseResult add(@RequestBody CatDto catDto){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            CatDto byCatName = catService.findByCatName(catDto.getCatName());
+            if(byCatName != null ){
+                result.FAIL_NAMEALREDYUSE();
+            }else {
+                catService.add(catDto);
+                result.Success("添加成功");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_ADD();
+        }
+        return result;
+    }
+
+    /**
+     * 修改分类
+     * @param catDto
+     * @return
+     */
+    @ApiOperation(value = "修改分类",notes = "修改分类",httpMethod = "Post",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = CatDto.class,required = true,value = "catDto")
+    @PostMapping("/upd")
+    public ResponseResult upd(@RequestBody CatDto catDto){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try {
+            CatDto catById = catService.findCatById(catDto.getId());
+            if(catById.getCatName().equals(catDto.getCatName())){
+                catService.upd(catDto);
+                result.Success("更新成功");
+            }else {
+                CatDto byCatName = catService.findByCatName(catDto.getCatName());
+                if (byCatName != null){
+                    result.FAIL_NAMEALREDYUSE();
+                }else {
+                    catService.upd(catDto);
+                    result.Success("更新成功");
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_UPDATE();
+        }
+        return result;
+    }
+
+    /**
+     * 根据id删除分类
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "删除分类",notes = "删除分类",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
+    @DeleteMapping("/del")
+    public ResponseResult del(Integer id){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            catService.del(id);
+            result.Success("删除成功");
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_DELETE();
         }
         return result;
     }
