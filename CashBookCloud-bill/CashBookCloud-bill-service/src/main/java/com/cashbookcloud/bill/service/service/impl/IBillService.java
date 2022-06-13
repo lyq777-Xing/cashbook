@@ -333,6 +333,25 @@ public class IBillService implements BillService {
         billMapper.delete(wrapper);
     }
 
+    @Override
+    public List<BillDto> getReportThree(Integer userId, Integer billlistId) {
+        QueryWrapper<Bill> wrapper = new QueryWrapper<>();
+        wrapper.eq("user_id",userId).eq("billlist_id",billlistId);
+        List<Bill> bills = billMapper.selectList(wrapper);
+        ArrayList<BillDto> billDtos = new ArrayList<>();
+        for (int i = 0; i < bills.size(); i++) {
+            Integer catId = bills.get(i).getCatId();
+            ResponseResult byId = catClient.findById(catId);
+            JSONObject jsonObject = JSONObject.fromObject(byId.getData());
+            CatDto catDto = (CatDto) JSONObject.toBean(jsonObject, CatDto.class);
+            String catName = catDto.getCatName();
+            BillDto billDto = BillCovert.INSTANCE.entity2dto(bills.get(i));
+            billDto.setCatName(catName);
+            billDtos.add(billDto);
+        }
+        return billDtos;
+    }
+
     /**
      * 获取一个月天数
      * @param date

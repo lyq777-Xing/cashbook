@@ -11,14 +11,21 @@ import com.cashbookcloud.bill.service.vo.BillVo;
 import com.cashbookcloud.bill.service.vo.CountVo;
 import com.cashbookcloud.bill.service.vo.PageVo;
 import com.cashbookcloud.common.result.ResponseResult;
+import com.cashbookcloud.common.utils.ExcelUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -280,4 +287,80 @@ public class BillController {
         }
         return result;
     }
+
+    @GetMapping("/getreportthree/{userid}/{billlistid}")
+    public void export(HttpServletRequest request, HttpServletResponse response,
+                       @PathVariable("userid") Integer userid,
+                       @PathVariable("billlistid") Integer billlistid) throws Exception {
+        //获取数据
+//        List<PageData> list = reportService.bookList(page);
+        List<BillDto> list = billService.getReportThree(userid, billlistid);
+
+        //excel标题
+        String[] title = {"账单备注","分类","时间","支出/收入方式"};
+
+        //excel文件名
+        String fileName = "账单"+System.currentTimeMillis()+".xls";
+
+        //sheet名
+        String sheetName = "账单";
+
+        String[][] content = new String[10000][4];
+
+        for (int i = 0; i < list.size(); i++) {
+//            content[i] = new String[title.length];
+            BillDto obj = list.get(i);
+            content[i][0] = obj.getBillDescribe();
+            content[i][1] = obj.getCatName();
+            content[i][2] = obj.getBillDate();
+            content[i][3] = obj.getBillMode();
+        }
+
+          //创建HSSFWorkbook
+            HSSFWorkbook wb = ExcelUtil.getHSSFWorkbook(sheetName, title, content, null);
+
+            //响应到客户端
+            try {
+                this.setResponseHeader(response, fileName);
+                OutputStream os = response.getOutputStream();
+                wb.write(os);
+                os.flush();
+                os.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
+
+    //发送响应流方法
+    public void setResponseHeader(HttpServletResponse response, String fileName) {
+        try {
+            try {
+                fileName = new String(fileName.getBytes(),"ISO8859-1");
+            } catch (UnsupportedEncodingException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            response.setContentType("application/octet-stream;charset=ISO8859-1");
+            response.setHeader("Content-Disposition", "attachment;filename="+ fileName);
+            response.addHeader("Pargam", "no-cache");
+            response.addHeader("Cache-Control", "no-cache");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 获取登录用户的信息
+     * @return
+     */
+    @ApiOperation(value = "获取登录用户的信息",notes = "获取登录用户的信息",httpMethod = "Get",response = ResponseResult.class)
+    @GetMapping("/getdetail")
+    public ResponseResult getDetail(){
+        ResponseResult<Object> result = new ResponseResult<>();
+        String principal = String.valueOf(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        result.Success("ok!",principal);
+        return result;
+    }
+
 }

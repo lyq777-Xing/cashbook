@@ -91,6 +91,7 @@
         <module>CashBookCloud-permission</module>
         <module>CashBookCloud-permissionapi</module>
         <module>CashBookCloud-alipay</module>
+        <module>CashBookCloud-sendmsg</module>
     </modules>
 
 

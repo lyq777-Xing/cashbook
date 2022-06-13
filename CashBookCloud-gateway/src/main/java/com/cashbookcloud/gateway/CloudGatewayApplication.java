@@ -26,7 +26,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 @EnableDiscoveryClient
-@EnableZuulProxy
+//@EnableZuulProxy
 @SpringBootApplication
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class CloudGatewayApplication {
