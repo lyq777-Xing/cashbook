@@ -176,4 +176,13 @@ public class IUserService implements UserService {
         }
         return reportDtos;
     }
+
+    @Override
+    public UserDto findByPhone(String phone) {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("user_phone",phone);
+        User user = userMapper.selectOne(wrapper);
+        UserDto userDto = UserCovert.INSTANCE.entity2dto(user);
+        return userDto;
+    }
 }

@@ -1,8 +1,0 @@
-com\cashbookcloud\captcha\config\Swagger2Config.class
-com\cashbookcloud\captcha\model\Const.class
-com\cashbookcloud\captcha\controller\AuthController.class
-com\cashbookcloud\captcha\config\KaptchaConfig.class
-com\cashbookcloud\captcha\CashBookCaptchaServiceApplication.class
-com\cashbookcloud\captcha\config\RedisConfig.class
-com\cashbookcloud\captcha\controller\BaseController.class
-com\cashbookcloud\captcha\config\RedisUtils.class

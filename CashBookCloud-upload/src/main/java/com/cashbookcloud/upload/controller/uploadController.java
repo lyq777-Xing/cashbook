@@ -27,7 +27,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
 
-import static com.cashbookcloud.upload.utils.CosUtils.createCOSClient;
+import static com.cashbookcloud.common.utils.CosUtils.createCOSClient;
+
 
 @RestController
 //@RequestMapping("/upload")

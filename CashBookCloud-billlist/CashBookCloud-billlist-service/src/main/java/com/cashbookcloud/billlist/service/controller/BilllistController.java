@@ -188,4 +188,34 @@ public class BilllistController {
         }
         return result;
     }
+
+    /**
+     * 注册用户成功后自动创建两个账本
+     * @param userId
+     * @return
+     */
+    @ApiOperation(value = "注册用户成功后自动创建两个账本",httpMethod = "Post",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = BilllistVo.class,required = true,value = "BilllistVo")
+//    @PreAuthorize("hasAuthority('addbilllist')")
+    @PostMapping("/zhuceadd/{userId}")
+    public ResponseResult zhuceadd(@PathVariable("userId") Integer userId){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            BilllistDto billlistDto = new BilllistDto();
+            billlistDto.setBilllistImg("efcc1544-cb75-416e-9477-ffc4900fd017.jpg");
+            billlistDto.setBilllistName("日常支出");
+            billlistDto.setUserId(userId);
+            BilllistDto add = billlistService.add(billlistDto);
+            BilllistDto billlistDto2 = new BilllistDto();
+            billlistDto2.setBilllistImg("4e9ec262-453f-4976-b40e-666028de0864.jpg");
+            billlistDto2.setBilllistName("生活开销");
+            billlistDto2.setUserId(userId);
+            BilllistDto add2 = billlistService.add(billlistDto2);
+            result.Success("添加成功");
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_ADD();
+        }
+        return result;
+    }
 }

@@ -1,7 +1,10 @@
 package com.cashbookcloud.user.service.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.cashbookcloud.common.constant.RedisMessageConstant;
 import com.cashbookcloud.common.result.ResponseResult;
+import com.cashbookcloud.common.utils.SendSmsUtils;
+import com.cashbookcloud.common.utils.ValidateCodeUtils;
 import com.cashbookcloud.user.api.dto.ReportDto;
 import com.cashbookcloud.user.api.dto.UserDto;
 import com.cashbookcloud.user.api.service.UserService;
@@ -15,6 +18,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import redis.clients.jedis.JedisPool;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -28,6 +32,10 @@ public class UserController {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private JedisPool jedisPool;
+
 
     /**
      * 获取所有用户信息
@@ -137,7 +145,7 @@ public class UserController {
      */
     @ApiOperation(value = "更新用户信息",notes = "更新用户信息",httpMethod = "Put",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = UserVo.class,required = true,value = "userVo")
-    @PreAuthorize("hasAuthority('upduser')")
+    @PreAuthorize("hasAnyAuthority('upduser','updwine')")
     @PutMapping("/upd")
     public ResponseResult upd(@RequestBody UserVo userVo){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -204,5 +212,130 @@ public class UserController {
         return result;
     }
 
+
+    /**
+     * 获取短信换绑手机号验证码
+     * @param phone
+     * @return
+     */
+    @ApiOperation(value = "获取短信换绑手机号验证码",notes = "获取短信换绑手机号验证码",httpMethod = "Get",response = ResponseResult.class)
+    @ApiImplicitParam(value = "phone",required = true)
+    @GetMapping("/smscodechangephone")
+    public ResponseResult GetSmsCodeTwo(String phone){
+        Integer validateCode = 0;
+        ResponseResult<Object> result = new ResponseResult<>();
+        try {
+//            判断该电话是否已经绑定手机号了
+            UserDto byPhone = userService.findByPhone(phone);
+            if(byPhone != null){
+                result.FAIL_PHONEALREADYUSE();
+            }else {
+//              随机生成4位数字验证码
+                validateCode = ValidateCodeUtils.generateValidateCode(4);
+//              给用户发送验证码
+                String string = validateCode.toString();
+                String[] code = {string};
+                String[] phones = {phone};
+                SendSmsUtils.sendShortMessage("1438295",phones,code);
+//              将验证码保存到redis
+                jedisPool.getResource().setex(phone+ RedisMessageConstant.SENDTYPE_CHANGEPHONE,300, String.valueOf(validateCode));
+                result.Success("发送验证码成功");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FailToSendCode("发送验证码失败");
+        }
+        return result;
+    }
+
+    /**
+     * 修改密码
+     * @param userVo
+     * @return
+     */
+    @ApiOperation(value = "修改密码",notes = "修改密码",httpMethod = "Put",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = UserVo.class,required = true,value = "userVo")
+//    @PreAuthorize("hasAuthority('upduser')")
+    @PutMapping("/updpwd")
+    public ResponseResult updpwd(@RequestBody UserVo userVo){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            UserDto userDto = UserCovert.INSTANCE.vo2dto(userVo);
+            String encode = passwordEncoder.encode(userDto.getUserPassword());
+            userDto.setUserPassword(encode);
+            UserDto upd = userService.upd(userDto);
+            result.Success("更新成功",upd);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_UPDATE();
+        }
+        return result;
+    }
+
+
+    /**
+     * 获取注册验证码
+     * @param phone
+     * @return
+     */
+    @ApiOperation(value = "获取注册验证码",notes = "获取注册验证码",httpMethod = "Get",response = ResponseResult.class)
+    @ApiImplicitParam(value = "phone",required = true)
+    @GetMapping("/smscodefour")
+    public ResponseResult GetSmsCodeFour(String phone){
+        Integer validateCode = 0;
+        ResponseResult<Object> result = new ResponseResult<>();
+        try {
+//            判断该电话是否已经绑定手机号了
+            UserDto byPhone = userService.findByPhone(phone);
+            if(byPhone != null){
+                result.FAIL_PHONEALREADYUSE();
+            }else {
+//              随机生成4位数字验证码
+                validateCode = ValidateCodeUtils.generateValidateCode(4);
+//              给用户发送验证码
+                String string = validateCode.toString();
+                String[] code = {string};
+                String[] phones = {phone};
+                SendSmsUtils.sendShortMessage("1353289",phones,code);
+//              将验证码保存到redis
+                jedisPool.getResource().setex(phone+ RedisMessageConstant.SENDTYPE_ZHUCE,300, String.valueOf(validateCode));
+                result.Success("发送验证码成功");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FailToSendCode("发送验证码失败");
+        }
+        return result;
+    }
+
+    @PostMapping("/zhuce/{cat}")
+    public ResponseResult zhuCe(@PathVariable("cat") String cat,@RequestBody UserVo userVo){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            String code = jedisPool.getResource().get(userVo.getUserPhone() + RedisMessageConstant.SENDTYPE_ZHUCE);
+            if(cat.equals(code) && code != null && cat != null){
+                String userName = userVo.getUserName();
+                UserDto byUserName = userService.findByUserName(userName);
+                if(byUserName != null){
+                    result.FAIL_NAMEALREDYUSE();
+                }else {
+                    UserDto userDto = UserCovert.INSTANCE.vo2dto(userVo);
+                    LocalDate now = LocalDate.now();
+                    userDto.setUserCreatedate(now);
+                    String encode = passwordEncoder.encode(userDto.getUserPassword());
+                    userDto.setUserPassword(encode);
+                    userDto.setRoleId(3);
+                    UserDto add = userService.add(userDto);
+                    result.Success("注册成功",add);
+                }
+            }else {
+                result.FAIL_CODEERROR();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_ADD();
+        }
+        return result;
+    }
 
 }

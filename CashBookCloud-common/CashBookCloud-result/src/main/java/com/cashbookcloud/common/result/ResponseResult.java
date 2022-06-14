@@ -359,4 +359,39 @@ public class ResponseResult<T> implements Serializable {
         meta.setMsg(msg);
         this.data=data;
     }
+
+//    FAIL_PHONEALREADYUSE
+    public void FAIL_PHONEALREADYUSE(){
+        meta.setMsg(ResponseCode.FAIL_PHONEALREADYUSE.getMessage());
+        meta.setStatus(ResponseCode.FAIL_PHONEALREADYUSE.getCode());
+    }
+
+
+    public void FAIL_PHONEALREADYUSE(String msg){
+        meta.setMsg(msg);
+        meta.setStatus(ResponseCode.FAIL_PHONEALREADYUSE.getCode());
+    }
+
+    public void FAIL_PHONEALREADYUSE(String msg,T data){
+        meta.setStatus(ResponseCode.FAIL_PHONEALREADYUSE.getCode());
+        meta.setMsg(msg);
+        this.data=data;
+    }
+//    FAIL_CODEERROR
+    public void FAIL_CODEERROR(){
+        meta.setMsg(ResponseCode.FAIL_CODEERROR.getMessage());
+        meta.setStatus(ResponseCode.FAIL_CODEERROR.getCode());
+    }
+
+
+    public void FAIL_CODEERROR(String msg){
+        meta.setMsg(msg);
+        meta.setStatus(ResponseCode.FAIL_CODEERROR.getCode());
+    }
+
+    public void FAIL_CODEERROR(String msg,T data){
+        meta.setStatus(ResponseCode.FAIL_CODEERROR.getCode());
+        meta.setMsg(msg);
+        this.data=data;
+    }
 }

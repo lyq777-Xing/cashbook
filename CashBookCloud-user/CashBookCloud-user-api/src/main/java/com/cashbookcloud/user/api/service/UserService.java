@@ -25,4 +25,6 @@ public interface UserService {
     List<String> findPermissionsByUserId(Integer id);
 
     List<ReportDto> getReport();
+
+    UserDto findByPhone(String phone);
 }

@@ -154,6 +154,8 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
                     .antMatchers("/user/v2/api-docs").permitAll()
+                    .antMatchers("/user/smscodefour").permitAll()
+                    .antMatchers("/user/zhuce").permitAll()
                     .antMatchers("/user/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }
@@ -177,6 +179,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
                     .antMatchers("/billlist/v2/api-docs").permitAll()
+                    .antMatchers("/billlist/zhuceadd/**").permitAll()
                     .antMatchers("/billlist/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }
@@ -270,6 +273,29 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
             http.authorizeRequests()
                     .antMatchers("/alipay/v2/api-docs").permitAll()
                     .antMatchers("/alipay/**").access("#oauth2.hasScope('ROLE_USER')");
+        }
+    }
+
+    /**
+     * sendmsg资源配置
+     */
+    @Configuration
+    @EnableResourceServer
+    public class sendMsgServerConfig extends ResourceServerConfigurerAdapter{
+        @Autowired
+        private TokenStore tokenStore;
+
+        @Override
+        public void configure(ResourceServerSecurityConfigurer resources){
+            resources.tokenStore(tokenStore).resourceId(RESOURCE_ID)
+                    .stateless(true);
+        }
+
+        @Override
+        public void configure(HttpSecurity http) throws Exception {
+            http.authorizeRequests()
+                    .antMatchers("/sendmsg/**").permitAll();
+//                    .antMatchers("/sendmsg/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }
 

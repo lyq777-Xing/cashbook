@@ -19,6 +19,8 @@ public enum ResponseCode {
     FAIL_QUERY(409,"查询失败"),
     FAIL_ADD(410,"添加失败"),
     FAIL_DELETE(411,"删除失败"),
+    FAIL_PHONEALREADYUSE(423,"该手机号已经被占用"),
+    FAIL_CODEERROR(424,"验证码错误"),
     FAIL_UPDATE(412,"更新失败"),
     FAIL_NAMEALREDYUSE(413,"名称被占用"),
     Unprocesable_entity(422,"[POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误"),
