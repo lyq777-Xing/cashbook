@@ -61,8 +61,6 @@ public class sendMsgController {
         Integer validateCode = 0;
         ResponseResult<Object> result = new ResponseResult<>();
         try {
-//            判断该电话是否已经绑定手机号了
-
 //          随机生成4位数字验证码
             validateCode = ValidateCodeUtils.generateValidateCode(4);
 //          给用户发送验证码
@@ -76,6 +74,36 @@ public class sendMsgController {
         }
 //        将验证码保存到redis
         jedisPool.getResource().setex(phone+ RedisMessageConstant.SENDTYPE_CHANGEPWD,300, String.valueOf(validateCode));
+        result.Success("发送验证码成功");
+        System.out.println(validateCode);
+        return result;
+    }
+
+    /**
+     * 获取忘记密码验证码
+     * @param phone
+     * @return
+     */
+    @ApiOperation("获取忘记密码验证码")
+    @ApiImplicitParam(value = "phone",required = true)
+    @GetMapping("/smscodeforgetpwd")
+    public ResponseResult smsCodeForgetPwd(String phone){
+        Integer validateCode = 0;
+        ResponseResult<Object> result = new ResponseResult<>();
+        try {
+//          随机生成4位数字验证码
+            validateCode = ValidateCodeUtils.generateValidateCode(4);
+//          给用户发送验证码
+            String string = validateCode.toString();
+            String[] code = {string};
+            String[] phones = {phone};
+            SendSmsUtils.sendShortMessage("1438107",phones,code);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FailToSendCode("发送验证码失败");
+        }
+//        将验证码保存到redis
+        jedisPool.getResource().setex(phone+ RedisMessageConstant.SENDTYPE_FORGETPWD,300, String.valueOf(validateCode));
         result.Success("发送验证码成功");
         System.out.println(validateCode);
         return result;

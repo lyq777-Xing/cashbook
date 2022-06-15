@@ -43,6 +43,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers("/**/v2/api-docs").permitAll()
                 .antMatchers("/**/smscodefour").permitAll()
                 .antMatchers("/**/zhuce").permitAll()
+                .antMatchers("/**/updpwd").permitAll()
                 .antMatchers("/**").access("#oauth2.hasScope('ROLE_USER')")
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

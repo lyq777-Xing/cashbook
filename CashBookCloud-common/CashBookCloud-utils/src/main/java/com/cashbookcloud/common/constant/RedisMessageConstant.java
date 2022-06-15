@@ -8,4 +8,5 @@ public class RedisMessageConstant {
     public static final String SENDTYPE_CHANGEPHONE = "002";
     public static final String SENDTYPE_CHANGEPWD = "003";
     public static final String SENDTYPE_ZHUCE = "004";
+    public static final String SENDTYPE_FORGETPWD = "005";
 }

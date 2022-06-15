@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.common.result.ResponseResult;
+import com.cashbookcloud.common.utils.SendSmsUtils;
 import com.cashbookcloud.manager.api.dto.ManagerDto;
 import com.cashbookcloud.manager.api.service.ManagerService;
 import com.cashbookcloud.manager.service.common.EncryptUtil;
@@ -18,6 +19,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.security.access.prepost.PreAuthorize;
@@ -204,6 +206,39 @@ public class ManagerController {
         ResponseResult<Object> result = new ResponseResult<>();
         String principal = String.valueOf(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         result.Success("ok!",principal);
+        return result;
+    }
+
+    /**
+     * 发送重置后密码
+     * @param id
+     * @return
+     */
+    @ApiOperation(value = "发送重置后密码",notes = "发送重置后密码",httpMethod = "POST",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
+    @PostMapping("/updpwd")
+    public ResponseResult updPwd(Integer id){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+//        先重置密码
+            // TODO: 2022/6/15
+            //生成指定长度的随机字符串
+            String str= RandomStringUtils.randomAlphanumeric(6);
+            ManagerDto byId = managerService.findById(id);
+            String encode = passwordEncoder.encode(str);
+            byId.setMgPassword(encode);
+            ManagerDto managerDto = managerService.updateById(byId);
+//        在发送短信验证码
+            // TODO: 2022/6/15
+//          给用户发送验证码
+            String[] code = {str};
+            String[] phones = {managerDto.getMgPhone()};
+            SendSmsUtils.sendShortMessage("1440822",phones,code);
+            result.Success("重置密码成功",managerDto);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
         return result;
     }
 

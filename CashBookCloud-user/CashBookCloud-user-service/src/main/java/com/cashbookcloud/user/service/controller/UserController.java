@@ -13,6 +13,7 @@ import com.cashbookcloud.user.service.vo.UserVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -334,6 +335,46 @@ public class UserController {
         }catch (Exception e){
             e.printStackTrace();
             result.FAIL_ADD();
+        }
+        return result;
+    }
+
+    /**
+     * 发送重置后密码
+     * @param phone
+     * @return
+     */
+    @ApiOperation(value = "发送重置后密码",notes = "发送重置后密码",httpMethod = "POST",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = String.class,required = true,value = "phone")
+    @PostMapping("/updpwd")
+    public ResponseResult updPwd(String phone,String cat){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            String code1 = jedisPool.getResource().get(phone + RedisMessageConstant.SENDTYPE_FORGETPWD);
+            if(cat.equals(code1) && code1 != null && cat != null){
+                //        先重置密码
+                // TODO: 2022/6/15
+                //生成指定长度的随机字符串
+                String str= RandomStringUtils.randomAlphanumeric(6);
+                UserDto byPhone = userService.findByPhone(phone);
+                String encode = passwordEncoder.encode(str);
+                byPhone.setUserPassword(encode);
+                UserDto upd = userService.upd(byPhone);
+//        在发送短信验证码
+                // TODO: 2022/6/15
+//          给用户发送验证码
+                String[] code = {str};
+                String[] phones = {phone};
+                SendSmsUtils.sendShortMessage("1440822",phones,code);
+                result.Success("重置密码成功",upd);
+            }else {
+//            表明验证码输入错误
+                result.FAIL_CODEERROR();
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
         }
         return result;
     }
