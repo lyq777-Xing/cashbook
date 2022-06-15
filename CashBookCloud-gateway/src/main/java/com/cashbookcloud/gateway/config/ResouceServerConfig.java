@@ -155,7 +155,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
             http.authorizeRequests()
                     .antMatchers("/user/v2/api-docs").permitAll()
                     .antMatchers("/user/smscodefour").permitAll()
-                    .antMatchers("/user/zhuce").permitAll()
+                    .antMatchers("/user/zhuce/**").permitAll()
                     .antMatchers("/user/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }

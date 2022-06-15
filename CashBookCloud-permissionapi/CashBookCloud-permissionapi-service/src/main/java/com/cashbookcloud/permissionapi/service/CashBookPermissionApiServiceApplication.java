@@ -9,7 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
         (scanBasePackages ={"com.cashbookcloud"})
 //@SpringCloudApplication
-@EnableDubbo
+//@EnableDubbo
 public class CashBookPermissionApiServiceApplication {
 
     public static void main(String[] args) {
