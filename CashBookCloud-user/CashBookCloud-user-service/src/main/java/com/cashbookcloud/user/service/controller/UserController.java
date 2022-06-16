@@ -10,12 +10,15 @@ import com.cashbookcloud.user.api.dto.UserDto;
 import com.cashbookcloud.user.api.service.UserService;
 import com.cashbookcloud.user.service.covert.UserCovert;
 import com.cashbookcloud.user.service.vo.UserVo;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.models.auth.In;
 import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -376,6 +379,37 @@ public class UserController {
             e.printStackTrace();
             result.FAIL_QUERY();
         }
+        return result;
+    }
+
+
+    @PostMapping("/changemem")
+    public ResponseResult chengeRoleToMember(Integer userId){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            UserDto byId = userService.findById(userId);
+            byId.setRoleId(6);
+            UserDto upd = userService.upd(byId);
+            result.Success("恭喜成为会员",upd);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_UPDATE();
+        }
+        return result;
+    }
+
+    /**
+     * 获取用户登录信息
+     * @return
+     * @throws JsonProcessingException
+     */
+    @ApiOperation(value = "获取用户登录信息",notes = "获取用户登录信息",httpMethod = "GET",response = ResponseResult.class)
+    @GetMapping("/getImg")
+//    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public ResponseResult test() throws JsonProcessingException {
+        ResponseResult<Object> result = new ResponseResult<>();
+        String principal = String.valueOf(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        result.Success("ok!",principal);
         return result;
     }
 

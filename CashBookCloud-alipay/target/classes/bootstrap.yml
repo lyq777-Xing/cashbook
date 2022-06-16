@@ -1,0 +1,148 @@
+server:
+  port: 8099
+  servlet:
+    context-path: /alipay
+nacos:
+  server:
+    addr: 106.12.162.221:8848
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.12.162.221:3307/cashbook?serverTimezone=Asia/Shanghai
+    password: 123456
+    username: root
+  application:
+    name: cashbook-alipay-service
+  main:
+    allow-bean-definition-overriding: true # Spring Boot 2.1 需要设定
+  redis:
+    host: 106.12.162.221
+    port: 6379
+    timeout: 30000
+    jedis:
+      pool:
+        max-active: 8
+
+
+#  quartz:
+#    scheduler:
+#      instance-name: MyselfScheduler
+#      instance-id: NON_CLUSTERED # 使用集群：AUTO 不使用集群：NON_CLUSTERED
+#      skip-update-check: true
+#      job-factory:
+#        class: org.quartz.simpl.SimpleJobFactory
+#    job-store:
+#      class: org.quartz.impl.jdbcjobstore.JobStoreTX
+#      driver-delegate-class: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+#      #配置quartz的数据源 不能不配置会报错
+#      datasource: quartzDataSource
+#      #      会创建一个表
+#      table-prefix: QRTZ
+#      is-clustered: true
+#    thread-pool:
+#      class: org.quartz.simpl.SimpleThreadPool
+#      thread-count: 5
+#    datasource:
+#      #      quartz的具体数据源信息
+#      quartzDataSource:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://106.12.162.221:3307/cashbook?serverTimezone=Asia/Shanghai
+#        password: 123456
+#        username: root
+#        maxConnections: 5
+#        validationQuery: select 0
+#        connection-provider:
+#          class: com.lingdu.welend.config.quartz.DruidConnectionProvider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 106.12.162.221:8848
+        namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+#      config:
+#        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+#        file-extension: yaml
+#        namespace: 5370d71d-e695-4fa9-bbe5-6b823c9c7696
+#        group: CashBook-Group
+#        extension-configs:
+#          - refresh: true
+#            data-id: cashbookcloud-bill-service.yml
+#            group: COMMON_GROUP # 通用配置组
+#修改调用超时时间2s
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 20000
+        readTimeout: 20000
+dubbo:
+  cloud:
+    subscribed-services: cashbook-alipay-service
+  scan:
+    # dubbo 服务扫描基准包
+    base-packages: com.cashbookcloud
+  protocol:
+    # dubbo 协议
+    name: dubbo
+    port: 20999
+  registry:
+    address: nacos://106.12.162.221:8848
+  application:
+    id: cashbook-alipay-service
+    name: cashbook-alipay-service
+    qos:
+      port: 22310 # dubbo qos端口配置  命令行注入
+  consumer:
+    check: false
+    timeout: 3000
+    retries: -1
+
+#feign:
+#  okhttp:
+#    enabled: true
+#  httpclient:
+#    enabled: false
+
+  #ribbon:
+  #  ReadTimeout: 120000
+  #  ConnectTimeout: 30000
+
+  #hystrix:
+  #  command:
+  #    default:
+  #      execution:
+  #        timeout:
+  #          enabled: true
+  #        isolation:
+  #          thread:
+  #            timeoutInMilliseconds: 4000
+
+  #
+#  sentinel:
+#    enabled: true
+#  hystrix:
+#    enabled: false
+
+app:
+  appId: 2021000119678947
+  privateKey: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQChpGrUHTfQ3yoY1AehLIabnpO+2ioZZNO0RPq9YGRnws3tyENi0ZNQSmdte7DDGHIVr5pOmfL7XTyC90pHPP8h90UbWhbzm+TELN/5O6lnk5yluHm6Syp9O/2b7rqXhfeEJcbl+B/L6TmDyJllyaTqxsw6IsvBoD23i2/dzXxLvwrrDPRvJOZpUaAh1VvVFuH1Rl2CMW7248GaNQZ1avo65qMNYyz8fZDCSHn+QlulqzVAKfggRWjgs6Qtwa9bniTb+VS3ucBMZg1Y3idbBqPnkHoH96SsMD0bD0vfGVW0hmKxMfp1Dzp+wYqca/wr3R5paFeA3id5Iu7T8BLi/xVfAgMBAAECggEADpioROs2hRgB1ygeYEGDDj5tnQhaUNy3+UlZUwyHRI9kxRoWa6/9G3z8hfhrZ9KnSqoGxx5DwMsUkcb+4Bvz9f88MFIcTHdBWy2qM/ldPMsplBVqeJYdCh4GsrQGCXTBex9mLJIRXPp8hRfyMizZRZIaEw3dVGjB6fcfbOoHVVeQOLSwJ1MOobscXcIHkcxk7LmTcDIPmIgM+UdHDmL+RVC5jX6ehbtfqjfh0oPm8H8jrSWL4gctBfR4ckQK/bm/i4BZeAw086xjZmfVrqizG7D3etZDGsh7L9+MXthVp4uxYBYRF9AiBd6WwbMFz5fCbwAVmDqjAh6elAcZMtHm4QKBgQDYC3TkPaAePFhLGm5yhBSWHSS9OJTbJLh5oplPsaIPWeVSEFy0jblDZsP6hDl8A6gQ7cU3bjdNuPLNy24ynhsLeWWrpGhcwnryFcozK2pgm4IJe2s2KLbGtEakaWVkwBpZjmK26FDhoRCHQdpkz6KXyY1DfVt6w3qKxtfPd1Yl9wKBgQC/iUxpTdfs6SgiCJiZuruU5tE+953MNB7B+8AJOpGbAvZ2323xR6qL7Q59H6M9vqVDzRtBn1Joc5Acml384UwxeAmKFe1rgNzfGWkU3hiYla2T8UOWhm8U+C9WdswOuKr6solO43c9AgBoTh64NalDzSroDNgZQQz6eVcFTkiR2QKBgBQBs5hzUIGcSvzhfLrkGlfwaPeQ5tAIbYDuGs5zf7N2OrNHyp35xd9FA/8OAZjHaefvbOT+MubiqrF+Fj1fwNdmLZEgj32PkP0cIXZtndNGc1tXb407ZfmutiABlp8m3wnOErwndV3/oV01LvlI9SCjTI6kbDVJJu71DQUsYvDvAoGAcLJ3bEpqLzJs88F9EI8HyjAZlGQby8grBNZ9ArEcdUnD/OOwC9SwK467BLI12aGwGfm3/N+inGTKuZm2jZF+xGitrDsErElxLDAGXUnkzPrc2/yMWSgWeg8hw004+bx8le+wzOMYCKSB2t2EQ70HMCarBUhxakKVQVdd9Xg/SNkCgYEAy6UMKmTD61RM8a5lxlkqYTffehLrBrnlx7DcpS3QRd/UhvG4o3JdwKopA2Umy720a7/uGeb8xFB3ySuW6+mp0l7zWhEKXaRI0qfMKbK/PzdbhZzpUnTDBydnGSULXbJ/2k3dnjczgg06j2xoYYh92CbivO6Y45rUUpT0vadXk5U=
+  publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkdKmcmg++2toaZZWhE1Gh9vwRGlgay7AOjIgS9a9gcfMxcNJA/1whizgIDrKAxw4dSahavAm+HGsH2t4Xkj1x7TACMRYxk3kFsy3EGnPt48fzYQvZS8BRd3Ad3ihxdjGJWFcuFa1tKQzVfVFKqbZMb4w/Y6jvnwfX/d3NX1Ty6SSKM+xI54lRArgikpdRNIOekc4OadXiPt5odAf2zXS0abEQ6OwmMamy/orch5+ZGuJz4T1e7wqsHsT6r3DhC0++XSNpmisPDEz23UQPgsgLMnbNeutiyAylI+x30AcFx7UYDqI5gnsym0stgrtT7TkwxO2rRrb1pUEk0lJqtappwIDAQAB
+  returnUrl:
+  signType: RSA2
+  charset: utf-8
+  gatewayUrl: https://openapi.alipaydev.com/gateway.do
+
+
+logging:
+  config: classpath:logback-spring.xml
+#logging:
+#  config: classpath:logback-spring.xml
+
+#swagger:
+#  enabled: true
+#  author: Pro-Cloud
+#  title: Pro-Cloud SpringCloud
+#  desc: Pro-Cloud SpringCloud doc
+#  version: v2.0
+#  termsOfServiceUrl: http://www.eduvipx.cn/termsOfServiceUrl
+#  host: 127.0.0.1:9999
+#  authUri: http://127.0.0.1:9999/auth/oauth/token

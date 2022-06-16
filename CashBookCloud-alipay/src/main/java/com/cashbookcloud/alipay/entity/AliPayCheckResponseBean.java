@@ -19,6 +19,7 @@ public class AliPayCheckResponseBean implements Serializable {
     private String send_pay_date;
     private String total_amount;
     private String trade_no;
+    private Integer user_id;
 
     public void setId(Integer id) {
         this.id = id;
@@ -46,5 +47,9 @@ public class AliPayCheckResponseBean implements Serializable {
 
     public void setTradeNo(String trade_no) {
         this.trade_no = trade_no;
+    }
+
+    public void setUserId(Integer user_id) {
+        this.user_id = user_id;
     }
 }

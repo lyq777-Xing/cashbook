@@ -47,7 +47,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**/*.ico").permitAll()
                 .antMatchers("/**/v2/api-docs").permitAll()
                 .antMatchers("/**/smscodefour").permitAll()
-                .antMatchers("/**/zhuce").permitAll()
+                .antMatchers("/**/zhuce/**").permitAll()
                 .antMatchers("/**/updpwd").permitAll()
                 .antMatchers("/user/**").authenticated()//所有/r/**的请求必须认证通过
                 .antMatchers("/login/**").permitAll()//除了/r/**，其它的请求可以访问

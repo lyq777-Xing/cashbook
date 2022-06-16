@@ -37,8 +37,8 @@ public class Swagger2Config {
      * @return
      */
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("账单服务")
-                .description("账单服务")
+        return new ApiInfoBuilder().title("支付服务")
+                .description("支付服务")
                 .version("1.0.0-SNAPSHOT")
                 .build();
     }
