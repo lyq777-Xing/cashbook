@@ -31,7 +31,7 @@ public class RolePermissionController {
      * @param rid
      * @return
      */
-    @ApiOperation(value = "根据角色id查询对应的权限idList",notes = "根据角色id查询对应的权限idList",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据角色id查询对应的权限idList",notes = "根据角色id查询对应的权限idList",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "rid")
     @GetMapping("/findByRid")
     public List<RolePermissionDto> findById(Integer rid){
@@ -45,7 +45,7 @@ public class RolePermissionController {
      * @param PermissionId
      * @return
      */
-    @ApiOperation(value = "根据角色id和权限id删除表数据",notes = "根据角色id和权限id删除表数据",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "根据角色id和权限id删除表数据",notes = "根据角色id和权限id删除表数据",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "rid,PermissionId")
     @DeleteMapping("/del")
     public ResponseResult del(Integer roleId, Integer PermissionId){
@@ -65,7 +65,7 @@ public class RolePermissionController {
      * @param roleId
      * @return
      */
-    @ApiOperation(value = "根据角色id删除关联表数据",notes = "根据角色id删除关联表数据",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "根据角色id删除关联表数据",notes = "根据角色id删除关联表数据",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "roleId")
     @DeleteMapping("/delbyrid")
     public ResponseResult del(Integer roleId){
@@ -86,7 +86,7 @@ public class RolePermissionController {
      * @param permissionIds
      * @return
      */
-    @ApiOperation(value = "根据角色id和权限id列表添加表数据",notes = "根据角色id和权限id列表添加表数据",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "根据角色id和权限id列表添加表数据",notes = "根据角色id和权限id列表添加表数据",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "roleId,permissionIds")
     @PostMapping("/add/{roleId}/{permissionIds}")
     public ResponseResult add(@PathVariable("roleId") Integer roleId,@PathVariable("permissionIds") Integer[] permissionIds){

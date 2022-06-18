@@ -6,7 +6,7 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-06-15T14:05:32+0800",
+    date = "2022-06-17T15:26:58+0800",
     comments = "version: 1.3.0.Final, compiler: javac, environment: Java 1.8.0_302 (Amazon.com Inc.)"
 )
 public class PermissionCovertImpl implements PermissionCovert {

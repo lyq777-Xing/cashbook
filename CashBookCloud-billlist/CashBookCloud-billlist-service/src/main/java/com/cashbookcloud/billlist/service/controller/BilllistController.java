@@ -31,7 +31,7 @@ public class BilllistController {
      * @param userId
      * @return
      */
-    @ApiOperation(value = "根据useId获取所有账本,返回range格式",notes = "list形式",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据useId获取所有账本,返回range格式",notes = "list形式",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "userId")
     @PreAuthorize("hasAuthority('getallbilllist')")
     @GetMapping("/getall")
@@ -58,7 +58,7 @@ public class BilllistController {
      * @param billlistVo
      * @return
      */
-    @ApiOperation(value = "添加账本",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "添加账本",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = BilllistVo.class,required = true,value = "BilllistVo")
     @PreAuthorize("hasAuthority('addbilllist')")
     @PostMapping("/add")
@@ -86,7 +86,7 @@ public class BilllistController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "删除账本",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "删除账本",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('delbillist')")
     @DeleteMapping("/del")
@@ -107,7 +107,7 @@ public class BilllistController {
      * @param billlistVo
      * @return
      */
-    @ApiOperation(value = "更新账本",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "更新账本",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = BilllistVo.class,required = true,value = "BilllistVo")
     @PreAuthorize("hasAuthority('updbilllist')")
     @PostMapping("/upd")
@@ -141,7 +141,7 @@ public class BilllistController {
      * @param userId
      * @return
      */
-    @ApiOperation(value = "根据userId获取其对应的所有账本",notes = "list形式",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据userId获取其对应的所有账本",notes = "list形式",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "userId")
     @PreAuthorize("hasAuthority('getallbilllist')")
     @GetMapping("/getallb")
@@ -160,7 +160,7 @@ public class BilllistController {
      * 获取登录用户的信息
      * @return
      */
-    @ApiOperation(value = "获取登录用户的信息",notes = "获取登录用户的信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取登录用户的信息",notes = "获取登录用户的信息",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/getdetail")
     public ResponseResult getDetail(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -174,7 +174,7 @@ public class BilllistController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据账本id获取账本信息",notes = "根据账本id获取账本信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据账本id获取账本信息",notes = "根据账本id获取账本信息",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @GetMapping("/findById")
     public ResponseResult findById(Integer id){
@@ -194,7 +194,7 @@ public class BilllistController {
      * @param userId
      * @return
      */
-    @ApiOperation(value = "注册用户成功后自动创建两个账本",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "注册用户成功后自动创建两个账本",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = BilllistVo.class,required = true,value = "BilllistVo")
 //    @PreAuthorize("hasAuthority('addbilllist')")
     @PostMapping("/zhuceadd/{userId}")

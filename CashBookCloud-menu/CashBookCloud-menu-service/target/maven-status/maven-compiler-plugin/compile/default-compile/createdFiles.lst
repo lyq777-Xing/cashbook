@@ -1,0 +1,14 @@
+com\cashbookcloud\menu\service\convert\MenuCovert.class
+com\cashbookcloud\menu\service\common\EncryptUtil.class
+com\cashbookcloud\menu\service\config\WebSecurityConfig.class
+com\cashbookcloud\menu\service\dto\ManagerDto.class
+com\cashbookcloud\menu\service\controller\MenuController.class
+com\cashbookcloud\menu\service\config\ResouceServerConfig.class
+com\cashbookcloud\menu\service\CashBookMenuServiceApplication.class
+com\cashbookcloud\menu\service\mapper\MenuMapper.class
+com\cashbookcloud\menu\service\config\TokenConfig.class
+com\cashbookcloud\menu\service\entity\Menu.class
+com\cashbookcloud\menu\service\filter\TokenAuthenticationFilter.class
+com\cashbookcloud\menu\service\service\impl\IMenuService.class
+com\cashbookcloud\menu\service\config\Swagger2Config.class
+com\cashbookcloud\menu\service\convert\MenuCovertImpl.class

@@ -23,7 +23,7 @@ public class PermissionApiController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据id查询权限api",notes = "根据id查询权限api",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据id查询权限api",notes = "根据id查询权限api",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @GetMapping("/findbyid")
     public PermissionApiDto findByPermissionId(Integer id){

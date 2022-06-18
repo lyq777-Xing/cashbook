@@ -28,7 +28,7 @@ public class CatController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据分类id获取账本信息",notes = "根据账本id获取账本信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据分类id获取账本信息",notes = "根据账本id获取账本信息",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @GetMapping("/findById")
     public ResponseResult findById(Integer id){
@@ -47,7 +47,7 @@ public class CatController {
      * 获取所有分类
      * @return
      */
-    @ApiOperation(value = "获取所有分类（List）",notes = "获取所有分类(List)",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取所有分类（List）",notes = "获取所有分类(List)",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/getall")
     public ResponseResult getAllCats(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -65,7 +65,7 @@ public class CatController {
      * 获取所有支出分类
      * @return
      */
-    @ApiOperation(value = "获取所有支出分类",notes = "获取所有支出分类",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取所有支出分类",notes = "获取所有支出分类",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/getput")
     public ResponseResult getAllCatPut(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -83,7 +83,7 @@ public class CatController {
      * 获取所有收入分类
      * @return
      */
-    @ApiOperation(value = "获取所有收入分类",notes = "获取所有收入分类",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取所有收入分类",notes = "获取所有收入分类",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/getinput")
     public ResponseResult getInput(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -102,7 +102,7 @@ public class CatController {
      * @param catDto
      * @return
      */
-    @ApiOperation(value = "添加分类",notes = "添加分类",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "添加分类",notes = "添加分类",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = CatDto.class,required = true,value = "catDto")
     @PostMapping("/add")
     public ResponseResult add(@RequestBody CatDto catDto){
@@ -127,7 +127,7 @@ public class CatController {
      * @param catDto
      * @return
      */
-    @ApiOperation(value = "修改分类",notes = "修改分类",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "修改分类",notes = "修改分类",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = CatDto.class,required = true,value = "catDto")
     @PostMapping("/upd")
     public ResponseResult upd(@RequestBody CatDto catDto){
@@ -158,7 +158,7 @@ public class CatController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "删除分类",notes = "删除分类",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "删除分类",notes = "删除分类",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @DeleteMapping("/del")
     public ResponseResult del(Integer id){

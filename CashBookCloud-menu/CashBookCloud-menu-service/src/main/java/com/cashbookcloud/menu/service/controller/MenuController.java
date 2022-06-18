@@ -25,7 +25,7 @@ public class MenuController {
     @Autowired
     private MenuService menuService;
 
-    @ApiOperation(value = "左侧菜单栏(树形结构)")
+    @ApiOperation(value = "左侧菜单栏(树形结构)",notes = "左侧菜单栏(树形结构)",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/menus")
     public ResponseResult findAll(){
         ResponseResult<Object> result = new ResponseResult<>();

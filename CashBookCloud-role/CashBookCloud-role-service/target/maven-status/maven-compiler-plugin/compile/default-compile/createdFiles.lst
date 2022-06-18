@@ -1,0 +1,17 @@
+com\cashbookcloud\role\service\filter\TokenAuthenticationFilter.class
+com\cashbookcloud\role\service\config\FeignConfig.class
+com\cashbookcloud\role\service\mapper\RoleMapper.class
+com\cashbookcloud\role\service\covert\RoleCovert.class
+com\cashbookcloud\role\service\service\impl\IRoleService.class
+com\cashbookcloud\role\service\vo\RoleVo.class
+com\cashbookcloud\role\service\client\PermissionClient.class
+com\cashbookcloud\role\service\controller\RoleController.class
+com\cashbookcloud\role\service\config\Swagger2Config.class
+com\cashbookcloud\role\service\config\WebSecurityConfig.class
+com\cashbookcloud\role\service\config\ResouceServerConfig.class
+com\cashbookcloud\role\service\config\TokenConfig.class
+com\cashbookcloud\role\service\entity\Role.class
+com\cashbookcloud\role\service\CashBookRoleServiceApplication.class
+com\cashbookcloud\role\service\common\EncryptUtil.class
+com\cashbookcloud\role\service\client\RolePermissionClient.class
+com\cashbookcloud\role\service\covert\RoleCovertImpl.class
