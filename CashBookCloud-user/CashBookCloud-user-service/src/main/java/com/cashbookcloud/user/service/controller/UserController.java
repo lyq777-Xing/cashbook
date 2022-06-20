@@ -13,6 +13,7 @@ import com.cashbookcloud.user.service.vo.UserVo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.models.auth.In;
 import org.apache.commons.lang.RandomStringUtils;
@@ -48,7 +49,13 @@ public class UserController {
      * @param query
      * @return
      */
-    @ApiOperation(value = "获取所有用户信息",notes = "获取所有用户信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取所有用户信息",notes = "获取所有用户信息",httpMethod = "GET",response = ResponseResult.class)
+//    @ApiImplicitParam(dataTypeClass = String.class,required = true,value = "phone")
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataTypeClass = Integer.class, required = true, value = "pagenum"),
+            @ApiImplicitParam(dataTypeClass = Integer.class, required = true, value = "pagesize"),
+            @ApiImplicitParam(dataTypeClass = String.class, required = true, value = "query"),
+    })
     @PreAuthorize("hasAuthority('getalluser')")
     @GetMapping("/getall")
     public ResponseResult getAllPage(@RequestParam(required = true) Integer pagenum,
@@ -73,7 +80,7 @@ public class UserController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据id查询用户信息",notes = "根据id查询用户信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据id查询用户信息",notes = "根据id查询用户信息",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('getalluser')")
     @GetMapping("/getById")
@@ -94,7 +101,7 @@ public class UserController {
      * @param userVo
      * @return
      */
-    @ApiOperation(value = "添加用户",notes = "添加用户",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "添加用户",notes = "添加用户",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = UserVo.class,required = true,value = "userVo")
     @PreAuthorize("hasAuthority('adduser')")
     @PostMapping("/add")
@@ -126,7 +133,7 @@ public class UserController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据id删除用户",notes = "根据id删除用户",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "根据id删除用户",notes = "根据id删除用户",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('deluser')")
     @DeleteMapping("/del")
@@ -147,7 +154,7 @@ public class UserController {
      * @param userVo
      * @return
      */
-    @ApiOperation(value = "更新用户信息",notes = "更新用户信息",httpMethod = "Put",response = ResponseResult.class)
+    @ApiOperation(value = "更新用户信息",notes = "更新用户信息",httpMethod = "PUT",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = UserVo.class,required = true,value = "userVo")
     @PreAuthorize("hasAnyAuthority('upduser','updwine')")
     @PutMapping("/upd")
@@ -182,7 +189,7 @@ public class UserController {
      * @param rid
      * @return
      */
-    @ApiOperation(value = "根据角色id删除用户",notes = "根据角色id删除用户",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "根据角色id删除用户",notes = "根据角色id删除用户",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "rid")
     @PreAuthorize("hasAuthority('delrole')")
     @DeleteMapping("/del/user")
@@ -202,7 +209,7 @@ public class UserController {
      * 获取角色统计数据
      * @return
      */
-    @ApiOperation(value = "获取角色统计数据",notes = "获取角色统计数据",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取角色统计数据",notes = "获取角色统计数据",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/getreport")
     public ResponseResult getReport(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -222,7 +229,7 @@ public class UserController {
      * @param phone
      * @return
      */
-    @ApiOperation(value = "获取短信换绑手机号验证码",notes = "获取短信换绑手机号验证码",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取短信换绑手机号验证码",notes = "获取短信换绑手机号验证码",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(value = "phone",required = true)
     @GetMapping("/smscodechangephone")
     public ResponseResult GetSmsCodeTwo(String phone){
@@ -257,7 +264,7 @@ public class UserController {
      * @param userVo
      * @return
      */
-    @ApiOperation(value = "修改密码",notes = "修改密码",httpMethod = "Put",response = ResponseResult.class)
+    @ApiOperation(value = "修改密码",notes = "修改密码",httpMethod = "PUT",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = UserVo.class,required = true,value = "userVo")
 //    @PreAuthorize("hasAuthority('upduser')")
     @PutMapping("/updpwd")
@@ -282,7 +289,7 @@ public class UserController {
      * @param phone
      * @return
      */
-    @ApiOperation(value = "获取注册验证码",notes = "获取注册验证码",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取注册验证码",notes = "获取注册验证码",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(value = "phone",required = true)
     @GetMapping("/smscodefour")
     public ResponseResult GetSmsCodeFour(String phone){
@@ -312,6 +319,17 @@ public class UserController {
         return result;
     }
 
+    /**
+     * 用户注册
+     * @param cat
+     * @param userVo
+     * @return
+     */
+    @ApiOperation(value = "用户注册",notes = "用户注册",httpMethod = "POST",response = ResponseResult.class)
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataTypeClass = String.class, required = true, value = "cat"),
+            @ApiImplicitParam(dataTypeClass = UserVo.class, required = true, value = "userVo"),
+    })
     @PostMapping("/zhuce/{cat}")
     public ResponseResult zhuCe(@PathVariable("cat") String cat,@RequestBody UserVo userVo){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -348,7 +366,10 @@ public class UserController {
      * @return
      */
     @ApiOperation(value = "发送重置后密码",notes = "发送重置后密码",httpMethod = "POST",response = ResponseResult.class)
-    @ApiImplicitParam(dataTypeClass = String.class,required = true,value = "phone")
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataTypeClass = String.class, required = true, value = "phone"),
+            @ApiImplicitParam(dataTypeClass = String.class, required = true, value = "cat"),
+    })
     @PostMapping("/updpwd")
     public ResponseResult updPwd(String phone,String cat){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -383,6 +404,13 @@ public class UserController {
     }
 
 
+    /**
+     * 将用户修改为会员
+     * @param userId
+     * @return
+     */
+    @ApiOperation(value = "将用户修改为会员",notes = "将用户修改为会员",httpMethod = "POST",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class, required = true, value = "userId")
     @PostMapping("/changemem")
     public ResponseResult chengeRoleToMember(Integer userId){
         ResponseResult<Object> result = new ResponseResult<>();

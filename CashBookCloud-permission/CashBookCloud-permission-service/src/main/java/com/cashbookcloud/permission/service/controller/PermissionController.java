@@ -25,7 +25,7 @@ public class PermissionController {
      * 获取权限列表
      * @return
      */
-    @ApiOperation(value = "获取权限列表（List）",notes = "获取权限列表",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取权限列表（List）",notes = "获取权限列表",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/getall")
     public ResponseResult getAll(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -43,7 +43,7 @@ public class PermissionController {
      * 获取权限列表
      * @return
      */
-    @ApiOperation(value = "获取权限列表（Tree）",notes = "获取权限列表",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取权限列表（Tree）",notes = "获取权限列表",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/gettree")
     public ResponseResult getTree(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -61,7 +61,7 @@ public class PermissionController {
      * 获取管理员权限列表
      * @return
      */
-    @ApiOperation(value = "获取管理员权限列表",notes = "获取权限列表",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取管理员权限列表",notes = "获取权限列表",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/getadmintree")
     public ResponseResult getAdminTree(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -79,7 +79,7 @@ public class PermissionController {
      * 获取用户权限列表
      * @return
      */
-    @ApiOperation(value = "获取用户权限列表",notes = "获取权限列表",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取用户权限列表",notes = "获取权限列表",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/getusertree")
     public ResponseResult getUserTree(){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -98,7 +98,7 @@ public class PermissionController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据id查询权限",notes = "根据id查询权限",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据id查询权限",notes = "根据id查询权限",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @GetMapping("/findById")
     public ResponseResult findById(Integer id){
@@ -118,7 +118,7 @@ public class PermissionController {
      * @param pid
      * @return
      */
-    @ApiOperation(value = "根据Pid查询权限",notes = "根据Pid查询权限",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据Pid查询权限",notes = "根据Pid查询权限",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "pid")
     @GetMapping("/findByPid")
     public List<PermissionDto> findByPid(Integer pid){

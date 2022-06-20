@@ -5,6 +5,7 @@ import com.cashbookcloud.common.result.ResponseResult;
 import com.cashbookcloud.common.utils.SendSmsUtils;
 import com.cashbookcloud.common.utils.ValidateCodeUtils;
 import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,8 +25,8 @@ public class sendMsgController {
      * @param phone
      * @return
      */
-    @ApiOperation("获取短信登录验证码")
-    @ApiImplicitParam(value = "phone",required = true)
+    @ApiOperation(value = "获取短信登录验证码",notes = "获取短信登录验证码",httpMethod = "GET",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = String.class,required = true,value = "phone")
     @GetMapping("/smscodelogin")
     public ResponseResult GetSmsCode(String phone){
         Integer validateCode = 0;
@@ -54,8 +55,8 @@ public class sendMsgController {
      * @param phone
      * @return
      */
-    @ApiOperation("获取修改密码验证码")
-    @ApiImplicitParam(value = "phone",required = true)
+    @ApiOperation(value = "获取修改密码验证码",notes = "获取修改密码验证码",httpMethod = "GET",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = String.class,required = true,value = "phone")
     @GetMapping("/smscodechangepwd")
     public ResponseResult GetSmsCodeThree(String phone){
         Integer validateCode = 0;
@@ -84,8 +85,8 @@ public class sendMsgController {
      * @param phone
      * @return
      */
-    @ApiOperation("获取忘记密码验证码")
-    @ApiImplicitParam(value = "phone",required = true)
+    @ApiOperation(value = "获取忘记密码验证码",notes = "获取忘记密码验证码",httpMethod = "GET",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = String.class,required = true,value = "phone")
     @GetMapping("/smscodeforgetpwd")
     public ResponseResult smsCodeForgetPwd(String phone){
         Integer validateCode = 0;
@@ -109,7 +110,18 @@ public class sendMsgController {
         return result;
     }
 
-    @ApiOperation("校验换绑手机号验证码是否正确")
+    /**
+     * 校验换绑手机号验证码是否正确
+     * @param phoneNumber
+     * @param cat
+     * @return
+     */
+    @ApiOperation(value = "校验换绑手机号验证码是否正确",notes = "校验换绑手机号验证码是否正确",httpMethod = "GET",response = ResponseResult.class)
+//    @ApiImplicitParam(dataTypeClass = String.class,required = true,value = "phone")
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataTypeClass = String.class, required = true, value = "phoneNumber"),
+            @ApiImplicitParam(dataTypeClass = String.class, required = true, value = "cat")
+    })
     @GetMapping("/checkchangephone")
     public ResponseResult checkChangePhone(String phoneNumber,String cat){
         ResponseResult<Object> result = new ResponseResult<>();
@@ -128,7 +140,18 @@ public class sendMsgController {
         return result;
     }
 
-    @ApiOperation("校验修改密码验证码是否正确")
+    /**
+     * 校验修改密码验证码是否正确
+     * @param phoneNumber
+     * @param cat
+     * @return
+     */
+    @ApiOperation(value = "校验修改密码验证码是否正确",notes = "校验修改密码验证码是否正确",httpMethod = "GET",response = ResponseResult.class)
+//    @ApiImplicitParam(dataTypeClass = String.class,required = true,value = "phone")
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataTypeClass = String.class, required = true, value = "phoneNumber"),
+            @ApiImplicitParam(dataTypeClass = String.class, required = true, value = "cat")
+    })
     @GetMapping("/checkchangepwd")
     public ResponseResult checkChangePwd(String phoneNumber,String cat){
         ResponseResult<Object> result = new ResponseResult<>();

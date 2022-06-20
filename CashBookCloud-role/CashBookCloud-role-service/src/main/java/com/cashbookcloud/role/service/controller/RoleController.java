@@ -31,7 +31,7 @@ public class RoleController {
      * @param query
      * @return
      */
-    @ApiOperation(value = "获取所有角色列表（Page）",notes = "获取所有角色列表（Page）",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取所有角色列表（Page）",notes = "获取所有角色列表（Page）",httpMethod = "GET",response = ResponseResult.class)
     @PreAuthorize("hasAuthority('getallrole')")
     @GetMapping("/getall")
     public ResponseResult getAllPage(@RequestParam(required = true) Integer pagenum,
@@ -53,7 +53,7 @@ public class RoleController {
      * @param roleVo
      * @return
      */
-    @ApiOperation(value = "添加角色",notes = "添加角色",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "添加角色",notes = "添加角色",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = RoleVo.class,required = true,value = "RoleVo")
     @PreAuthorize("hasAuthority('addrole')")
     @PostMapping("/add")
@@ -81,7 +81,7 @@ public class RoleController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据id删除角色",notes = "根据id删除角色",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "根据id删除角色",notes = "根据id删除角色",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('delrole')")
     @DeleteMapping("/del")
@@ -103,7 +103,7 @@ public class RoleController {
      * @param roleVo
      * @return
      */
-    @ApiOperation(value = "更新角色信息",notes = "更新角色信息",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "更新角色信息",notes = "更新角色信息",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = RoleVo.class,required = true,value = "RoleVo")
     @PreAuthorize("hasAuthority('updrole')")
     @PostMapping("/upd")
@@ -137,7 +137,7 @@ public class RoleController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据id查询角色",notes = "根据id查询角色",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据id查询角色",notes = "根据id查询角色",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAnyAuthority('getallrole','getallmanager')")
     @GetMapping("/getById")
@@ -157,7 +157,7 @@ public class RoleController {
      * 获取所有管理员角色
      * @return
      */
-    @ApiOperation(value = "获取所有管理员角色",notes = "获取所有管理员角色",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取所有管理员角色",notes = "获取所有管理员角色",httpMethod = "GET",response = ResponseResult.class)
     @PreAuthorize("hasAnyAuthority('updmanager','upduser','getallrole')")
     @GetMapping("/getalladmin")
     public ResponseResult getAllAdmin(){
@@ -176,7 +176,7 @@ public class RoleController {
      * 获取所有用户角色
      * @return
      */
-    @ApiOperation(value = "获取所有用户角色",notes = "获取所有用户角色",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取所有用户角色",notes = "获取所有用户角色",httpMethod = "GET",response = ResponseResult.class)
     @PreAuthorize("hasAnyAuthority('updmanager','upduser','getallrole')")
     @GetMapping("/getalluser")
     public ResponseResult getAllUser(){
@@ -196,7 +196,7 @@ public class RoleController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据id查询对应权限",notes = "根据id查询对应权限",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据id查询对应权限",notes = "根据id查询对应权限",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @GetMapping("/getpermissionbyroleid")
     public ResponseResult getPermissionByRoleId(Integer id){
@@ -217,7 +217,7 @@ public class RoleController {
      * @param permissionId
      * @return
      */
-    @ApiOperation(value = "删除角色的权限",notes = "删除角色的权限",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "删除角色的权限",notes = "删除角色的权限",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "roleId，permissionId")
     @DeleteMapping("/delrolepermission")
     public ResponseResult delRolePermission(Integer roleId,Integer permissionId){
@@ -239,7 +239,7 @@ public class RoleController {
      * @param permissionIds
      * @return
      */
-    @ApiOperation(value = "更新角色的权限",notes = "更新角色的权限",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "更新角色的权限",notes = "更新角色的权限",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "roleId，permissionIds")
     @PostMapping("/updrolerights/{roleId}/{permissionIds}")
     public ResponseResult updRoleRights(@PathVariable("roleId") Integer roleId,@PathVariable("permissionIds") Integer[] permissionIds){

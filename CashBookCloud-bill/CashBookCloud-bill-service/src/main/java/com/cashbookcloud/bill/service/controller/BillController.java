@@ -19,6 +19,7 @@ import io.swagger.models.auth.In;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -87,7 +88,7 @@ public class BillController {
      * @param billVo
      * @return
      */
-    @ApiOperation(value = "添加账单",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "添加账单",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = BillVo.class,required = true,value = "账单Vo")
     @PostMapping("/add")
     public ResponseResult add(@RequestBody BillVo billVo){
@@ -109,7 +110,7 @@ public class BillController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "删除账单",notes = "参数id ",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "删除账单",notes = "参数id ",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @DeleteMapping("/del")
     public ResponseResult delete(Integer id){
@@ -129,7 +130,7 @@ public class BillController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据id查询账单",notes = "参数id ",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "根据id查询账单",notes = "参数id ",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @GetMapping("/getById")
     public ResponseResult getById(Integer id){
@@ -150,7 +151,7 @@ public class BillController {
      * @param billVo
      * @return
      */
-    @ApiOperation(value = "更新账单",httpMethod = "Put",response = ResponseResult.class)
+    @ApiOperation(value = "更新账单",httpMethod = "PUT",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = BillVo.class,required = true,value = "billVo")
     @PutMapping("/upd")
     public ResponseResult update(@RequestBody BillVo billVo){
@@ -171,7 +172,7 @@ public class BillController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "获取账单结余支出收入信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取账单结余支出收入信息",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @GetMapping("/getkeeping")
     public ResponseResult getKeeping(Integer id){
@@ -191,7 +192,7 @@ public class BillController {
      * @param billlistId
      * @return
      */
-    @ApiOperation(value = "获取根据账本id获取对应账单数量",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取根据账本id获取对应账单数量",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "billlistId")
     @GetMapping("/getcount")
     public ResponseResult getCount(Integer billlistId){
@@ -214,7 +215,7 @@ public class BillController {
      * @param billlistId
      * @return
      */
-    @ApiOperation(value = "获取根据用户id和账本id获取对应账单",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取根据用户id和账本id获取对应账单",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "userId,billlistId")
     @GetMapping("/get")
     public ResponseResult Get(Integer userId,Integer billlistId){
@@ -234,7 +235,7 @@ public class BillController {
      * @param userId
      * @return
      */
-    @ApiOperation(value = "获取用户每日支出图表",notes = "与用户选择的账本无关",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取用户每日支出图表",notes = "与用户选择的账本无关",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "userId")
     @GetMapping("/getreportone")
     public ResponseResult getReportOne(Integer userId){
@@ -253,7 +254,7 @@ public class BillController {
      * @param userId
      * @return
      */
-    @ApiOperation(value = "获取用户分类支出图表",notes = "与用户选择的账本无关",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取用户分类支出图表",notes = "与用户选择的账本无关",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "userId")
     @GetMapping("/getreporttwo")
     public ResponseResult getReportTwo(Integer userId){
@@ -273,7 +274,7 @@ public class BillController {
      * @param catId
      * @return
      */
-    @ApiOperation(value = "根据分类ID删除账单",notes = "根据分类ID删除账单",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "根据分类ID删除账单",notes = "根据分类ID删除账单",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "catId")
     @DeleteMapping("/delByCatId")
     public ResponseResult delByCatId(Integer catId){
@@ -288,6 +289,17 @@ public class BillController {
         return result;
     }
 
+    /**
+     * 导出账单（测试ing）
+     * @param request
+     * @param response
+     * @param userid
+     * @param billlistid
+     * @throws Exception
+     */
+    @ApiOperation(value = "导出账单（测试ing）",notes = "导出账单（测试ing）",httpMethod = "GET",response = ResponseResult.class)
+    @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "userid,billlistid")
+    @PreAuthorize("hasAuthority('putbilllist')")
     @GetMapping("/getreportthree/{userid}/{billlistid}")
     public void export(HttpServletRequest request, HttpServletResponse response,
                        @PathVariable("userid") Integer userid,
@@ -321,6 +333,7 @@ public class BillController {
 
             //响应到客户端
             try {
+//                System.out.println("ok!");
                 this.setResponseHeader(response, fileName);
                 OutputStream os = response.getOutputStream();
                 wb.write(os);
@@ -331,7 +344,11 @@ public class BillController {
             }
     }
 
-    //发送响应流方法
+    /**
+     * 发送响应流方法
+     * @param response
+     * @param fileName
+     */
     public void setResponseHeader(HttpServletResponse response, String fileName) {
         try {
             try {
@@ -354,7 +371,7 @@ public class BillController {
      * 获取登录用户的信息
      * @return
      */
-    @ApiOperation(value = "获取登录用户的信息",notes = "获取登录用户的信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取登录用户的信息",notes = "获取登录用户的信息",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/getdetail")
     public ResponseResult getDetail(){
         ResponseResult<Object> result = new ResponseResult<>();

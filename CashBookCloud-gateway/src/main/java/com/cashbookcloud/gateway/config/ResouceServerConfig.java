@@ -180,7 +180,8 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
                     .antMatchers("/billlist/v2/api-docs").permitAll()
-                    .antMatchers("/billlist/zhuceadd/**").permitAll()
+//                    .antMatchers("/billlist/zhuceadd/**").permitAll()
+                    .antMatchers("/**/zhuceadd/**").permitAll()
                     .antMatchers("/billlist/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }
@@ -227,6 +228,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
         public void configure(HttpSecurity http) throws Exception {
             http.authorizeRequests()
                     .antMatchers("/bill/v2/api-docs").permitAll()
+                    .antMatchers("/**/getreportthree/**/**").permitAll()
                     .antMatchers("/bill/**").access("#oauth2.hasScope('ROLE_USER')");
         }
     }

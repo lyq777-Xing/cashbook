@@ -43,7 +43,7 @@ public class uploadController {
      * @return
      * @throws IOException
      */
-    @ApiOperation(value = "上传文件",notes = "上传文件",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "上传文件",notes = "上传文件",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = MultipartFile.class,required = true,value = "imgFile")
     @PostMapping("/upload")
     public ResponseResult upload(@RequestParam("imgFile") MultipartFile imgFile) throws IOException {

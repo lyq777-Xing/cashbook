@@ -41,7 +41,7 @@ public class ResouceServerConfig extends ResourceServerConfigurerAdapter {
                 .antMatchers("/**/*.png").permitAll()
                 .antMatchers("/**/*.ico").permitAll()
                 .antMatchers("/**/v2/api-docs").permitAll()
-                .antMatchers("/billlist/zhuceadd/**").permitAll()
+                .antMatchers("/**/zhuceadd/**").permitAll()
                 .antMatchers("/**").access("#oauth2.hasScope('ROLE_USER')")
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

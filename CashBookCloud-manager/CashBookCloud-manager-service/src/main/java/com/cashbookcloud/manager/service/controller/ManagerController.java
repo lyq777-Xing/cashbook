@@ -47,7 +47,7 @@ public class ManagerController {
     /**
      * 获取管理员列表（带分页） 并且根据query查询信息
      */
-    @ApiOperation(value = "获取管理员列表（带分页） 并且根据query查询信息",notes = "获取管理员列表（带分页） 并且根据query查询信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取管理员列表（带分页） 并且根据query查询信息",notes = "获取管理员列表（带分页） 并且根据query查询信息",httpMethod = "GET",response = ResponseResult.class)
     @PreAuthorize("hasAuthority('getallmanager')")
     @GetMapping("/getall")
     public ResponseResult getAllAdminPage(@RequestParam(required = true) Integer pagenum,
@@ -73,7 +73,7 @@ public class ManagerController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "删除管理员",notes = "删除管理员",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "删除管理员",notes = "删除管理员",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('delmanager')")
     @DeleteMapping("/del")
@@ -94,7 +94,7 @@ public class ManagerController {
      * @param managerDto
      * @return
      */
-    @ApiOperation(value = "添加管理员",notes = "添加管理员",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "添加管理员",notes = "添加管理员",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = ManagerDto.class,required = true,value = "managerDto")
     @PreAuthorize("hasAuthority('addmanager')")
     @PostMapping("/add")
@@ -123,7 +123,7 @@ public class ManagerController {
      * @param managerVo
      * @return
      */
-    @ApiOperation(value = "更新管理员信息",notes = "更新管理员信息",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "更新管理员信息",notes = "更新管理员信息",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = ManagerDto.class,required = true,value = "managerDto")
     @PreAuthorize("hasAuthority('updmanager')")
     @PostMapping("/upd")
@@ -157,7 +157,7 @@ public class ManagerController {
      * @param id
      * @return
      */
-    @ApiOperation(value = "根据Id查询管理员信息",notes = "根据Id查询管理员信息",httpMethod = "Post",response = ResponseResult.class)
+    @ApiOperation(value = "根据Id查询管理员信息",notes = "根据Id查询管理员信息",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
     @PreAuthorize("hasAuthority('getallmanager')")
     @GetMapping("/getById")
@@ -178,7 +178,7 @@ public class ManagerController {
      * @param rid
      * @return
      */
-    @ApiOperation(value = "根据rid删除管理员",notes = "根据rid删除管理员",httpMethod = "Delete",response = ResponseResult.class)
+    @ApiOperation(value = "根据rid删除管理员",notes = "根据rid删除管理员",httpMethod = "DELETE",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "rid")
     @PreAuthorize("hasAuthority('delrole')")
     @DeleteMapping("/del/manager")
@@ -199,7 +199,7 @@ public class ManagerController {
      * @return
      * @throws JsonProcessingException
      */
-    @ApiOperation(value = "获取管理员登录信息",notes = "获取管理员登录信息",httpMethod = "Get",response = ResponseResult.class)
+    @ApiOperation(value = "获取管理员登录信息",notes = "获取管理员登录信息",httpMethod = "GET",response = ResponseResult.class)
     @GetMapping("/getImg")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseResult test() throws JsonProcessingException {
