@@ -3,6 +3,8 @@ package com.cashbookcloud.rolepermission.service.controller;
 import com.cashbookcloud.common.result.ResponseResult;
 import com.cashbookcloud.rolepermission.api.dto.RolePermissionDto;
 import com.cashbookcloud.rolepermission.api.service.RolePermissionService;
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -13,8 +15,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rolepermission")
+//@RequestMapping("/rolepermission")
 @Api("角色权限关联表管理")
+//@DefaultProperties(defaultFallback  = "findOrderListFallBack")
 public class RolePermissionController {
     @Autowired
     private RolePermissionService rolePermissionService;
@@ -34,7 +37,8 @@ public class RolePermissionController {
     @ApiOperation(value = "根据角色id查询对应的权限idList",notes = "根据角色id查询对应的权限idList",httpMethod = "GET",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "rid")
     @GetMapping("/findByRid")
-    public List<RolePermissionDto> findById(Integer rid){
+    public List<RolePermissionDto> findById(Integer rid) throws InterruptedException {
+//        Thread.sleep(5000);
         List<RolePermissionDto> byRoleId = rolePermissionService.findByRoleId(rid);
         return byRoleId;
     }
@@ -97,6 +101,13 @@ public class RolePermissionController {
         }catch (Exception e){
             result.FAIL_ADD();
         }
+        return result;
+    }
+
+    public ResponseResult findOrderListFallBack() throws Exception {
+        ResponseResult<Object> result = new ResponseResult<>();
+        System.out.println("进入降级方法findOrderListFallBack...");
+        result.HYSTRIX();
         return result;
     }
 

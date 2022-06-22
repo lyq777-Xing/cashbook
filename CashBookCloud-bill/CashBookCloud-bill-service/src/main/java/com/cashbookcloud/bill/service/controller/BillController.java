@@ -1,10 +1,7 @@
 package com.cashbookcloud.bill.service.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.cashbookcloud.bill.api.dto.BillDto;
-import com.cashbookcloud.bill.api.dto.CashReportDto;
-import com.cashbookcloud.bill.api.dto.CatReportDto;
-import com.cashbookcloud.bill.api.dto.KeepingDto;
+import com.cashbookcloud.bill.api.dto.*;
 import com.cashbookcloud.bill.api.service.BillService;
 import com.cashbookcloud.bill.service.covert.BillCovert;
 import com.cashbookcloud.bill.service.vo.BillVo;
@@ -12,6 +9,7 @@ import com.cashbookcloud.bill.service.vo.CountVo;
 import com.cashbookcloud.bill.service.vo.PageVo;
 import com.cashbookcloud.common.result.ResponseResult;
 import com.cashbookcloud.common.utils.ExcelUtil;
+import com.cashbookcloud.common.utils.POIUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -22,9 +20,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -377,6 +377,58 @@ public class BillController {
         ResponseResult<Object> result = new ResponseResult<>();
         String principal = String.valueOf(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         result.Success("ok!",principal);
+        return result;
+    }
+
+    /**
+     * excel文件上传 并解析文件内容保存到数据库
+     * @param excelFile
+     * @return
+     */
+    @PostMapping("/upload/{billlistId}/{userId}")
+    public ResponseResult upload(@RequestParam("excelFile") MultipartFile excelFile,@PathVariable("billlistId") Integer billlistId,@PathVariable("userId")Integer userId){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            List<String[]> list = POIUtils.readExcel(excelFile);
+            for (String[] strings : list) {
+                String billName = strings[0];
+                String catName = strings[1];
+                String billDate = strings[2];
+                String billDescribe = strings[3];
+                String billMode = strings[4];
+                Double billPrice = Double.parseDouble(strings[5]);
+                if(billDate == null){
+                    continue;
+                }
+//                根据catname查询cat
+                // TODO: 2022/6/22
+                CatDto bycatName = billService.findBycatName(catName);
+//                判断cat是否存在
+                if(bycatName == null){
+                    continue;
+                }
+//                若存在，cat与收入支出是否匹配
+                if (bycatName.getCatDesc().equals(billDescribe)){
+//                    说明匹配
+                    BillDto billDto = new BillDto();
+                    billDto.setCatId(bycatName.getId());
+                    billDto.setBilllistId(billlistId);
+                    billDto.setBillPrice(billPrice);
+                    billDto.setBillMode(billMode);
+                    billDto.setBillDate(billDate);
+                    billDto.setBillName(billName);
+                    billDto.setUserId(userId);
+                    billDto.setBillDescribe(billDescribe);
+                    billService.addBill(billDto);
+                }else {
+                    continue;
+                }
+            }
+            result.Success("导入成功");
+        } catch (IOException e) {
+            e.printStackTrace();
+            result.FAIL_ADD("导入账单失败");
+        }
         return result;
     }
 

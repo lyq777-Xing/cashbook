@@ -17,4 +17,7 @@ public interface CatClient {
 
     @GetMapping("/cat/getall")
     public ResponseResult getAllCats();
+
+    @GetMapping("/cat/findbyname")
+    public ResponseResult findByName(@RequestParam("name")String name);
 }

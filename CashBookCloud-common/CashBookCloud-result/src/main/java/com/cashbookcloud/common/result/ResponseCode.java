@@ -25,7 +25,8 @@ public enum ResponseCode {
     FAIL_NAMEALREDYUSE(413,"名称被占用"),
     Unprocesable_entity(422,"[POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误"),
     INTERNAL_SERVER_ERROR(500,"内部错误"),
-    FailToSendCode(421,"发送验证码失败");
+    FailToSendCode(421,"发送验证码失败"),
+    HYSTRIX(888,"服务降级");
     private Integer code;
     private String message;
 

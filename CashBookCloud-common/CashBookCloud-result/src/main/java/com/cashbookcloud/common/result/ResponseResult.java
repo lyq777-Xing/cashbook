@@ -394,4 +394,22 @@ public class ResponseResult<T> implements Serializable {
         meta.setMsg(msg);
         this.data=data;
     }
+
+//    HYSTRIX
+    public void HYSTRIX(){
+        meta.setMsg(ResponseCode.HYSTRIX.getMessage());
+        meta.setStatus(ResponseCode.HYSTRIX.getCode());
+    }
+
+
+    public void HYSTRIX(String msg){
+        meta.setMsg(msg);
+        meta.setStatus(ResponseCode.HYSTRIX.getCode());
+    }
+
+    public void HYSTRIX(String msg,T data){
+        meta.setStatus(ResponseCode.HYSTRIX.getCode());
+        meta.setMsg(msg);
+        this.data=data;
+    }
 }

@@ -1,10 +1,7 @@
 package com.cashbookcloud.bill.api.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.cashbookcloud.bill.api.dto.BillDto;
-import com.cashbookcloud.bill.api.dto.CashReportDto;
-import com.cashbookcloud.bill.api.dto.CatReportDto;
-import com.cashbookcloud.bill.api.dto.KeepingDto;
+import com.cashbookcloud.bill.api.dto.*;
 import io.swagger.models.auth.In;
 
 import java.util.List;
@@ -66,4 +63,7 @@ public interface BillService {
     void delByCatId(Integer catId);
 
     List<BillDto> getReportThree(Integer userId,Integer billlistId);
+
+    CatDto findBycatName(String name);
+
 }

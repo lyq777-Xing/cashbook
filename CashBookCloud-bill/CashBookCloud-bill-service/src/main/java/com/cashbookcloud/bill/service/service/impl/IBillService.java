@@ -1,26 +1,21 @@
 package com.cashbookcloud.bill.service.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cashbookcloud.bill.api.dto.*;
 import com.cashbookcloud.bill.api.service.BillService;
 import com.cashbookcloud.bill.service.client.BilllistClient;
 import com.cashbookcloud.bill.service.client.CatClient;
 import com.cashbookcloud.bill.service.covert.BillCovert;
-import com.cashbookcloud.bill.service.dto.BilllistDto;
-import com.cashbookcloud.bill.service.dto.CatDto;
+import com.cashbookcloud.bill.api.dto.BilllistDto;
+import com.cashbookcloud.bill.api.dto.CatDto;
 import com.cashbookcloud.bill.service.entity.Bill;
 import com.cashbookcloud.bill.service.mapper.BillMapper;
 import com.cashbookcloud.common.result.ResponseResult;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.apache.dubbo.config.annotation.Service;
-import org.checkerframework.checker.units.qual.A;
-import org.hibernate.validator.constraints.br.TituloEleitoral;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.text.SimpleDateFormat;
@@ -350,6 +345,16 @@ public class IBillService implements BillService {
             billDtos.add(billDto);
         }
         return billDtos;
+    }
+
+    @Override
+    public CatDto findBycatName(String name) {
+        ResponseResult result = catClient.findByName(name);
+        // 将数据转成json字符串
+        JSONObject jsonObject= JSONObject.fromObject(result.getData());
+        //将json转成需要的对象
+        CatDto catDto = (CatDto)JSONObject.toBean(jsonObject, CatDto.class);
+        return catDto;
     }
 
     /**

@@ -180,4 +180,23 @@ public class CatController {
         }
         return result;
     }
+
+    /**
+     * 根据分类名称查询分类
+     * @param name
+     * @return
+     */
+    @ApiOperation(value = "根据分类名称查询分类",notes = "根据分类名称查询分类",httpMethod = "GET",response = ResponseResult.class)
+    @GetMapping("/findbyname")
+    public ResponseResult findByName(String name){
+        ResponseResult<Object> result = new ResponseResult<>();
+        try{
+            CatDto byCatName = catService.findByCatName(name);
+            result.Success("查询成功",byCatName);
+        }catch (Exception e){
+            e.printStackTrace();
+            result.FAIL_QUERY();
+        }
+        return result;
+    }
 }
