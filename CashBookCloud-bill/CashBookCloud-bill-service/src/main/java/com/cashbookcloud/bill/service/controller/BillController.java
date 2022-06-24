@@ -385,6 +385,8 @@ public class BillController {
      * @param excelFile
      * @return
      */
+    @ApiOperation(value = "excel文件上传 并解析文件内容保存到数据库",notes = "excel文件上传 并解析文件内容保存到数据库",httpMethod = "POST",response = ResponseResult.class)
+    @PreAuthorize("hasAuthority('inputbilllist')")
     @PostMapping("/upload/{billlistId}/{userId}")
     public ResponseResult upload(@RequestParam("excelFile") MultipartFile excelFile,@PathVariable("billlistId") Integer billlistId,@PathVariable("userId")Integer userId){
         ResponseResult<Object> result = new ResponseResult<>();

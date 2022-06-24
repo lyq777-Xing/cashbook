@@ -216,6 +216,7 @@ public class ManagerController {
      */
     @ApiOperation(value = "发送重置后密码",notes = "发送重置后密码",httpMethod = "POST",response = ResponseResult.class)
     @ApiImplicitParam(dataTypeClass = Integer.class,required = true,value = "id")
+    @PreAuthorize("hasAuthority('changePwd')")
     @PostMapping("/updpwd")
     public ResponseResult updPwd(Integer id){
         ResponseResult<Object> result = new ResponseResult<>();

@@ -435,3 +435,15 @@ Caused by: java.io.IOException: 你的主机中的软件中止了一个已建立
 	at org.apache.coyote.Response.action(Response.java:209)
 	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305)
 	... 98 common frames omitted
+2022-06-22 20:24:52 | [34mINFO [0;39m | [1;33mThread-114[0;39m | [1;32mcom.netflix.loadbalancer.PollingServerListUpdater[0;39m | Shutting down the Executor Pool for PollingServerListUpdater
+2022-06-22 20:25:20 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32mcom.alibaba.cloud.dubbo.service.DubboMetadataServiceExporter[0;39m | The Dubbo service[<dubbo:service exported="true" unexported="true" />] has been unexported.
+2022-06-22 20:25:21 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32morg.apache.dubbo.spring.boot.context.event.AwaitingNonWebApplicationListener[0;39m |  [Dubbo] Current Spring Boot Application is about to shutdown...
+2022-06-22 20:25:32 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32morg.springframework.scheduling.concurrent.ThreadPoolTaskScheduler[0;39m | Shutting down ExecutorService 'Nacso-Watch-Task-Scheduler'
+2022-06-22 20:25:33 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32mcom.alibaba.cloud.nacos.registry.NacosServiceRegistry[0;39m | De-registering from Nacos Server now...
+2022-06-22 20:25:33 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32mcom.alibaba.cloud.nacos.registry.NacosServiceRegistry[0;39m | De-registration finished.
+2022-06-22 20:25:33 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32morg.springframework.scheduling.concurrent.ThreadPoolTaskExecutor[0;39m | Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-22 20:25:36 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32mcom.alibaba.druid.pool.DruidDataSource[0;39m | {dataSource-1} closing ...
+2022-06-22 20:25:37 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32mcom.alibaba.druid.pool.DruidDataSource[0;39m | {dataSource-1} closed
+2022-06-22 20:25:37 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32mcom.alibaba.cloud.dubbo.service.DubboGenericServiceFactory[0;39m | The Dubbo GenericService ReferenceBeans are destroying...
+2022-06-22 20:25:37 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32morg.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor[0;39m | com.cashbookcloud.security.user.getAuthorization.service.impl.IUserService@1982cd1 was destroying!
+2022-06-22 20:25:37 | [34mINFO [0;39m | [1;33mSpringContextShutdownHook[0;39m | [1;32morg.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor[0;39m | class org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
